@@ -1,0 +1,561 @@
+{
+  "products": [
+    {
+      "id": "landscape-pack",
+      "name": "Massive Open World Landscape Pack",
+      "subtitle": "14 Maps + AutoMaterial System",
+      "shortDescription": "14 unique landscape height maps with AutoMaterial system for automatic terrain painting",
+      "price": "£13.15",
+      "priceRange": "£13.15 to £26.30",
+      "fabUrl": "https://www.fab.com/listings/e158b150-42f8-4980-9978-9ef35e01d8c8",
+      "image": "https://media.fab.com/image_previews/gallery_images/e3ac83ca-e790-4efa-b569-e88a17ba0b3c/17a618b8-2bc7-44e4-95ae-a1b4107e5a7f.jpg",
+      "featured": true,
+      "category": "Environment",
+      "tags": ["World", "Landscape", "Environment", "Heightmap", "Fantasy", "Open World", "RPG", "Gaea", "Material", "Beginner Friendly"],
+      "description": "14 unique massive open world landscape height maps with a bonus AutoMaterial system to easily paint your landscapes. Perfect for creating expansive game worlds, from fantasy islands to volcanic terrains.",
+      "features": [
+        {
+          "title": "Height Maps",
+          "description": "Available in 1K, 2K, 4K, and 8K resolutions. Import directly into any version of Unreal Engine to generate landscapes"
+        },
+        {
+          "title": "Unreal Project Files",
+          "description": "Demo maps for each height map (textured, lit, and oceans applied where appropriate)"
+        },
+        {
+          "title": "AutoMaterial",
+          "description": "Automatically paint landscapes with your chosen textures. Includes 5 optional layers for custom textures"
+        },
+        {
+          "title": "PDF Guide",
+          "description": "Step-by-step instructions on using landscapes and configuring AutoMaterial"
+        },
+        {
+          "title": "Source Files",
+          "description": "Gaea files for editing landscapes"
+        }
+      ],
+      "technicalDetails": {
+        "Textures": "56 height maps",
+        "Resolutions": "1K, 2K, 4K, 8K",
+        "Supported Platforms": "Windows",
+        "UE Version": "5.7 (Compatible with all versions)",
+        "Distribution": "Complete Project"
+      },
+      "keyFeatures": [
+        "14 Unique Landscapes",
+        "Multiple Resolutions",
+        "AutoMaterial Included",
+        "Demo Projects",
+        "Gaea Source Files",
+        "Comprehensive Guide",
+        "Island Configurations",
+        "Water Plugin Support"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Included Maps",
+          "items": [
+            {
+              "name": "Open World 1",
+              "description": "Unique landscape with mountain ranges, fertile planes, circular dunes, and a menacing mountain"
+            },
+            {
+              "name": "Open World 2",
+              "description": "Rocky map with huge half-moon shaped island and secondary large landmass"
+            },
+            {
+              "name": "Hilly Island (Map 3)",
+              "description": "Concentrated mound of hilly mountains with lower landmass and sea ingress"
+            },
+            {
+              "name": "Open World 4",
+              "description": "Surrounded mountainous area with only one exit and dividing mountain range"
+            },
+            {
+              "name": "Island (Map 5)",
+              "description": "Tall concentrated island with protected sea ingress and small gap for ships"
+            },
+            {
+              "name": "Dragon Tooth Isles (Map 6)",
+              "description": "Menacing island shredded by two jagged strikes resembling a dragon's tooth"
+            },
+            {
+              "name": "Dragon Fire Isles (Map 7)",
+              "description": "Barren rocky land with rocky terraces scorched by demonic fires"
+            },
+            {
+              "name": "Sandstone Isles (Map 8)",
+              "description": "Continuous island perfect for linear-driven open world games"
+            },
+            {
+              "name": "Open World 9",
+              "description": "Multiple choice map with vertical variation from high areas to lower planes"
+            },
+            {
+              "name": "Turtle Top Isles (Map 10)",
+              "description": "Rounded isle that peaks in the center resembling a turtle's back"
+            },
+            {
+              "name": "Dark Isles (Map 11)",
+              "description": "Dark menacing mountain island with rocky outcrops and deep drops"
+            },
+            {
+              "name": "Secluded Island (Map 12)",
+              "description": "Small island completely surrounded by sea and mountains"
+            },
+            {
+              "name": "Mountain Pass (Map 13)",
+              "description": "Rocky mountain range with a pass through two large mountains"
+            },
+            {
+              "name": "Highlands (Map 14)",
+              "description": "Surrounded by tall mountains with varying height layers to explore"
+            }
+          ]
+        },
+        {
+          "heading": "AutoMaterial System",
+          "content": "The included AutoMaterial automatically paints your landscape based on configurable height and incline rules. Demo levels use Unreal's starter content textures, which you can easily swap with any high-quality textures of your choice."
+        }
+      ]
+    },
+    {
+      "id": "ritual-jars",
+      "name": "Ritual Jars | Canopic Jars from the Abyss",
+      "subtitle": "9 Unique Demonic Sculptures",
+      "shortDescription": "9 unique demonic canopic jars for dark fantasy and horror environments",
+      "price": "£7.00",
+      "priceRange": "£7.00 to £24.55",
+      "fabUrl": "https://www.fab.com/listings/4c826a15-f7f2-4edb-b908-3730dda13c67",
+      "image": "https://media.fab.com/image_previews/gallery_images/af52ddcc-0f6c-4ab2-913f-b14143e4b057/1bbd18be-b93a-4853-91b4-22db237aead4.jpg",
+      "featured": true,
+      "category": "Props",
+      "tags": ["Demon", "Demonic", "Ritual", "Fantasy", "Gothic", "Medieval", "Artifact", "Collectible", "Nanite", "Ancient", "Jar", "Prop"],
+      "description": "Elevate your dark fantasy or horror environment with this comprehensive prop pack of 9 Ritual Canopic Vials, each sealed by the likeness of a different dark entity. Perfect for the crypts of powerful necromancers, cultist altars, ancient treasuries, or the laboratory of a mad alchemist.",
+      "features": [
+        {
+          "title": "Nine Unique Sculptures",
+          "description": "Each jar is topped with a uniquely sculpted head (horned demon, serpentine creature, grinning ghoul, skeletal mask, etc.) to store specific 'vitals' or artifacts"
+        },
+        {
+          "title": "Aged Detail",
+          "description": "Heavy, ancient texture featuring cracked stone, aged metal, or dark ceramic with traces of ritual wear and grime"
+        },
+        {
+          "title": "Narrative Versatility",
+          "description": "Use the complete set to define a powerful ritual, or scatter individual vials as valuable loot or lore objects throughout your level"
+        },
+        {
+          "title": "High Realism",
+          "description": "Excellent for close-up renders and highly detailed environment dressing"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "9",
+        "Materials": "9",
+        "Textures": "36",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes (automatic)",
+        "LODs": "No (Nanite)",
+        "Supported Platforms": "Windows",
+        "UE Version": "5.7",
+        "Distribution": "Asset Package"
+      },
+      "keyFeatures": [
+        "9 Unique Demonic Designs",
+        "Nanite Ready",
+        "High Detail Textures",
+        "Aged & Weathered Look",
+        "Demo Scene Included",
+        "Automatic Collision",
+        "Quest-Ready Props",
+        "Lore-Friendly Design"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Technical Features",
+          "items": [
+            {
+              "name": "Nanite Ready",
+              "description": "Built for Unreal Engine's Nanite virtualized geometry system - LODs not included as they're not needed"
+            },
+            {
+              "name": "Demo Map",
+              "description": "Example scene showing all jars in context"
+            },
+            {
+              "name": "High Quality Textures",
+              "description": "2048x2048 resolution textures for maximum detail"
+            }
+          ]
+        },
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Dark Fantasy",
+              "description": "Ancient crypts, necromancer lairs, and forbidden treasure rooms"
+            },
+            {
+              "name": "Horror Games",
+              "description": "Ritual chambers, cursed artifacts, and atmospheric props"
+            },
+            {
+              "name": "RPG Environments",
+              "description": "Quest items, collectibles, and narrative elements"
+            },
+            {
+              "name": "Gothic Settings",
+              "description": "Victorian laboratories, occult studies, alchemist workshops"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chart-widgets",
+      "name": "Fast Chart Widgets",
+      "subtitle": "Easy Blueprintable Graphs for UE5",
+      "shortDescription": "Easy-to-use blueprintable graph and chart widgets for data visualization in UE5",
+      "price": "£22.80",
+      "priceRange": "£22.80",
+      "fabUrl": "https://www.fab.com/listings/63207f67-dd6e-4570-b56c-a1f5abeba5f1",
+      "image": "https://via.placeholder.com/400x250/1a1a2e/eee?text=Fast+Chart+Widgets",
+      "featured": true,
+      "category": "Tools",
+      "rating": "2.0",
+      "reviews": "1",
+      "tags": ["Blueprint", "Widget", "Chart", "Graph", "Data Viz", "UI", "UMG", "Dashboard"],
+      "description": "Professional data visualization widgets for Unreal Engine 5. Create beautiful, responsive charts and graphs entirely in Blueprint with minimal setup. Perfect for dashboards, analytics displays, game stats, and any application requiring real-time data visualization.",
+      "features": [
+        {
+          "title": "Blueprint Ready",
+          "description": "No C++ required - fully accessible through Unreal Engine's Blueprint visual scripting"
+        },
+        {
+          "title": "Multiple Chart Types",
+          "description": "Line charts, bar charts, pie charts, and more"
+        },
+        {
+          "title": "Real-time Updates",
+          "description": "Dynamic data binding with smooth animations"
+        },
+        {
+          "title": "Fully Customizable",
+          "description": "Colors, fonts, labels, legends, and styling options"
+        },
+        {
+          "title": "Performance Optimized",
+          "description": "Efficient rendering suitable for real-time applications"
+        },
+        {
+          "title": "Responsive Design",
+          "description": "Adapts to different screen sizes and resolutions"
+        }
+      ],
+      "technicalDetails": {
+        "Rating": "2.0 (1 review)",
+        "Code Language": "Blueprint",
+        "UE Version": "5.7+",
+        "Supported Platforms": "All",
+        "Documentation": "Full guide included",
+        "Examples": "Demo projects"
+      },
+      "keyFeatures": [
+        "Blueprint Only",
+        "Multiple Chart Types",
+        "Real-time Updates",
+        "Customizable Styling",
+        "Responsive Design",
+        "Performance Optimized",
+        "Full Documentation",
+        "Example Projects"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Game UI",
+              "description": "Player statistics, inventory management, skill trees"
+            },
+            {
+              "name": "Simulation Tools",
+              "description": "Real-time data monitoring and analysis displays"
+            },
+            {
+              "name": "Training Applications",
+              "description": "Performance metrics and progress tracking"
+            },
+            {
+              "name": "Architectural Viz",
+              "description": "Energy consumption, occupancy, and analytics"
+            }
+          ]
+        },
+        {
+          "heading": "Easy Integration",
+          "content": "Simply drag and drop the widget into your UMG interface, bind your data arrays, and customize the appearance. Full documentation and example projects included to get you started in minutes."
+        }
+      ]
+    },
+    {
+      "id": "landstamp-pro",
+      "name": "Landstamp Pro",
+      "subtitle": "Professional Landscape Heightmap Stamp System",
+      "shortDescription": "Professional landscape heightmap stamp system for advanced terrain creation",
+      "price": "£43.86",
+      "priceRange": "£43.86",
+      "fabUrl": "https://www.fab.com/listings/98b3d002-eedf-42f9-9d4e-007b0a9b0f9d",
+      "image": "https://via.placeholder.com/400x250/1a1a2e/eee?text=Landstamp+Pro",
+      "featured": true,
+      "category": "Tools",
+      "tags": ["Landscape", "Heightmap", "Terrain", "Stamp", "Professional", "Tool", "Editor", "Level Design"],
+      "description": "Take your landscape creation to the next level with Landstamp Pro - a professional-grade heightmap stamping system for Unreal Engine. Create complex, detailed terrains by combining and layering heightmap stamps with precise control and real-time preview.",
+      "features": [
+        {
+          "title": "Advanced Stamping System",
+          "description": "Apply heightmap stamps with rotation, scale, and blend modes"
+        },
+        {
+          "title": "Layer-Based Workflow",
+          "description": "Non-destructive editing with multiple stamp layers"
+        },
+        {
+          "title": "Real-Time Preview",
+          "description": "See changes instantly as you work"
+        },
+        {
+          "title": "Extensive Stamp Library",
+          "description": "Hundreds of pre-made stamps for mountains, valleys, plateaus, and more"
+        },
+        {
+          "title": "Custom Stamp Support",
+          "description": "Import your own heightmaps as stamps"
+        },
+        {
+          "title": "Blend Modes",
+          "description": "Additive, subtractive, maximum, minimum, and custom blending"
+        },
+        {
+          "title": "Precision Tools",
+          "description": "Fine-tune height, falloff, and intensity with intuitive controls"
+        }
+      ],
+      "technicalDetails": {
+        "UE Version": "5.7+",
+        "Code": "C++ & Blueprint",
+        "Platforms": "All",
+        "Stamp Library": "Extensive",
+        "Documentation": "Comprehensive",
+        "Examples": "Tutorial projects"
+      },
+      "keyFeatures": [
+        "Advanced Stamping System",
+        "Layer-Based Workflow",
+        "Real-Time Preview",
+        "Extensive Stamp Library",
+        "Custom Stamp Support",
+        "Multiple Blend Modes",
+        "Precision Controls",
+        "Professional Tool"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Professional Workflow",
+          "items": [
+            {
+              "name": "Non-Destructive",
+              "description": "Layer-based system allows you to adjust and refine without losing work"
+            },
+            {
+              "name": "Efficient",
+              "description": "Quickly build complex terrains that would take hours manually"
+            },
+            {
+              "name": "Flexible",
+              "description": "Works with any landscape size and resolution"
+            },
+            {
+              "name": "Powerful",
+              "description": "Combine stamps to create unique, realistic terrain features"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crimson-throne",
+      "name": "The Crimson Sovereign Throne",
+      "subtitle": "Dark Opulent Throne Asset",
+      "shortDescription": "Dark opulent throne with baroque scrollwork and rich velvet upholstery",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/4a68946b-360f-44d1-97ec-9f5191c445f1",
+      "image": "https://via.placeholder.com/400x250/8B0000/eee?text=Crimson+Sovereign+Throne",
+      "featured": true,
+      "category": "Furniture",
+      "tags": ["Fantasy", "Gothic", "Medieval", "Throne", "Furniture", "Victorian", "Nanite", "Stylized"],
+      "description": "Establish absolute authority and dark royalty in your scene with this Crimson Sovereign Throne 3D model. This asset is the perfect seat for a Vampire Lord, an Evil Queen, a High Priest, or any character demanding attention in a fantasy castle, royal chamber, or grand villain's lair.",
+      "features": [
+        {
+          "title": "Dark Opulence",
+          "description": "Features a massive, high-back frame with highly detailed baroque/rococo scrolling rendered in heavy, dark wood or obsidian texture"
+        },
+        {
+          "title": "Rich Upholstery",
+          "description": "The seat and backrest are sumptuously upholstered in vibrant tufted red velvet or satin, creating a dramatic contrast"
+        },
+        {
+          "title": "Commanding Presence",
+          "description": "The imposing size and striking color palette ensure this throne immediately becomes the focal point of any environment"
+        }
+      ],
+      "technicalDetails": {
+        "Triangles": "925,955",
+        "Vertices": "462,952",
+        "Unique Meshes": "1",
+        "Textures": "1",
+        "Max Texture Res": "2048",
+        "Materials": "1",
+        "Formats": "FBX, glTF, GLB, USDZ",
+        "File Size": "34.99 MB"
+      },
+      "keyFeatures": [
+        "High Poly Detail",
+        "Baroque Scrollwork",
+        "Rich Velvet Upholstery",
+        "Multiple Formats",
+        "Game Ready",
+        "2K Textures",
+        "Gothic Design",
+        "Fantasy Asset"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Fantasy Castles",
+              "description": "Throne rooms, vampire lairs, evil queen chambers"
+            },
+            {
+              "name": "Gothic Settings",
+              "description": "Dark cathedrals, cult headquarters, Victorian mansions"
+            },
+            {
+              "name": "RPG Games",
+              "description": "Boss encounters, royal courts, narrative scenes"
+            },
+            {
+              "name": "Cinematic Scenes",
+              "description": "Hero furniture pieces, establishing shots, character moments"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "volcanic-throne",
+      "name": "The Volcanic Sentinel Throne",
+      "subtitle": "Fire & Molten Rock Fantasy Throne",
+      "shortDescription": "Imposing throne with volcanic aesthetic and molten details",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/8c0e423d-8337-4601-af4f-1c6ad3c81783",
+      "image": "https://via.placeholder.com/400x250/FF4500/eee?text=Volcanic+Sentinel+Throne",
+      "featured": false,
+      "category": "Furniture",
+      "tags": ["Fantasy", "Volcanic", "Fire", "Throne", "Furniture", "Demon", "Medieval", "Dark Fantasy"],
+      "description": "Command the power of fire and stone with the Volcanic Sentinel Throne. This imposing seat combines the raw power of volcanic rock with glowing molten details, perfect for fire lords, demon kings, or any character who rules through elemental might.",
+      "features": [
+        {
+          "title": "Volcanic Design",
+          "description": "Crafted from dark, jagged volcanic rock with realistic erosion and heat damage patterns"
+        },
+        {
+          "title": "Molten Details",
+          "description": "Glowing lava veins and ember effects create an otherworldly, dangerous aesthetic"
+        },
+        {
+          "title": "Imposing Scale",
+          "description": "Large, commanding presence suitable for boss chambers and throne rooms"
+        },
+        {
+          "title": "High Detail",
+          "description": "Intricate surface details with cracks, chips, and molten flows"
+        }
+      ],
+      "technicalDetails": {
+        "Formats": "FBX, glTF, GLB, USDZ",
+        "Materials": "PBR workflow",
+        "Textures": "2K resolution",
+        "Detail Level": "High poly",
+        "Game Ready": "Yes"
+      },
+      "keyFeatures": [
+        "Volcanic Rock Design",
+        "Molten Lava Details",
+        "Glowing Effects",
+        "High Detail Geometry",
+        "Multiple Formats",
+        "PBR Materials",
+        "Fantasy Asset",
+        "Customizable"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Fantasy Games",
+              "description": "Fire realm bosses, demon lords, volcanic dungeons"
+            },
+            {
+              "name": "Dark Fantasy",
+              "description": "Hellish landscapes, infernal courts, fire temples"
+            },
+            {
+              "name": "Action RPGs",
+              "description": "Epic boss encounters, elemental chambers"
+            },
+            {
+              "name": "Adventure Games",
+              "description": "Puzzle dungeons, environmental storytelling"
+            }
+          ]
+        },
+        {
+          "heading": "Technical Excellence",
+          "content": "Built to modern standards with high-quality textures and optimized geometry. The volcanic materials support customization, allowing you to adjust glow intensity, lava flow, and color temperature to match your project's aesthetic."
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "seller": "MythicLemon",
+    "tagline": "Premium Unreal Engine Assets",
+    "description": "We create high-quality Unreal Engine assets and tools designed to accelerate your development workflow. From massive landscape packs to professional visualization plugins, our products combine technical excellence with creative flexibility.",
+    "totalProducts": "24+",
+    "socialLinks": {
+      "fab": "https://www.fab.com/sellers/MythicLemon",
+      "twitter": "https://x.com/MythicLemon",
+      "youtube": "https://youtube.com/@mythiclemonstudio"
+    },
+    "stats": [
+      {
+        "label": "Products Available",
+        "value": "24+"
+      },
+      {
+        "label": "Latest Version Support",
+        "value": "UE 5.7"
+      },
+      {
+        "label": "Next-Gen Graphics",
+        "value": "Nanite Ready"
+      }
+    ]
+  }
+}
