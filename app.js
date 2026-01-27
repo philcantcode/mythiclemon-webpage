@@ -38,7 +38,7 @@ class MythicLemonApp {
 
     // Render product cards on homepage
     renderProductGrid(container, products = null) {
-        const productsToRender = products || this.getFeaturedProducts();
+        const productsToRender = products || this.products;
         const grid = document.querySelector(container);
         
         if (!grid) return;
