@@ -1,6 +1,558 @@
 {
   "products": [
     {
+      "id": "landstamp-pro",
+      "name": "Landstamp Pro",
+      "subtitle": "Professional Landscape Heightmap Stamp System",
+      "shortDescription": "Professional landscape heightmap stamp system for advanced terrain creation",
+      "price": "£43.86",
+      "priceRange": "£43.86",
+      "fabUrl": "https://www.fab.com/listings/98b3d002-eedf-42f9-9d4e-007b0a9b0f9d",
+      "image": "https://via.placeholder.com/400x250/1a1a2e/eee?text=Landstamp+Pro",
+      "featured": true,
+      "category": "Tools",
+      "tags": ["Landscape", "Heightmap", "Terrain", "Stamp", "Professional", "Tool", "Editor", "Level Design"],
+      "description": "Take your landscape creation to the next level with Landstamp Pro - a professional-grade heightmap stamping system for Unreal Engine. Create complex, detailed terrains by combining and layering heightmap stamps with precise control and real-time preview.",
+      "features": [
+        {
+          "title": "Advanced Stamping System",
+          "description": "Apply heightmap stamps with rotation, scale, and blend modes"
+        },
+        {
+          "title": "Layer-Based Workflow",
+          "description": "Non-destructive editing with multiple stamp layers"
+        },
+        {
+          "title": "Real-Time Preview",
+          "description": "See changes instantly as you work"
+        },
+        {
+          "title": "Extensive Stamp Library",
+          "description": "Hundreds of pre-made stamps for mountains, valleys, plateaus, and more"
+        },
+        {
+          "title": "Custom Stamp Support",
+          "description": "Import your own heightmaps as stamps"
+        },
+        {
+          "title": "Blend Modes",
+          "description": "Additive, subtractive, maximum, minimum, and custom blending"
+        }
+      ],
+      "technicalDetails": {
+        "UE Version": "5.7+",
+        "Code": "C++ & Blueprint",
+        "Platforms": "All",
+        "Stamp Library": "Extensive",
+        "Documentation": "Comprehensive",
+        "Examples": "Tutorial projects"
+      },
+      "keyFeatures": [
+        "Advanced Stamping System",
+        "Layer-Based Workflow",
+        "Real-Time Preview",
+        "Extensive Stamp Library",
+        "Custom Stamp Support",
+        "Multiple Blend Modes",
+        "Precision Controls",
+        "Professional Tool"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Professional Workflow",
+          "items": [
+            {
+              "name": "Non-Destructive",
+              "description": "Layer-based system allows you to adjust and refine without losing work"
+            },
+            {
+              "name": "Efficient",
+              "description": "Quickly build complex terrains that would take hours manually"
+            },
+            {
+              "name": "Flexible",
+              "description": "Works with any landscape size and resolution"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "easy-kanban-board",
+      "name": "Easy Kanban Board",
+      "subtitle": "Simple Task Management Plugin for UE5",
+      "shortDescription": "Lightweight Kanban-style task board plugin integrated directly into Unreal Engine 5",
+      "price": "£52.00",
+      "priceRange": "£52.00",
+      "fabUrl": "https://www.fab.com/listings/d4f9a8c3-7b2e-4d1a-9e5f-6a1b2c3d4e5f",
+      "image": "https://via.placeholder.com/400x250/1a1a2e/eee?text=Easy+Kanban+Board",
+      "featured": true,
+      "category": "Tools",
+      "tags": ["Productivity", "Task Management", "Plugin", "Kanban", "Project Management", "Workflow", "Organization"],
+      "description": "Keep your development organized with Easy Kanban Board - a lightweight task management plugin that brings Kanban-style boards directly into Unreal Engine 5. Track features, bugs, and to-dos without leaving the editor.",
+      "features": [
+        {
+          "title": "Editor Integration",
+          "description": "Fully integrated into the Unreal Engine 5 editor - no external tools required"
+        },
+        {
+          "title": "Drag & Drop",
+          "description": "Intuitive drag-and-drop interface for moving tasks between columns"
+        },
+        {
+          "title": "Customizable Columns",
+          "description": "Create your own workflow with custom column names and colors"
+        },
+        {
+          "title": "Task Details",
+          "description": "Add descriptions, priorities, and tags to tasks"
+        },
+        {
+          "title": "Quick Notes",
+          "description": "Capture ideas and reminders quickly while working"
+        },
+        {
+          "title": "Persistent Storage",
+          "description": "All tasks saved with your project"
+        }
+      ],
+      "technicalDetails": {
+        "UE Version": "5.7+",
+        "Code": "C++ Plugin",
+        "Platforms": "All",
+        "Integration": "Editor Plugin",
+        "Storage": "Project-based",
+        "Documentation": "Full guide included"
+      },
+      "keyFeatures": [
+        "Editor Integration",
+        "Drag & Drop Interface",
+        "Custom Columns",
+        "Task Priorities",
+        "Quick Notes",
+        "Persistent Storage",
+        "Team-Friendly",
+        "Lightweight"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Solo Developers",
+              "description": "Keep track of features and bugs without external tools"
+            },
+            {
+              "name": "Small Teams",
+              "description": "Simple project tracking within the editor"
+            },
+            {
+              "name": "Prototyping",
+              "description": "Quick task organization during rapid development"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "markdown-4-blueprints",
+      "name": "Markdown 4 Blueprints",
+      "subtitle": "Markdown Widget for UE5 UMG",
+      "shortDescription": "Display formatted markdown text in UMG widgets with rich text styling",
+      "price": "£43.86",
+      "priceRange": "£43.86",
+      "fabUrl": "https://www.fab.com/listings/a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "image": "https://via.placeholder.com/400x250/1a1a2e/eee?text=Markdown+4+Blueprints",
+      "featured": true,
+      "category": "Tools",
+      "tags": ["Markdown", "Widget", "UMG", "UI", "Text", "Blueprint", "Documentation", "Rich Text"],
+      "description": "Display beautifully formatted markdown text in your UMG interfaces with Markdown 4 Blueprints. Perfect for in-game documentation, tutorials, changelogs, and rich text displays. Supports headers, lists, bold, italic, links, and more.",
+      "features": [
+        {
+          "title": "Markdown Support",
+          "description": "Full markdown syntax support including headers, lists, bold, italic, links, and code blocks"
+        },
+        {
+          "title": "UMG Widget",
+          "description": "Drop-in widget component for UMG interfaces"
+        },
+        {
+          "title": "Customizable Styling",
+          "description": "Configure fonts, colors, sizes, and spacing to match your UI design"
+        },
+        {
+          "title": "Dynamic Content",
+          "description": "Update markdown text at runtime via Blueprint"
+        },
+        {
+          "title": "Link Callbacks",
+          "description": "Handle link clicks with Blueprint events"
+        },
+        {
+          "title": "Scroll Support",
+          "description": "Built-in scrolling for long documents"
+        }
+      ],
+      "technicalDetails": {
+        "UE Version": "5.7+",
+        "Code": "C++ & Blueprint",
+        "Platforms": "All",
+        "Widget Type": "UMG",
+        "Documentation": "Full guide",
+        "Examples": "Demo project"
+      },
+      "keyFeatures": [
+        "Full Markdown Support",
+        "UMG Integration",
+        "Customizable Styling",
+        "Dynamic Updates",
+        "Link Callbacks",
+        "Scroll Support",
+        "Blueprint Friendly",
+        "Performance Optimized"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "In-Game Documentation",
+              "description": "Help screens, tutorials, and game guides"
+            },
+            {
+              "name": "Changelogs",
+              "description": "Patch notes and update information"
+            },
+            {
+              "name": "Story Content",
+              "description": "Formatted text for narrative games"
+            },
+            {
+              "name": "Developer Tools",
+              "description": "Debug information and logging displays"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "simple-pdf-viewer",
+      "name": "Simple PDF Viewer",
+      "subtitle": "PDF Display Plugin for UE5",
+      "shortDescription": "Display PDF documents directly in Unreal Engine 5 UMG widgets",
+      "price": "£43.86",
+      "priceRange": "£43.86",
+      "fabUrl": "https://www.fab.com/listings/b2c3d4e5-f6a7-8901-bcde-f23456789012",
+      "image": "https://via.placeholder.com/400x250/1a1a2e/eee?text=Simple+PDF+Viewer",
+      "featured": true,
+      "category": "Tools",
+      "tags": ["PDF", "Viewer", "UMG", "Widget", "Document", "Plugin", "UI", "Blueprint"],
+      "description": "Display PDF documents directly in your Unreal Engine 5 applications with Simple PDF Viewer. Perfect for training simulations, technical documentation, manuals, and any application requiring PDF display capabilities.",
+      "features": [
+        {
+          "title": "Native PDF Rendering",
+          "description": "Render PDF documents directly in UMG widgets"
+        },
+        {
+          "title": "Page Navigation",
+          "description": "Built-in controls for page-by-page navigation"
+        },
+        {
+          "title": "Zoom Controls",
+          "description": "Zoom in/out and pan for detailed viewing"
+        },
+        {
+          "title": "Blueprint API",
+          "description": "Full Blueprint API for custom controls and integration"
+        },
+        {
+          "title": "Performance Optimized",
+          "description": "Efficient rendering suitable for real-time applications"
+        },
+        {
+          "title": "File Loading",
+          "description": "Load PDFs from disk or packaged content"
+        }
+      ],
+      "technicalDetails": {
+        "UE Version": "5.7+",
+        "Code": "C++ Plugin",
+        "Platforms": "Windows, Mac",
+        "Widget Type": "UMG",
+        "Documentation": "Full guide",
+        "Examples": "Demo project"
+      },
+      "keyFeatures": [
+        "Native PDF Rendering",
+        "Page Navigation",
+        "Zoom & Pan",
+        "Blueprint API",
+        "UMG Widget",
+        "Performance Optimized",
+        "Easy Integration",
+        "Custom Controls"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Training Simulations",
+              "description": "Display manuals, procedures, and training materials"
+            },
+            {
+              "name": "Technical Applications",
+              "description": "Engineering documentation and specifications"
+            },
+            {
+              "name": "Architectural Viz",
+              "description": "Floor plans, specifications, and project documents"
+            },
+            {
+              "name": "Interactive Kiosks",
+              "description": "Information displays and digital signage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "easyhttp",
+      "name": "EasyHTTP",
+      "subtitle": "Simple HTTP Requests for UE5",
+      "shortDescription": "Simplified HTTP request system for Unreal Engine 5 with Blueprint support",
+      "price": "£17.53",
+      "priceRange": "£17.53",
+      "fabUrl": "https://www.fab.com/listings/c3d4e5f6-a7b8-9012-cdef-34567890123",
+      "image": "https://via.placeholder.com/400x250/1a1a2e/eee?text=EasyHTTP",
+      "featured": true,
+      "category": "Tools",
+      "tags": ["HTTP", "API", "REST", "Blueprint", "Networking", "Web", "JSON", "Plugin"],
+      "description": "Make HTTP requests from Blueprint with ease using EasyHTTP. Simple, intuitive interface for GET, POST, PUT, DELETE requests with automatic JSON parsing. Perfect for REST API integration, web services, and online features.",
+      "features": [
+        {
+          "title": "Blueprint Ready",
+          "description": "No C++ required - fully accessible through Blueprint nodes"
+        },
+        {
+          "title": "All HTTP Methods",
+          "description": "Support for GET, POST, PUT, DELETE, PATCH requests"
+        },
+        {
+          "title": "JSON Support",
+          "description": "Automatic JSON parsing and serialization"
+        },
+        {
+          "title": "Headers & Auth",
+          "description": "Easy header management and authentication support"
+        },
+        {
+          "title": "Async Execution",
+          "description": "Non-blocking requests with callback events"
+        },
+        {
+          "title": "Error Handling",
+          "description": "Comprehensive error reporting and timeout management"
+        }
+      ],
+      "technicalDetails": {
+        "UE Version": "5.7+",
+        "Code": "C++ & Blueprint",
+        "Platforms": "All",
+        "Protocol": "HTTP/HTTPS",
+        "Documentation": "Full guide",
+        "Examples": "Demo project"
+      },
+      "keyFeatures": [
+        "Blueprint Support",
+        "All HTTP Methods",
+        "JSON Parsing",
+        "Authentication",
+        "Async Callbacks",
+        "Error Handling",
+        "Header Management",
+        "Easy Integration"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "REST APIs",
+              "description": "Integrate with web services and cloud backends"
+            },
+            {
+              "name": "Online Features",
+              "description": "Leaderboards, player stats, cloud saves"
+            },
+            {
+              "name": "Content Delivery",
+              "description": "Download configs, assets, and dynamic content"
+            },
+            {
+              "name": "Analytics",
+              "description": "Send game events and telemetry data"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "landscape-stamp-tool",
+      "name": "Landscape Stamp Tool",
+      "subtitle": "Essential Heightmap Stamping Plugin",
+      "shortDescription": "Essential heightmap stamping tool for creating detailed landscapes in Unreal Engine",
+      "price": "£8.77",
+      "priceRange": "£8.77",
+      "fabUrl": "https://www.fab.com/listings/d4e5f6a7-b8c9-0123-def4-456789012345",
+      "image": "https://via.placeholder.com/400x250/1a1a2e/eee?text=Landscape+Stamp+Tool",
+      "featured": false,
+      "category": "Tools",
+      "tags": ["Landscape", "Heightmap", "Terrain", "Stamp", "Tool", "Editor", "Level Design", "Essential"],
+      "description": "Create detailed terrains quickly with the Landscape Stamp Tool. Apply pre-made heightmap stamps or your own custom stamps to build mountains, valleys, cliffs, and other terrain features with ease.",
+      "features": [
+        {
+          "title": "Stamp Application",
+          "description": "Apply heightmap stamps with rotation and scale controls"
+        },
+        {
+          "title": "Pre-Made Stamps",
+          "description": "Library of common terrain features included"
+        },
+        {
+          "title": "Custom Stamps",
+          "description": "Import your own heightmaps as stamps"
+        },
+        {
+          "title": "Real-Time Preview",
+          "description": "See stamp placement before applying"
+        },
+        {
+          "title": "Blend Modes",
+          "description": "Additive and subtractive stamping options"
+        }
+      ],
+      "technicalDetails": {
+        "UE Version": "5.7+",
+        "Code": "C++ & Blueprint",
+        "Platforms": "All",
+        "Documentation": "User guide",
+        "Examples": "Tutorial project"
+      },
+      "keyFeatures": [
+        "Heightmap Stamping",
+        "Pre-Made Stamps",
+        "Custom Stamp Support",
+        "Real-Time Preview",
+        "Blend Modes",
+        "Easy to Use",
+        "Level Design Tool",
+        "Time Saving"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Efficient Terrain Creation",
+          "items": [
+            {
+              "name": "Quick Results",
+              "description": "Build complex terrains in minutes instead of hours"
+            },
+            {
+              "name": "Repeatable",
+              "description": "Create consistent terrain features across your world"
+            },
+            {
+              "name": "Flexible",
+              "description": "Combine stamps for unique landscapes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chart-widgets",
+      "name": "Fast Chart Widgets",
+      "subtitle": "Easy Blueprintable Graphs for UE5",
+      "shortDescription": "Easy-to-use blueprintable graph and chart widgets for data visualization in UE5",
+      "price": "£22.80",
+      "priceRange": "£22.80",
+      "fabUrl": "https://www.fab.com/listings/63207f67-dd6e-4570-b56c-a1f5abeba5f1",
+      "image": "https://via.placeholder.com/400x250/1a1a2e/eee?text=Fast+Chart+Widgets",
+      "featured": true,
+      "category": "Tools",
+      "rating": "2.0",
+      "reviews": "1",
+      "tags": ["Blueprint", "Widget", "Chart", "Graph", "Data Viz", "UI", "UMG", "Dashboard"],
+      "description": "Professional data visualization widgets for Unreal Engine 5. Create beautiful, responsive charts and graphs entirely in Blueprint with minimal setup. Perfect for dashboards, analytics displays, game stats, and any application requiring real-time data visualization.",
+      "features": [
+        {
+          "title": "Blueprint Ready",
+          "description": "No C++ required - fully accessible through Unreal Engine's Blueprint visual scripting"
+        },
+        {
+          "title": "Multiple Chart Types",
+          "description": "Line charts, bar charts, pie charts, and more"
+        },
+        {
+          "title": "Real-time Updates",
+          "description": "Dynamic data binding with smooth animations"
+        },
+        {
+          "title": "Fully Customizable",
+          "description": "Colors, fonts, labels, legends, and styling options"
+        },
+        {
+          "title": "Performance Optimized",
+          "description": "Efficient rendering suitable for real-time applications"
+        },
+        {
+          "title": "Responsive Design",
+          "description": "Adapts to different screen sizes and resolutions"
+        }
+      ],
+      "technicalDetails": {
+        "Rating": "2.0 (1 review)",
+        "Code Language": "Blueprint",
+        "UE Version": "5.7+",
+        "Supported Platforms": "All",
+        "Documentation": "Full guide included",
+        "Examples": "Demo projects"
+      },
+      "keyFeatures": [
+        "Blueprint Only",
+        "Multiple Chart Types",
+        "Real-time Updates",
+        "Customizable Styling",
+        "Responsive Design",
+        "Performance Optimized",
+        "Full Documentation",
+        "Example Projects"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Game UI",
+              "description": "Player statistics, inventory management, skill trees"
+            },
+            {
+              "name": "Simulation Tools",
+              "description": "Real-time data monitoring and analysis displays"
+            },
+            {
+              "name": "Training Applications",
+              "description": "Performance metrics and progress tracking"
+            },
+            {
+              "name": "Architectural Viz",
+              "description": "Energy consumption, occupancy, and analytics"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "landscape-pack",
       "name": "Massive Open World Landscape Pack",
       "subtitle": "14 Maps + AutoMaterial System",
@@ -113,10 +665,6 @@
               "description": "Surrounded by tall mountains with varying height layers to explore"
             }
           ]
-        },
-        {
-          "heading": "AutoMaterial System",
-          "content": "The included AutoMaterial automatically paints your landscape based on configurable height and incline rules. Demo levels use Unreal's starter content textures, which you can easily swap with any high-quality textures of your choice."
         }
       ]
     },
@@ -125,8 +673,8 @@
       "name": "Ritual Jars | Canopic Jars from the Abyss",
       "subtitle": "9 Unique Demonic Sculptures",
       "shortDescription": "9 unique demonic canopic jars for dark fantasy and horror environments",
-      "price": "£7.00",
-      "priceRange": "£7.00 to £24.55",
+      "price": "£2.61",
+      "priceRange": "£0.86 to £2.61",
       "fabUrl": "https://www.fab.com/listings/4c826a15-f7f2-4edb-b908-3730dda13c67",
       "image": "https://media.fab.com/image_previews/gallery_images/af52ddcc-0f6c-4ab2-913f-b14143e4b057/1bbd18be-b93a-4853-91b4-22db237aead4.jpg",
       "featured": true,
@@ -174,23 +722,6 @@
       ],
       "detailedContent": [
         {
-          "heading": "Technical Features",
-          "items": [
-            {
-              "name": "Nanite Ready",
-              "description": "Built for Unreal Engine's Nanite virtualized geometry system - LODs not included as they're not needed"
-            },
-            {
-              "name": "Demo Map",
-              "description": "Example scene showing all jars in context"
-            },
-            {
-              "name": "High Quality Textures",
-              "description": "2048x2048 resolution textures for maximum detail"
-            }
-          ]
-        },
-        {
           "heading": "Perfect For",
           "items": [
             {
@@ -204,182 +735,1886 @@
             {
               "name": "RPG Environments",
               "description": "Quest items, collectibles, and narrative elements"
-            },
-            {
-              "name": "Gothic Settings",
-              "description": "Victorian laboratories, occult studies, alchemist workshops"
             }
           ]
         }
       ]
     },
     {
-      "id": "chart-widgets",
-      "name": "Fast Chart Widgets",
-      "subtitle": "Easy Blueprintable Graphs for UE5",
-      "shortDescription": "Easy-to-use blueprintable graph and chart widgets for data visualization in UE5",
-      "price": "£22.80",
-      "priceRange": "£22.80",
-      "fabUrl": "https://www.fab.com/listings/63207f67-dd6e-4570-b56c-a1f5abeba5f1",
-      "image": "https://via.placeholder.com/400x250/1a1a2e/eee?text=Fast+Chart+Widgets",
-      "featured": true,
-      "category": "Tools",
-      "rating": "2.0",
-      "reviews": "1",
-      "tags": ["Blueprint", "Widget", "Chart", "Graph", "Data Viz", "UI", "UMG", "Dashboard"],
-      "description": "Professional data visualization widgets for Unreal Engine 5. Create beautiful, responsive charts and graphs entirely in Blueprint with minimal setup. Perfect for dashboards, analytics displays, game stats, and any application requiring real-time data visualization.",
+      "id": "jade-ritual-mask",
+      "name": "Jade Ritual Mask",
+      "subtitle": "Ancient Ceremonial Artifact",
+      "shortDescription": "Mystical jade ceremonial mask with intricate carved details",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/jade-ritual-mask",
+      "image": "https://via.placeholder.com/400x250/2F4F2F/eee?text=Jade+Ritual+Mask",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Ancient", "Ritual", "Mask", "Jade", "Artifact", "Collectible", "Fantasy", "Nanite"],
+      "description": "An ancient jade ceremonial mask carved with intricate mystical symbols. Perfect for treasure rooms, ancient temples, or as a powerful artifact in your fantasy or adventure game.",
       "features": [
         {
-          "title": "Blueprint Ready",
-          "description": "No C++ required - fully accessible through Unreal Engine's Blueprint visual scripting"
+          "title": "Jade Material",
+          "description": "Authentic jade appearance with natural veining and translucency"
         },
         {
-          "title": "Multiple Chart Types",
-          "description": "Line charts, bar charts, pie charts, and more"
+          "title": "Intricate Carving",
+          "description": "Detailed relief carvings and symbolic etchings"
         },
         {
-          "title": "Real-time Updates",
-          "description": "Dynamic data binding with smooth animations"
-        },
-        {
-          "title": "Fully Customizable",
-          "description": "Colors, fonts, labels, legends, and styling options"
-        },
-        {
-          "title": "Performance Optimized",
-          "description": "Efficient rendering suitable for real-time applications"
-        },
-        {
-          "title": "Responsive Design",
-          "description": "Adapts to different screen sizes and resolutions"
+          "title": "Ancient Aesthetic",
+          "description": "Weathered and aged for historical authenticity"
         }
       ],
       "technicalDetails": {
-        "Rating": "2.0 (1 review)",
-        "Code Language": "Blueprint",
-        "UE Version": "5.7+",
-        "Supported Platforms": "All",
-        "Documentation": "Full guide included",
-        "Examples": "Demo projects"
+        "Unique Meshes": "1",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
       },
       "keyFeatures": [
-        "Blueprint Only",
-        "Multiple Chart Types",
-        "Real-time Updates",
-        "Customizable Styling",
-        "Responsive Design",
-        "Performance Optimized",
-        "Full Documentation",
-        "Example Projects"
+        "Jade Material",
+        "Intricate Details",
+        "Ancient Design",
+        "Nanite Ready",
+        "High Quality Textures",
+        "Quest Item",
+        "Collectible",
+        "Fantasy Artifact"
       ],
       "detailedContent": [
         {
           "heading": "Perfect For",
           "items": [
             {
-              "name": "Game UI",
-              "description": "Player statistics, inventory management, skill trees"
+              "name": "Ancient Temples",
+              "description": "Ceremonial chambers and treasure vaults"
             },
             {
-              "name": "Simulation Tools",
-              "description": "Real-time data monitoring and analysis displays"
+              "name": "Adventure Games",
+              "description": "Quest items and powerful artifacts"
             },
             {
-              "name": "Training Applications",
-              "description": "Performance metrics and progress tracking"
-            },
-            {
-              "name": "Architectural Viz",
-              "description": "Energy consumption, occupancy, and analytics"
+              "name": "Fantasy RPGs",
+              "description": "Collectibles and lore objects"
             }
           ]
-        },
-        {
-          "heading": "Easy Integration",
-          "content": "Simply drag and drop the widget into your UMG interface, bind your data arrays, and customize the appearance. Full documentation and example projects included to get you started in minutes."
         }
       ]
     },
     {
-      "id": "landstamp-pro",
-      "name": "Landstamp Pro",
-      "subtitle": "Professional Landscape Heightmap Stamp System",
-      "shortDescription": "Professional landscape heightmap stamp system for advanced terrain creation",
-      "price": "£43.86",
-      "priceRange": "£43.86",
-      "fabUrl": "https://www.fab.com/listings/98b3d002-eedf-42f9-9d4e-007b0a9b0f9d",
-      "image": "https://via.placeholder.com/400x250/1a1a2e/eee?text=Landstamp+Pro",
-      "featured": true,
-      "category": "Tools",
-      "tags": ["Landscape", "Heightmap", "Terrain", "Stamp", "Professional", "Tool", "Editor", "Level Design"],
-      "description": "Take your landscape creation to the next level with Landstamp Pro - a professional-grade heightmap stamping system for Unreal Engine. Create complex, detailed terrains by combining and layering heightmap stamps with precise control and real-time preview.",
+      "id": "azure-gargoyle-urn",
+      "name": "Azure Gargoyle Urn",
+      "subtitle": "Gothic Funeral Vessel",
+      "shortDescription": "Ornate azure urn featuring menacing gargoyle sculptures",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/azure-gargoyle-urn",
+      "image": "https://via.placeholder.com/400x250/1E3A5F/eee?text=Azure+Gargoyle+Urn",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Gothic", "Urn", "Gargoyle", "Funeral", "Cemetery", "Medieval", "Fantasy", "Nanite"],
+      "description": "A striking azure funeral urn adorned with fearsome gargoyle sculptures. Perfect for gothic crypts, ancient cemeteries, haunted mansions, or dark fantasy environments.",
       "features": [
         {
-          "title": "Advanced Stamping System",
-          "description": "Apply heightmap stamps with rotation, scale, and blend modes"
+          "title": "Gargoyle Details",
+          "description": "Menacing gargoyle sculptures integrated into the vessel design"
         },
         {
-          "title": "Layer-Based Workflow",
-          "description": "Non-destructive editing with multiple stamp layers"
+          "title": "Azure Finish",
+          "description": "Rich blue ceramic with aged patina and wear"
         },
         {
-          "title": "Real-Time Preview",
-          "description": "See changes instantly as you work"
+          "title": "Gothic Design",
+          "description": "Classic funeral urn aesthetic with dark fantasy elements"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "1",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Gargoyle Sculptures",
+        "Azure Ceramic",
+        "Gothic Design",
+        "Nanite Ready",
+        "Aged Finish",
+        "High Detail",
+        "Cemetery Prop",
+        "Dark Fantasy"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Gothic Crypts",
+              "description": "Cemetery scenes and funeral chambers"
+            },
+            {
+              "name": "Haunted Mansions",
+              "description": "Victorian horror environments"
+            },
+            {
+              "name": "Dark Fantasy",
+              "description": "Ancient burial sites and treasure rooms"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mythic-stag-tapestry",
+      "name": "Mythic Stag Tapestry",
+      "subtitle": "Medieval Fantasy Wall Hanging",
+      "shortDescription": "Ornate tapestry depicting a legendary stag in medieval fantasy style",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/mythic-stag-tapestry",
+      "image": "https://via.placeholder.com/400x250/8B4513/eee?text=Mythic+Stag+Tapestry",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Tapestry", "Medieval", "Fantasy", "Decoration", "Wall", "Stag", "Castle", "Nanite"],
+      "description": "A grand medieval tapestry featuring a legendary stag surrounded by mystical forest imagery. Perfect for castle halls, throne rooms, noble chambers, and fantasy environments.",
+      "features": [
+        {
+          "title": "Medieval Artistry",
+          "description": "Authentic medieval tapestry design with rich colors and intricate patterns"
         },
         {
-          "title": "Extensive Stamp Library",
-          "description": "Hundreds of pre-made stamps for mountains, valleys, plateaus, and more"
+          "title": "Mythic Imagery",
+          "description": "Features a legendary stag with forest and nature motifs"
         },
         {
-          "title": "Custom Stamp Support",
-          "description": "Import your own heightmaps as stamps"
+          "title": "Aged Fabric",
+          "description": "Weathered texture showing years of display"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "1",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Medieval Design",
+        "Mythic Stag",
+        "Rich Colors",
+        "Aged Fabric",
+        "Nanite Ready",
+        "Castle Decoration",
+        "Fantasy Asset",
+        "Wall Hanging"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Castle Halls",
+              "description": "Throne rooms, great halls, noble chambers"
+            },
+            {
+              "name": "Fantasy Settings",
+              "description": "Medieval environments and historical recreations"
+            },
+            {
+              "name": "RPG Games",
+              "description": "Environmental storytelling and atmosphere"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "acid-glob-monster",
+      "name": "Acid Glob Monster",
+      "subtitle": "Toxic Creature Asset",
+      "shortDescription": "Amorphous acidic creature with glowing toxic effects",
+      "price": "£2.61",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/acid-glob-monster",
+      "image": "https://via.placeholder.com/400x250/9ACD32/000?text=Acid+Glob+Monster",
+      "featured": false,
+      "category": "Creatures",
+      "tags": ["Monster", "Creature", "Acid", "Toxic", "Fantasy", "Horror", "Enemy", "Nanite"],
+      "description": "A menacing acidic creature with a bubbling, amorphous form and toxic glow. Perfect for dungeon crawlers, horror games, and fantasy environments requiring unique enemy types.",
+      "features": [
+        {
+          "title": "Toxic Appearance",
+          "description": "Glowing acidic material with bubbling surface details"
         },
         {
-          "title": "Blend Modes",
-          "description": "Additive, subtractive, maximum, minimum, and custom blending"
+          "title": "Amorphous Design",
+          "description": "Blob-like creature form with organic movement appeal"
         },
         {
-          "title": "Precision Tools",
-          "description": "Fine-tune height, falloff, and intensity with intuitive controls"
+          "title": "High Detail",
+          "description": "Detailed surface texture with emission effects"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "1",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Toxic Design",
+        "Glowing Effects",
+        "Amorphous Form",
+        "Nanite Ready",
+        "Enemy Creature",
+        "High Detail",
+        "Fantasy Monster",
+        "Horror Asset"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Dungeon Crawlers",
+              "description": "Unique enemy type for caves and sewers"
+            },
+            {
+              "name": "Horror Games",
+              "description": "Toxic hazards and creature encounters"
+            },
+            {
+              "name": "Fantasy RPGs",
+              "description": "Ooze-type monsters and slime enemies"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vessel-of-the-damned",
+      "name": "Vessel of the Damned",
+      "subtitle": "Cursed Soul Container",
+      "shortDescription": "Dark artifact for containing tortured souls",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/vessel-of-the-damned",
+      "image": "https://via.placeholder.com/400x250/2C2C2C/eee?text=Vessel+of+the+Damned",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Dark", "Cursed", "Artifact", "Soul", "Gothic", "Horror", "Fantasy", "Nanite"],
+      "description": "A sinister vessel designed to trap and contain tortured souls. Perfect for dark fantasy, horror environments, necromancer lairs, and cursed artifact collections.",
+      "features": [
+        {
+          "title": "Dark Design",
+          "description": "Ominous appearance with macabre details"
+        },
+        {
+          "title": "Soul Container",
+          "description": "Visual elements suggesting trapped spirits"
+        },
+        {
+          "title": "Cursed Aesthetic",
+          "description": "Aged and corrupted material finish"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "1",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Dark Artifact",
+        "Soul Container",
+        "Cursed Design",
+        "Nanite Ready",
+        "Horror Prop",
+        "High Detail",
+        "Quest Item",
+        "Gothic Fantasy"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Necromancer Lairs",
+              "description": "Dark magic laboratories and ritual chambers"
+            },
+            {
+              "name": "Horror Games",
+              "description": "Cursed objects and supernatural artifacts"
+            },
+            {
+              "name": "Dark Fantasy",
+              "description": "Quest items and powerful artifacts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fae-blight-mask",
+      "name": "Fae Blight Mask",
+      "subtitle": "Corrupted Fae Artifact",
+      "shortDescription": "Twisted fae mask corrupted by dark magic",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/fae-blight-mask",
+      "image": "https://via.placeholder.com/400x250/4B0082/eee?text=Fae+Blight+Mask",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Fae", "Mask", "Corrupted", "Dark", "Fantasy", "Magic", "Artifact", "Nanite"],
+      "description": "Once a beautiful fae artifact, now twisted and corrupted by dark magic. Perfect for dark fantasy environments, corrupted forests, and cursed artifact collections.",
+      "features": [
+        {
+          "title": "Corrupted Design",
+          "description": "Beautiful fae features twisted by dark magic"
+        },
+        {
+          "title": "Dual Nature",
+          "description": "Hints of former beauty mixed with corruption"
+        },
+        {
+          "title": "Dark Magic",
+          "description": "Visual effects suggesting magical corruption"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "1",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Corrupted Fae",
+        "Dark Magic",
+        "Dual Nature",
+        "Nanite Ready",
+        "Fantasy Mask",
+        "High Detail",
+        "Cursed Artifact",
+        "Unique Design"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Dark Fantasy",
+              "description": "Corrupted forests and twisted fae realms"
+            },
+            {
+              "name": "Quest Items",
+              "description": "Powerful artifacts with narrative significance"
+            },
+            {
+              "name": "Horror Fantasy",
+              "description": "Blighted environments and cursed locations"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "infernal-gauntlet",
+      "name": "Infernal Gauntlet",
+      "subtitle": "Demonic Armored Glove",
+      "shortDescription": "Heavy demonic gauntlet with hellfire details",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/infernal-gauntlet",
+      "image": "https://via.placeholder.com/400x250/8B0000/eee?text=Infernal+Gauntlet",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Armor", "Gauntlet", "Demonic", "Infernal", "Fantasy", "Medieval", "Hellfire", "Nanite"],
+      "description": "A fearsome infernal gauntlet forged in hellfire. Heavy demonic armor perfect for villain characters, demon knights, or as a powerful artifact in dark fantasy games.",
+      "features": [
+        {
+          "title": "Demonic Design",
+          "description": "Heavy armor with spikes, horns, and hellish details"
+        },
+        {
+          "title": "Hellfire Elements",
+          "description": "Glowing embers and heat damage effects"
+        },
+        {
+          "title": "High Detail",
+          "description": "Intricate metalwork and battle damage"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "1",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Demonic Armor",
+        "Hellfire Effects",
+        "Heavy Detail",
+        "Nanite Ready",
+        "Fantasy Armor",
+        "High Quality",
+        "Artifact Item",
+        "Dark Fantasy"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Character Equipment",
+              "description": "Demon knights, villains, dark warriors"
+            },
+            {
+              "name": "Artifact Collections",
+              "description": "Powerful relics and legendary equipment"
+            },
+            {
+              "name": "Dark Fantasy",
+              "description": "Hellish environments and infernal realms"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "three-witnesses-plaque",
+      "name": "Three Witnesses Plaque",
+      "subtitle": "Ancient Stone Relief",
+      "shortDescription": "Mysterious stone plaque depicting three enigmatic figures",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/three-witnesses-plaque",
+      "image": "https://via.placeholder.com/400x250/696969/eee?text=Three+Witnesses+Plaque",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Ancient", "Stone", "Relief", "Plaque", "Mystery", "Fantasy", "Archaeology", "Nanite"],
+      "description": "An ancient stone relief depicting three enigmatic witnesses to forgotten events. Perfect for ancient ruins, archaeological sites, temples, and mystery-driven narratives.",
+      "features": [
+        {
+          "title": "Relief Carving",
+          "description": "Three distinct figures carved in stone relief"
+        },
+        {
+          "title": "Ancient Stone",
+          "description": "Weathered stone with age and erosion"
+        },
+        {
+          "title": "Mysterious Narrative",
+          "description": "Enigmatic imagery inviting interpretation"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "1",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Stone Relief",
+        "Three Figures",
+        "Ancient Design",
+        "Nanite Ready",
+        "Mystery Element",
+        "High Detail",
+        "Wall Decoration",
+        "Archaeology Prop"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Ancient Ruins",
+              "description": "Archaeological sites and forgotten temples"
+            },
+            {
+              "name": "Mystery Games",
+              "description": "Puzzle elements and narrative clues"
+            },
+            {
+              "name": "Fantasy RPGs",
+              "description": "Lore objects and environmental storytelling"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hand-of-the-infernal",
+      "name": "Hand of the Infernal",
+      "subtitle": "Cursed Demonic Relic",
+      "shortDescription": "Severed demonic hand artifact with dark power",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/hand-of-the-infernal",
+      "image": "https://via.placeholder.com/400x250/800020/eee?text=Hand+of+the+Infernal",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Demonic", "Hand", "Relic", "Cursed", "Horror", "Fantasy", "Artifact", "Nanite"],
+      "description": "A severed demonic hand preserved as a dark relic of infernal power. Perfect for horror games, dark fantasy environments, cursed collections, and necromancer lairs.",
+      "features": [
+        {
+          "title": "Demonic Anatomy",
+          "description": "Twisted hand with claws and hellish features"
+        },
+        {
+          "title": "Dark Power",
+          "description": "Suggests malevolent magical energy"
+        },
+        {
+          "title": "Macabre Detail",
+          "description": "Gruesome preserved appearance"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "1",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Demonic Relic",
+        "Cursed Artifact",
+        "Horror Prop",
+        "Nanite Ready",
+        "Dark Power",
+        "High Detail",
+        "Fantasy Horror",
+        "Collectible"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Horror Environments",
+              "description": "Cursed collections and dark laboratories"
+            },
+            {
+              "name": "Necromancer Lairs",
+              "description": "Ritual components and dark magic items"
+            },
+            {
+              "name": "Dark Fantasy",
+              "description": "Powerful artifacts and quest items"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sanguine-tome",
+      "name": "The Sanguine Tome",
+      "subtitle": "Ancient Blood-Bound Grimoire",
+      "shortDescription": "Dark grimoire bound in leather with mysterious blood-red pages",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/a3e981c3-c1ea-435f-b1e1-4f494926db04",
+      "image": "https://via.placeholder.com/400x250/8B0000/eee?text=Sanguine+Tome",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Book", "Grimoire", "Dark Magic", "Fantasy", "Gothic", "Medieval", "Artifact", "Nanite"],
+      "description": "A forbidden grimoire bound in dark leather with blood-red pages. Perfect for necromancer libraries, dark wizard chambers, cursed collections, and occult environments.",
+      "features": [
+        {
+          "title": "Ancient Grimoire",
+          "description": "Weathered dark leather binding with arcane symbols"
+        },
+        {
+          "title": "Blood-Red Pages",
+          "description": "Mysterious crimson pages suggesting dark rituals"
+        },
+        {
+          "title": "Forbidden Knowledge",
+          "description": "Perfect for dark magic and necromancy themes"
+        },
+        {
+          "title": "High Detail",
+          "description": "Intricate texture work and realistic aging"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "1",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7",
+        "Formats": "FBX, glTF, GLB, USDZ"
+      },
+      "keyFeatures": [
+        "Dark Grimoire",
+        "Blood-Red Pages",
+        "Forbidden Knowledge",
+        "Nanite Ready",
+        "High Detail Textures",
+        "Ancient Book",
+        "Gothic Aesthetic",
+        "Quest Item"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Dark Fantasy",
+              "description": "Necromancer libraries and wizard chambers"
+            },
+            {
+              "name": "Horror Games",
+              "description": "Cursed artifacts and forbidden knowledge"
+            },
+            {
+              "name": "RPG Environments",
+              "description": "Quest items and lore objects"
+            },
+            {
+              "name": "Gothic Settings",
+              "description": "Occult studies and dark libraries"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "forest-wardens-crest",
+      "name": "Forest Warden's Crest",
+      "subtitle": "Nature Guardian Shield",
+      "shortDescription": "Ornate shield emblem of the forest guardians",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/forest-wardens-crest",
+      "image": "https://via.placeholder.com/400x250/228B22/eee?text=Forest+Warden+Crest",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Shield", "Crest", "Nature", "Fantasy", "Guardian", "Forest", "Emblem", "Nanite"],
+      "description": "An ornate crest bearing the emblem of the forest wardens. Beautiful shield design perfect for fantasy environments, nature-themed games, and guardian characters.",
+      "features": [
+        {
+          "title": "Nature Motif",
+          "description": "Forest and nature-inspired design elements"
+        },
+        {
+          "title": "Guardian Symbol",
+          "description": "Emblem representing protectors of the wild"
+        },
+        {
+          "title": "Ornate Detail",
+          "description": "Intricate metalwork and decoration"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "1",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Nature Design",
+        "Guardian Emblem",
+        "Ornate Shield",
+        "Nanite Ready",
+        "Fantasy Prop",
+        "High Detail",
+        "Wall Decoration",
+        "Character Equipment"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Fantasy Settings",
+              "description": "Nature temples, druid groves, forest camps"
+            },
+            {
+              "name": "Character Equipment",
+              "description": "Guardian NPCs, ranger characters"
+            },
+            {
+              "name": "Environmental Storytelling",
+              "description": "Faction symbols and territorial markers"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "demonheart-aegis",
+      "name": "Demonheart Aegis",
+      "subtitle": "Corrupted Knight's Shield",
+      "shortDescription": "Heavy shield bearing a demonic heart emblem",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/demonheart-aegis",
+      "image": "https://via.placeholder.com/400x250/8B0000/eee?text=Demonheart+Aegis",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Shield", "Demonic", "Armor", "Dark", "Fantasy", "Knight", "Corrupted", "Nanite"],
+      "description": "A corrupted knight's shield bearing the emblem of a demonic heart. Heavy defense equipment perfect for dark knights, corrupted paladins, and demon warriors.",
+      "features": [
+        {
+          "title": "Demonic Emblem",
+          "description": "Central demonic heart design with corruption details"
+        },
+        {
+          "title": "Heavy Shield",
+          "description": "Large defensive equipment with battle damage"
+        },
+        {
+          "title": "Dark Aesthetic",
+          "description": "Corrupted metal with hellish accents"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "1",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Demonic Shield",
+        "Heavy Armor",
+        "Corrupted Design",
+        "Nanite Ready",
+        "Dark Knight",
+        "High Detail",
+        "Battle Damage",
+        "Fantasy Weapon"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Dark Knights",
+              "description": "Corrupted paladins, demon warriors, villain equipment"
+            },
+            {
+              "name": "Boss Characters",
+              "description": "Heavy armor for imposing enemies"
+            },
+            {
+              "name": "Dark Fantasy",
+              "description": "Hellish armies and corrupted forces"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "necromancers-staff",
+      "name": "Necromancer's Staff",
+      "subtitle": "Staff of Dark Magic",
+      "shortDescription": "Ominous staff crackling with necromantic energy",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/necromancers-staff",
+      "image": "https://via.placeholder.com/400x250/4B0082/eee?text=Necromancer+Staff",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Staff", "Necromancer", "Magic", "Dark", "Fantasy", "Weapon", "Wizard", "Nanite"],
+      "description": "A powerful staff imbued with necromantic energy. Perfect for necromancer characters, dark wizards, death mages, and any practitioner of forbidden magic.",
+      "features": [
+        {
+          "title": "Dark Magic Design",
+          "description": "Ominous appearance with necromantic symbols"
+        },
+        {
+          "title": "Energy Effects",
+          "description": "Glowing elements suggesting magical power"
+        },
+        {
+          "title": "Detailed Crafting",
+          "description": "Intricate staff head with bone and metal elements"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "1",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Necromantic Staff",
+        "Dark Magic",
+        "Glowing Effects",
+        "Nanite Ready",
+        "Wizard Weapon",
+        "High Detail",
+        "Fantasy Prop",
+        "Character Equipment"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Necromancer Characters",
+              "description": "Death mages, dark wizards, lich lords"
+            },
+            {
+              "name": "Boss Weapons",
+              "description": "Powerful enemy equipment"
+            },
+            {
+              "name": "Dark Fantasy",
+              "description": "Forbidden magic items and artifacts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "binding-scrolls",
+      "name": "Binding Scrolls",
+      "subtitle": "Ancient Spell Scrolls",
+      "shortDescription": "Mystical scrolls containing binding spells and incantations",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/binding-scrolls",
+      "image": "https://via.placeholder.com/400x250/DAA520/eee?text=Binding+Scrolls",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Scroll", "Magic", "Spell", "Ancient", "Fantasy", "Wizard", "Document", "Nanite"],
+      "description": "Ancient scrolls containing powerful binding spells. Perfect for wizard towers, magic libraries, quest items, and mystical environments.",
+      "features": [
+        {
+          "title": "Aged Parchment",
+          "description": "Weathered scrolls with visible age and wear"
+        },
+        {
+          "title": "Mystical Text",
+          "description": "Arcane writing and magical symbols"
+        },
+        {
+          "title": "Multiple Variations",
+          "description": "Different scroll configurations for variety"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "Multiple",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Spell Scrolls",
+        "Arcane Text",
+        "Aged Parchment",
+        "Nanite Ready",
+        "Multiple Variants",
+        "High Detail",
+        "Quest Items",
+        "Magic Props"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Wizard Towers",
+              "description": "Magic libraries, study chambers, spell repositories"
+            },
+            {
+              "name": "Quest Items",
+              "description": "Collectible spells and magical documents"
+            },
+            {
+              "name": "Fantasy RPGs",
+              "description": "Loot items, environmental props, narrative elements"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cracked-jester-mask",
+      "name": "Cracked Jester Mask",
+      "subtitle": "Haunting Comedy Mask",
+      "shortDescription": "Cracked porcelain jester mask with haunting grin",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/cracked-jester-mask",
+      "image": "https://via.placeholder.com/400x250/DC143C/eee?text=Cracked+Jester+Mask",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Mask", "Jester", "Horror", "Creepy", "Clown", "Haunted", "Porcelain", "Nanite"],
+      "description": "A disturbing cracked jester mask with a permanent haunting grin. Perfect for horror games, haunted carnivals, creepy collections, and psychological horror environments.",
+      "features": [
+        {
+          "title": "Cracked Porcelain",
+          "description": "Broken mask with realistic crack patterns"
+        },
+        {
+          "title": "Haunting Grin",
+          "description": "Unsettling permanent smile"
+        },
+        {
+          "title": "Weathered Detail",
+          "description": "Age and damage adding to creepy aesthetic"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "1",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Cracked Porcelain",
+        "Jester Design",
+        "Horror Prop",
+        "Nanite Ready",
+        "Haunting Aesthetic",
+        "High Detail",
+        "Creepy Mask",
+        "Carnival Horror"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Horror Games",
+              "description": "Haunted carnivals, creepy collections, psychological horror"
+            },
+            {
+              "name": "Villain Characters",
+              "description": "Creepy antagonist equipment"
+            },
+            {
+              "name": "Haunted Environments",
+              "description": "Abandoned circuses, cursed artifacts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "war-torn-cult-banner",
+      "name": "War Torn Cult Banner",
+      "subtitle": "Tattered Faction Flag",
+      "shortDescription": "Battle-damaged cultist banner with dark symbols",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/war-torn-cult-banner",
+      "image": "https://via.placeholder.com/400x250/8B4513/eee?text=War+Torn+Cult+Banner",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Banner", "Cult", "Flag", "War", "Tattered", "Fantasy", "Faction", "Nanite"],
+      "description": "A war-torn banner bearing the dark symbols of a mysterious cult. Tattered and battle-damaged, perfect for dark fantasy environments, cult headquarters, and faction territories.",
+      "features": [
+        {
+          "title": "Battle Damage",
+          "description": "Torn fabric, burn marks, and weathering"
+        },
+        {
+          "title": "Cult Symbols",
+          "description": "Mysterious dark faction emblems"
+        },
+        {
+          "title": "Tattered Cloth",
+          "description": "Realistic fabric simulation and damage"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "1",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Battle Damaged",
+        "Cult Symbol",
+        "Tattered Fabric",
+        "Nanite Ready",
+        "Faction Banner",
+        "High Detail",
+        "War Prop",
+        "Dark Fantasy"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Cult Headquarters",
+              "description": "Dark faction bases and ritual sites"
+            },
+            {
+              "name": "Battlefield Scenes",
+              "description": "War-torn environments and conquest markers"
+            },
+            {
+              "name": "Fantasy RPGs",
+              "description": "Faction identification and territorial markers"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dark-fantasy-nature-statue-tree",
+      "name": "Dark Fantasy Nature Statue - Tree",
+      "subtitle": "Twisted Ancient Tree Sculpture",
+      "shortDescription": "Gnarled dark tree statue with mystical presence",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/dark-fantasy-nature-statue-tree",
+      "image": "https://via.placeholder.com/400x250/2F4F4F/eee?text=Dark+Tree+Statue",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Statue", "Tree", "Nature", "Dark", "Fantasy", "Sculpture", "Ancient", "Nanite"],
+      "description": "A twisted ancient tree sculpted in dark stone. Mystical nature statue perfect for dark fantasy forests, corrupted groves, and atmospheric outdoor environments.",
+      "features": [
+        {
+          "title": "Twisted Design",
+          "description": "Gnarled tree form with dark aesthetic"
+        },
+        {
+          "title": "Stone Sculpture",
+          "description": "Ancient weathered stone material"
+        },
+        {
+          "title": "Mystical Presence",
+          "description": "Atmospheric piece for fantasy environments"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "1",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Tree Statue",
+        "Dark Stone",
+        "Twisted Design",
+        "Nanite Ready",
+        "Nature Sculpture",
+        "High Detail",
+        "Fantasy Prop",
+        "Atmospheric"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Dark Forests",
+              "description": "Corrupted groves, twisted woodlands"
+            },
+            {
+              "name": "Fantasy Gardens",
+              "description": "Mystical outdoor spaces"
+            },
+            {
+              "name": "Ancient Ruins",
+              "description": "Nature-themed monuments"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dark-fantasy-nature-statue-hart",
+      "name": "Dark Fantasy Nature Statue - Hart",
+      "subtitle": "Majestic Stag Sculpture",
+      "shortDescription": "Noble stag statue in dark fantasy style",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/dark-fantasy-nature-statue-hart",
+      "image": "https://via.placeholder.com/400x250/2F4F4F/eee?text=Dark+Hart+Statue",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Statue", "Stag", "Hart", "Nature", "Dark", "Fantasy", "Sculpture", "Nanite"],
+      "description": "A noble stag rendered in dark stone. Majestic nature sculpture perfect for forest shrines, hunting lodges, noble estates, and fantasy environments.",
+      "features": [
+        {
+          "title": "Majestic Form",
+          "description": "Noble stag with impressive antlers"
+        },
+        {
+          "title": "Dark Stone",
+          "description": "Weathered stone with mystical quality"
+        },
+        {
+          "title": "Detailed Carving",
+          "description": "High quality sculpture work"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "1",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Stag Statue",
+        "Dark Stone",
+        "Majestic Design",
+        "Nanite Ready",
+        "Nature Sculpture",
+        "High Detail",
+        "Fantasy Prop",
+        "Noble Aesthetic"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Forest Shrines",
+              "description": "Nature temples and sacred groves"
+            },
+            {
+              "name": "Noble Estates",
+              "description": "Hunting lodges, castle gardens"
+            },
+            {
+              "name": "Fantasy Settings",
+              "description": "Outdoor monuments and landmarks"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fantasy-nature-statue",
+      "name": "Fantasy Nature Statue",
+      "subtitle": "Elegant Nature Guardian",
+      "shortDescription": "Beautiful nature spirit statue in elegant fantasy style",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/fantasy-nature-statue",
+      "image": "https://via.placeholder.com/400x250/90EE90/000?text=Fantasy+Nature+Statue",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Statue", "Nature", "Spirit", "Fantasy", "Sculpture", "Guardian", "Elegant", "Nanite"],
+      "description": "An elegant statue depicting a nature spirit or guardian. Beautiful sculpture perfect for fantasy gardens, druid groves, temples, and mystical outdoor environments.",
+      "features": [
+        {
+          "title": "Elegant Design",
+          "description": "Graceful nature spirit form"
+        },
+        {
+          "title": "Nature Elements",
+          "description": "Flora and natural motifs integrated"
+        },
+        {
+          "title": "Fine Detail",
+          "description": "High quality sculptural work"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "1",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Nature Spirit",
+        "Elegant Design",
+        "Fantasy Sculpture",
+        "Nanite Ready",
+        "Guardian Statue",
+        "High Detail",
+        "Garden Prop",
+        "Mystical"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Fantasy Gardens",
+              "description": "Magical outdoor spaces, druid groves"
+            },
+            {
+              "name": "Nature Temples",
+              "description": "Sacred sites and shrines"
+            },
+            {
+              "name": "RPG Environments",
+              "description": "Quest locations, safe havens"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "frozen-wailstone",
+      "name": "Frozen Wailstone",
+      "subtitle": "Ice Cursed Monument",
+      "shortDescription": "Cursed monument frozen in eternal ice with haunting presence",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/frozen-wailstone",
+      "image": "https://via.placeholder.com/400x250/B0E0E6/000?text=Frozen+Wailstone",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Stone", "Cursed", "Ice", "Frozen", "Monument", "Fantasy", "Horror", "Nanite"],
+      "description": "A cursed monument encased in eternal ice, emanating supernatural cold and haunting wails. Perfect for frozen wastelands, cursed landscapes, and horror fantasy environments.",
+      "features": [
+        {
+          "title": "Ice Encased",
+          "description": "Monument frozen in supernatural ice"
+        },
+        {
+          "title": "Haunting Presence",
+          "description": "Eerie atmosphere and cursed aesthetic"
+        },
+        {
+          "title": "Frost Effects",
+          "description": "Ice crystals and frozen details"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "1",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Frozen Monument",
+        "Cursed Stone",
+        "Ice Effects",
+        "Nanite Ready",
+        "Horror Fantasy",
+        "High Detail",
+        "Atmospheric",
+        "Supernatural"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Frozen Wastelands",
+              "description": "Ice dungeons, arctic ruins"
+            },
+            {
+              "name": "Cursed Landscapes",
+              "description": "Blighted regions, supernatural zones"
+            },
+            {
+              "name": "Horror Fantasy",
+              "description": "Haunted monuments, evil landmarks"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "demonic-wailstone",
+      "name": "Demonic Wailstone",
+      "subtitle": "Hellfire Cursed Monument",
+      "shortDescription": "Cursed monument burning with infernal flames and echoing screams",
+      "price": "£0.86",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/demonic-wailstone",
+      "image": "https://via.placeholder.com/400x250/8B0000/eee?text=Demonic+Wailstone",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Stone", "Cursed", "Demonic", "Fire", "Monument", "Horror", "Fantasy", "Nanite"],
+      "description": "A cursed monument consumed by infernal flames, echoing with the screams of the damned. Perfect for hellish landscapes, demonic ruins, and dark fantasy horror environments.",
+      "features": [
+        {
+          "title": "Infernal Flames",
+          "description": "Monument burning with hellfire"
+        },
+        {
+          "title": "Demonic Energy",
+          "description": "Dark power and malevolent presence"
+        },
+        {
+          "title": "Fire Effects",
+          "description": "Glowing embers and heat damage"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "1",
+        "Materials": "1",
+        "Textures": "4",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Hellfire Monument",
+        "Demonic Curse",
+        "Fire Effects",
+        "Nanite Ready",
+        "Horror Fantasy",
+        "High Detail",
+        "Atmospheric",
+        "Infernal"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Hellish Landscapes",
+              "description": "Demonic ruins, infernal dungeons"
+            },
+            {
+              "name": "Dark Fantasy",
+              "description": "Cursed zones, evil landmarks"
+            },
+            {
+              "name": "Horror Games",
+              "description": "Supernatural monuments, hellscapes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fantasy-flower-pack",
+      "name": "Fantasy Flower Pack",
+      "subtitle": "Magical Flora Collection",
+      "shortDescription": "Collection of mystical fantasy flowers and magical plants",
+      "price": "£2.61",
+      "priceRange": "£0.86 to £2.61",
+      "fabUrl": "https://www.fab.com/listings/fantasy-flower-pack",
+      "image": "https://via.placeholder.com/400x250/FF69B4/eee?text=Fantasy+Flower+Pack",
+      "featured": false,
+      "category": "Environment",
+      "tags": ["Flowers", "Plants", "Fantasy", "Nature", "Flora", "Magical", "Garden", "Nanite"],
+      "description": "A collection of beautiful mystical flowers and magical plants. Perfect for fantasy gardens, enchanted forests, potion ingredients, and vibrant outdoor environments.",
+      "features": [
+        {
+          "title": "Multiple Varieties",
+          "description": "Several unique fantasy flower types"
+        },
+        {
+          "title": "Magical Aesthetic",
+          "description": "Glowing effects and vibrant colors"
+        },
+        {
+          "title": "High Quality",
+          "description": "Detailed models suitable for close-ups"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "Multiple",
+        "Materials": "Multiple",
+        "Textures": "Multiple sets",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Multiple Flowers",
+        "Magical Plants",
+        "Vibrant Colors",
+        "Nanite Ready",
+        "Fantasy Flora",
+        "High Detail",
+        "Garden Assets",
+        "Nature Pack"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Fantasy Gardens",
+              "description": "Magical outdoor spaces, enchanted groves"
+            },
+            {
+              "name": "Potion Ingredients",
+              "description": "Harvestable resources, crafting materials"
+            },
+            {
+              "name": "Environment Dressing",
+              "description": "Vibrant natural details for any fantasy scene"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lumen-meter",
+      "name": "Lumen Meter",
+      "subtitle": "Real-time Lighting Analysis Tool",
+      "shortDescription": "In-editor plugin for measuring and analyzing Lumen lighting in real-time",
+      "price": "£8.77",
+      "priceRange": "£8.77",
+      "fabUrl": "https://www.fab.com/listings/lumen-meter",
+      "image": "https://via.placeholder.com/400x250/1a1a2e/eee?text=Lumen+Meter",
+      "featured": false,
+      "category": "Tools",
+      "tags": ["Lumen", "Lighting", "Tool", "Analysis", "Plugin", "Editor", "Visualization", "Debug"],
+      "description": "Analyze and optimize your Lumen lighting with this essential editor plugin. Measure light intensity, view coverage, identify problem areas, and optimize lighting performance in real-time.",
+      "features": [
+        {
+          "title": "Real-Time Analysis",
+          "description": "Live measurement of Lumen lighting values"
+        },
+        {
+          "title": "Coverage Visualization",
+          "description": "See Lumen coverage areas and gaps"
+        },
+        {
+          "title": "Performance Metrics",
+          "description": "Track lighting performance impact"
+        },
+        {
+          "title": "Debug Views",
+          "description": "Multiple visualization modes for lighting analysis"
+        },
+        {
+          "title": "Easy Integration",
+          "description": "Simple editor plugin, no code required"
         }
       ],
       "technicalDetails": {
         "UE Version": "5.7+",
-        "Code": "C++ & Blueprint",
+        "Code": "C++ Plugin",
         "Platforms": "All",
-        "Stamp Library": "Extensive",
-        "Documentation": "Comprehensive",
-        "Examples": "Tutorial projects"
+        "Integration": "Editor Plugin",
+        "Documentation": "User guide",
+        "Examples": "Tutorial scenes"
       },
       "keyFeatures": [
-        "Advanced Stamping System",
-        "Layer-Based Workflow",
-        "Real-Time Preview",
-        "Extensive Stamp Library",
-        "Custom Stamp Support",
-        "Multiple Blend Modes",
-        "Precision Controls",
-        "Professional Tool"
+        "Real-Time Measurement",
+        "Coverage Visualization",
+        "Performance Metrics",
+        "Debug Views",
+        "Editor Integration",
+        "Lumen Specific",
+        "Optimization Tool",
+        "Lighting Analysis"
       ],
       "detailedContent": [
         {
-          "heading": "Professional Workflow",
+          "heading": "Perfect For",
           "items": [
             {
-              "name": "Non-Destructive",
-              "description": "Layer-based system allows you to adjust and refine without losing work"
+              "name": "Lighting Artists",
+              "description": "Optimize and perfect Lumen lighting setups"
             },
             {
-              "name": "Efficient",
-              "description": "Quickly build complex terrains that would take hours manually"
+              "name": "Performance Optimization",
+              "description": "Identify expensive lighting areas"
             },
             {
-              "name": "Flexible",
-              "description": "Works with any landscape size and resolution"
+              "name": "Quality Control",
+              "description": "Ensure consistent lighting coverage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dark-fantasy-props-bundle",
+      "name": "Dark Fantasy Props Bundle",
+      "subtitle": "Complete Gothic Asset Collection",
+      "shortDescription": "Comprehensive collection of dark fantasy and gothic props",
+      "price": "£15.00",
+      "priceRange": "£7.00 to £24.55",
+      "fabUrl": "https://www.fab.com/listings/dark-fantasy-props-bundle",
+      "image": "https://via.placeholder.com/400x250/2C2C2C/eee?text=Dark+Fantasy+Bundle",
+      "featured": true,
+      "category": "Props",
+      "tags": ["Bundle", "Dark Fantasy", "Gothic", "Props", "Collection", "Medieval", "Horror", "Nanite"],
+      "description": "Complete collection of dark fantasy and gothic props. Includes weapons, artifacts, furniture, decorations, and more. Everything you need to build immersive dark fantasy environments.",
+      "features": [
+        {
+          "title": "Extensive Collection",
+          "description": "Dozens of props across multiple categories"
+        },
+        {
+          "title": "Cohesive Style",
+          "description": "All assets share a unified dark fantasy aesthetic"
+        },
+        {
+          "title": "Value Bundle",
+          "description": "Significant savings compared to individual purchases"
+        },
+        {
+          "title": "High Quality",
+          "description": "Nanite-ready assets with detailed textures"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "50+",
+        "Materials": "Multiple",
+        "Textures": "100+",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes (all assets)",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "50+ Props",
+        "Cohesive Style",
+        "Bundle Value",
+        "Nanite Ready",
+        "Dark Fantasy",
+        "Gothic Assets",
+        "Complete Collection",
+        "High Quality"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Included Categories",
+          "items": [
+            {
+              "name": "Weapons & Armor",
+              "description": "Swords, shields, staffs, and protective equipment"
             },
             {
-              "name": "Powerful",
-              "description": "Combine stamps to create unique, realistic terrain features"
+              "name": "Artifacts",
+              "description": "Cursed objects, relics, and magical items"
+            },
+            {
+              "name": "Furniture",
+              "description": "Thrones, tables, chairs, and decorative pieces"
+            },
+            {
+              "name": "Decorations",
+              "description": "Tapestries, statues, masks, and wall hangings"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grinning-moon-face-bundle",
+      "name": "Grinning Moon Face Bundle",
+      "subtitle": "Creepy Lunar Decoration Set",
+      "shortDescription": "Collection of haunting moon face decorations with sinister grins",
+      "price": "£7.00",
+      "priceRange": "£0.86 to £7.00",
+      "fabUrl": "https://www.fab.com/listings/grinning-moon-face-bundle",
+      "image": "https://via.placeholder.com/400x250/FFD700/000?text=Moon+Face+Bundle",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Bundle", "Moon", "Face", "Creepy", "Horror", "Decoration", "Haunted", "Nanite"],
+      "description": "A collection of eerie grinning moon face decorations. Perfect for haunted environments, gothic horror, creepy carnival scenes, and atmospheric horror games.",
+      "features": [
+        {
+          "title": "Multiple Variations",
+          "description": "Several unique moon face designs"
+        },
+        {
+          "title": "Sinister Grins",
+          "description": "Unsettling expressions and haunting features"
+        },
+        {
+          "title": "Versatile Use",
+          "description": "Wall decorations, hanging pieces, or standalone props"
+        }
+      ],
+      "technicalDetails": {
+        "Unique Meshes": "Multiple",
+        "Materials": "Multiple",
+        "Textures": "Multiple sets",
+        "Texture Resolution": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.7"
+      },
+      "keyFeatures": [
+        "Multiple Moon Faces",
+        "Sinister Grins",
+        "Bundle Value",
+        "Nanite Ready",
+        "Horror Props",
+        "Gothic Decoration",
+        "Versatile",
+        "Atmospheric"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Horror Games",
+              "description": "Haunted houses, creepy atmospheres"
+            },
+            {
+              "name": "Gothic Settings",
+              "description": "Victorian horror, dark carnival"
+            },
+            {
+              "name": "Environmental Atmosphere",
+              "description": "Unsettling decorative elements"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mythic-relic-landscape-pack",
+      "name": "Mythic Relic Landscape Pack",
+      "subtitle": "Ancient Monument Landscape Collection",
+      "shortDescription": "Landscape pack featuring ancient mythic monuments and relic-filled terrains",
+      "price": "£13.15",
+      "priceRange": "£13.15 to £26.30",
+      "fabUrl": "https://www.fab.com/listings/mythic-relic-landscape-pack",
+      "image": "https://via.placeholder.com/400x250/8B4513/eee?text=Mythic+Relic+Landscape",
+      "featured": false,
+      "category": "Environment",
+      "tags": ["Landscape", "Heightmap", "Ancient", "Ruins", "Mythic", "Relics", "Fantasy", "Gaea"],
+      "description": "Heightmap landscape pack featuring terrains with ancient mythic monuments, forgotten ruins, and relic sites. Perfect for archaeological adventures, fantasy exploration games, and ancient mystery settings.",
+      "features": [
+        {
+          "title": "Relic Landscapes",
+          "description": "Heightmaps designed with ancient monument sites"
+        },
+        {
+          "title": "Multiple Resolutions",
+          "description": "Available in 1K, 2K, 4K, and 8K"
+        },
+        {
+          "title": "Gaea Source Files",
+          "description": "Editable source files for customization"
+        },
+        {
+          "title": "Demo Projects",
+          "description": "Example scenes showing each landscape"
+        }
+      ],
+      "technicalDetails": {
+        "Heightmaps": "Multiple",
+        "Resolutions": "1K, 2K, 4K, 8K",
+        "Source Files": "Gaea",
+        "UE Version": "5.7 (All versions compatible)",
+        "Distribution": "Complete Project"
+      },
+      "keyFeatures": [
+        "Ancient Monuments",
+        "Multiple Landscapes",
+        "High Resolution",
+        "Gaea Source Files",
+        "Demo Projects",
+        "Fantasy Ruins",
+        "Archaeological Sites",
+        "Exploration Ready"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Adventure Games",
+              "description": "Archaeological expeditions and relic hunting"
+            },
+            {
+              "name": "Fantasy RPGs",
+              "description": "Ancient ruins and forgotten civilizations"
+            },
+            {
+              "name": "Exploration Games",
+              "description": "Mystery landscapes and discovery gameplay"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fantasy-statue-bundle",
+      "name": "Fantasy Statue Bundle",
+      "subtitle": "Dark Fantasy Open World Props Collection",
+      "shortDescription": "Comprehensive bundle of dark fantasy statue props for open world games",
+      "price": "£7.00",
+      "priceRange": "£7.00 to £21.92",
+      "fabUrl": "https://www.fab.com/listings/2d3165a9-ae1e-44d3-be02-96e38fe751b1",
+      "image": "https://via.placeholder.com/400x250/696969/eee?text=Fantasy+Statue+Bundle",
+      "featured": false,
+      "category": "Props",
+      "tags": ["Bundle", "Statues", "Dark Fantasy", "Open World", "Props", "Gothic", "Medieval", "Nanite"],
+      "description": "Comprehensive collection of dark fantasy statue props perfect for populating open world environments. Features multiple unique statue designs for temples, graveyards, ruins, and atmospheric world building.",
+      "features": [
+        {
+          "title": "Multiple Statues",
+          "description": "Variety of unique statue designs included"
+        },
+        {
+          "title": "Nanite Ready",
+          "description": "Optimized for Unreal Engine 5 Nanite"
+        },
+        {
+          "title": "Dark Fantasy Aesthetic",
+          "description": "Gothic and medieval themed statuary"
+        },
+        {
+          "title": "Open World Ready",
+          "description": "Perfect for environmental storytelling"
+        }
+      ],
+      "technicalDetails": {
+        "Bundle Size": "Multiple Assets",
+        "Materials": "PBR",
+        "Textures": "2048x2048",
+        "Collision": "Yes",
+        "LODs": "No (Nanite)",
+        "UE Version": "5.6+",
+        "Formats": "FBX"
+      },
+      "keyFeatures": [
+        "Statue Collection",
+        "Dark Fantasy",
+        "Nanite Ready",
+        "Multiple Designs",
+        "Gothic Aesthetic",
+        "Open World Props",
+        "Environmental Storytelling",
+        "Bundle Value"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Open World Games",
+              "description": "Populate temples, ruins, and graveyards"
+            },
+            {
+              "name": "Dark Fantasy RPGs",
+              "description": "Environmental storytelling and atmosphere"
+            },
+            {
+              "name": "Gothic Environments",
+              "description": "Cathedrals, crypts, and ancient sites"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fantasy-landscape-pack",
+      "name": "Fantasy Landscape Pack",
+      "subtitle": "Diverse Fantasy Terrain Collection",
+      "shortDescription": "Collection of diverse fantasy heightmap landscapes for various biomes",
+      "price": "£13.15",
+      "priceRange": "£13.15 to £26.30",
+      "fabUrl": "https://www.fab.com/listings/fantasy-landscape-pack",
+      "image": "https://via.placeholder.com/400x250/4682B4/eee?text=Fantasy+Landscape+Pack",
+      "featured": false,
+      "category": "Environment",
+      "tags": ["Landscape", "Heightmap", "Fantasy", "Terrain", "Biome", "Open World", "Gaea", "RPG"],
+      "description": "Diverse collection of fantasy heightmap landscapes covering multiple biomes. From lush valleys to barren wastelands, perfect for creating varied fantasy worlds and RPG environments.",
+      "features": [
+        {
+          "title": "Multiple Biomes",
+          "description": "Varied landscapes for diverse fantasy settings"
+        },
+        {
+          "title": "High Resolution",
+          "description": "Available in 1K, 2K, 4K, and 8K"
+        },
+        {
+          "title": "Gaea Source Files",
+          "description": "Editable source files included"
+        },
+        {
+          "title": "Demo Maps",
+          "description": "Example projects for each terrain"
+        }
+      ],
+      "technicalDetails": {
+        "Heightmaps": "Multiple",
+        "Resolutions": "1K, 2K, 4K, 8K",
+        "Source Files": "Gaea",
+        "UE Version": "5.7 (All versions compatible)",
+        "Distribution": "Complete Project"
+      },
+      "keyFeatures": [
+        "Multiple Biomes",
+        "High Resolution",
+        "Gaea Source Files",
+        "Demo Projects",
+        "Fantasy Terrains",
+        "Varied Landscapes",
+        "RPG Ready",
+        "Open World"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "Fantasy RPGs",
+              "description": "Diverse world building with multiple regions"
+            },
+            {
+              "name": "Open World Games",
+              "description": "Expansive fantasy landscapes"
+            },
+            {
+              "name": "Adventure Games",
+              "description": "Varied terrain for exploration"
             }
           ]
         }
@@ -447,10 +2682,6 @@
             {
               "name": "RPG Games",
               "description": "Boss encounters, royal courts, narrative scenes"
-            },
-            {
-              "name": "Cinematic Scenes",
-              "description": "Hero furniture pieces, establishing shots, character moments"
             }
           ]
         }
@@ -481,10 +2712,6 @@
         {
           "title": "Imposing Scale",
           "description": "Large, commanding presence suitable for boss chambers and throne rooms"
-        },
-        {
-          "title": "High Detail",
-          "description": "Intricate surface details with cracks, chips, and molten flows"
         }
       ],
       "technicalDetails": {
@@ -519,16 +2746,8 @@
             {
               "name": "Action RPGs",
               "description": "Epic boss encounters, elemental chambers"
-            },
-            {
-              "name": "Adventure Games",
-              "description": "Puzzle dungeons, environmental storytelling"
             }
           ]
-        },
-        {
-          "heading": "Technical Excellence",
-          "content": "Built to modern standards with high-quality textures and optimized geometry. The volcanic materials support customization, allowing you to adjust glow intensity, lava flow, and color temperature to match your project's aesthetic."
         }
       ]
     }
@@ -537,7 +2756,7 @@
     "seller": "MythicLemon",
     "tagline": "Premium Unreal Engine Assets",
     "description": "We create high-quality Unreal Engine assets and tools designed to accelerate your development workflow. From massive landscape packs to professional visualization plugins, our products combine technical excellence with creative flexibility.",
-    "totalProducts": "24+",
+    "totalProducts": "39",
     "socialLinks": {
       "fab": "https://www.fab.com/sellers/MythicLemon",
       "twitter": "https://x.com/MythicLemon",
@@ -546,7 +2765,7 @@
     "stats": [
       {
         "label": "Products Available",
-        "value": "24+"
+        "value": "39"
       },
       {
         "label": "Latest Version Support",
