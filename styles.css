@@ -273,12 +273,20 @@ header {
     overflow: hidden;
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .product-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
     border-color: var(--primary-color);
+}
+
+.product-card:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
 }
 
 .product-image {

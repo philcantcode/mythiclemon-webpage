@@ -177,7 +177,7 @@
     opacity: 0.9;
 }
 
-.price {
+.purchase-card .price {
     display: block;
     font-size: 3rem;
     font-weight: 700;
@@ -251,6 +251,10 @@
 .related-products {
     padding: 4rem 2rem;
     background: var(--darker-bg);
+}
+
+.related-products .price {
+    font-size: 1.1rem;
 }
 
 .related-products h2 {

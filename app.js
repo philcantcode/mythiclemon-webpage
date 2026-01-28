@@ -7,6 +7,29 @@ class MythicLemonApp {
         this.metadata = {};
     }
 
+    // Format price to neat USD (nearest whole dollar, minus $0.01)
+    formatUsdPrice(priceString) {
+        if (!priceString) return priceString;
+
+        const numbers = priceString.match(/\d+(?:\.\d+)?/g);
+        if (!numbers || numbers.length === 0) return priceString;
+
+        const toNeatUsd = (num) => {
+            const value = parseFloat(num);
+            if (Number.isNaN(value)) return priceString;
+
+            const rounded = Math.floor(value + 0.5);
+            const neat = Math.max(rounded - 0.01, 0.99);
+            return `$${neat.toFixed(2)}`;
+        };
+
+        if (priceString.includes('to') && numbers.length >= 2) {
+            return `${toNeatUsd(numbers[0])} to ${toNeatUsd(numbers[1])}`;
+        }
+
+        return toNeatUsd(numbers[0]);
+    }
+
     // Load products data from JSON
     async loadProducts() {
         try {
@@ -44,7 +67,7 @@ class MythicLemonApp {
         if (!grid) return;
 
         grid.innerHTML = productsToRender.map(product => `
-            <div class="product-card">
+            <a class="product-card" href="product.html?id=${product.id}" aria-label="View ${product.name}">
                 <div class="product-image">
                     <img src="${product.image}" alt="${product.name}">
                 </div>
@@ -55,11 +78,11 @@ class MythicLemonApp {
                         ${product.tags.slice(0, 3).map(tag => `<span class="tag">${tag}</span>`).join('')}
                     </div>
                     <div class="product-footer">
-                        <span class="price">From ${product.price}</span>
-                        <a href="product.html?id=${product.id}" class="btn btn-small">Learn More</a>
+                        <span class="price">From ${this.formatUsdPrice(product.price)}</span>
+                        <span class="btn btn-small">Learn More</span>
                     </div>
                 </div>
-            </div>
+            </a>
         `).join('');
     }
 
@@ -140,7 +163,10 @@ class MythicLemonApp {
         // Render purchase card
         const priceSection = document.querySelector('.price-section .price');
         const buyButton = document.querySelector('.purchase-card .btn');
-        if (priceSection) priceSection.textContent = product.price;
+        if (priceSection) {
+            const displayPrice = product.priceRange || product.price;
+            priceSection.textContent = this.formatUsdPrice(displayPrice);
+        }
         if (buyButton) buyButton.href = product.fabUrl;
 
         // Render technical specs
@@ -187,7 +213,7 @@ class MythicLemonApp {
         }
 
         relatedSection.innerHTML = related.map(product => `
-            <div class="product-card">
+            <a class="product-card" href="product.html?id=${product.id}" aria-label="View ${product.name}">
                 <div class="product-image">
                     <img src="${product.image}" alt="${product.name}">
                 </div>
@@ -195,11 +221,11 @@ class MythicLemonApp {
                     <h3>${product.name}</h3>
                     <p>${product.shortDescription}</p>
                     <div class="product-footer">
-                        <span class="price">From ${product.price}</span>
-                        <a href="product.html?id=${product.id}" class="btn btn-small">Learn More</a>
+                        <span class="price">From ${this.formatUsdPrice(product.price)}</span>
+                        <span class="btn btn-small">Learn More</span>
                     </div>
                 </div>
-            </div>
+            </a>
         `).join('');
     }
 
