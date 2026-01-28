@@ -169,6 +169,20 @@ class MythicLemonApp {
         }
         if (buyButton) buyButton.href = product.fabUrl;
 
+        // Add user guide button if available
+        if (product.userGuide) {
+            const purchaseCard = document.querySelector('.purchase-card');
+            if (purchaseCard && buyButton) {
+                const userGuideBtn = document.createElement('a');
+                userGuideBtn.href = product.userGuide;
+                userGuideBtn.target = '_blank';
+                userGuideBtn.className = 'btn btn-secondary btn-block';
+                userGuideBtn.style.marginTop = '1rem';
+                userGuideBtn.innerHTML = '📄 View User Guide';
+                buyButton.parentNode.insertBefore(userGuideBtn, buyButton.nextSibling);
+            }
+        }
+
         // Render technical specs
         const specsList = document.querySelector('.specs-list');
         if (specsList && product.technicalDetails) {

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="User Guides for MythicLemon Unreal Engine Products - Download comprehensive documentation">
+    <title>User Guides | MythicLemon</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .guides-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .guides-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #b8b8d1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .guides-hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .guides-section {
+            padding: 4rem 2rem;
+        }
+
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .guide-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .guide-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 168, 232, 0.2);
+        }
+
+        .guide-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .guide-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .guide-card .product-name {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .guide-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .guide-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-download {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .guide-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .guide-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        @media (max-width: 768px) {
+            .guides-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-actions {
+                flex-direction: column;
+            }
+
+            .btn-download {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <h1><a href="index.html" style="text-decoration: none; color: inherit;">MythicLemon</a></h1>
+                <p class="tagline">Premium Unreal Engine Assets</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="user-guides.html">User Guides</a></li>
+                <li><a href="https://www.fab.com/sellers/MythicLemon" target="_blank" class="cta-button">View on Fab</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="guides-hero">
+        <div class="container">
+            <h1>📚 User Guides</h1>
+            <p>Comprehensive documentation to help you get the most out of your MythicLemon products. Download PDF guides with detailed instructions, examples, and best practices.</p>
+        </div>
+    </section>
+
+    <section class="guides-section">
+        <div class="guides-grid">
+            <div class="guide-card">
+                <div class="guide-icon">🗺️</div>
+                <h3>Landstamp Pro</h3>
+                <div class="product-name">Professional Landscape Tool</div>
+                <p>Complete guide to using Landstamp Pro for creating professional terrain heightmaps. Covers stamping techniques, layer management, blend modes, and workflow best practices.</p>
+                <div class="guide-actions">
+                    <a href="user-guides/Landstamp-Pro-User-Guide.pdf" target="_blank" class="btn btn-primary btn-download">📄 View Guide</a>
+                    <a href="product.html?id=landstamp-pro" class="btn btn-secondary btn-download">View Product</a>
+                </div>
+                <div class="guide-meta">
+                    <span>📄 PDF Format</span>
+                    <span>🎯 Comprehensive</span>
+                </div>
+            </div>
+
+            <div class="guide-card">
+                <div class="guide-icon">📊</div>
+                <h3>Fast Chart Widgets</h3>
+                <div class="product-name">Data Visualization Tool</div>
+                <p>Learn how to create beautiful charts and graphs with Fast Chart Widgets. Includes Blueprint examples, customization options, and real-time data binding techniques.</p>
+                <div class="guide-actions">
+                    <a href="user-guides/FastChartWidgets-User-Guide.pdf" target="_blank" class="btn btn-primary btn-download">📄 View Guide</a>
+                    <a href="product.html?id=chart-widgets" class="btn btn-secondary btn-download">View Product</a>
+                </div>
+                <div class="guide-meta">
+                    <span>📄 PDF Format</span>
+                    <span>🎯 Blueprint Focused</span>
+                </div>
+            </div>
+
+            <div class="guide-card">
+                <div class="guide-icon">📋</div>
+                <h3>Easy Kanban Board</h3>
+                <div class="product-name">Task Management Plugin</div>
+                <p>Master task management within Unreal Engine using Easy Kanban Board. Setup instructions, workflow customization, and team collaboration tips included.</p>
+                <div class="guide-actions">
+                    <a href="user-guides/Easy-Kanban-Board-User-Guide.pdf" target="_blank" class="btn btn-primary btn-download">📄 View Guide</a>
+                    <a href="product.html?id=easy-kanban-board" class="btn btn-secondary btn-download">View Product</a>
+                </div>
+                <div class="guide-meta">
+                    <span>📄 PDF Format</span>
+                    <span>🎯 Quick Start</span>
+                </div>
+            </div>
+
+            <div class="guide-card">
+                <div class="guide-icon">📝</div>
+                <h3>Markdown 4 Blueprints</h3>
+                <div class="product-name">UMG Markdown Widget</div>
+                <p>Comprehensive guide to integrating markdown-formatted text in your UMG interfaces. Covers syntax support, styling customization, and dynamic content updates.</p>
+                <div class="guide-actions">
+                    <a href="user-guides/Blueprint-Markdown-User-Guide.pdf" target="_blank" class="btn btn-primary btn-download">📄 View Guide</a>
+                    <a href="product.html?id=markdown-4-blueprints" class="btn btn-secondary btn-download">View Product</a>
+                </div>
+                <div class="guide-meta">
+                    <span>📄 PDF Format</span>
+                    <span>🎯 Full Examples</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background-color: var(--darker-bg); border-top: 2px solid var(--border-color); padding: 3rem 2rem; text-align: center;">
+        <div class="container">
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                © 2026 MythicLemon. All rights reserved.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <a href="https://www.fab.com/sellers/MythicLemon" target="_blank" style="color: var(--primary-color); text-decoration: none;">Fab Marketplace</a>
+                <a href="https://x.com/MythicLemon" target="_blank" style="color: var(--primary-color); text-decoration: none;">X (Twitter)</a>
+                <a href="index.html#products" style="color: var(--primary-color); text-decoration: none;">All Products</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
