@@ -2,8 +2,6 @@
 
 Premium Unreal Engine Assets & Tools
 
-Visit the live site: [https://YOUR-USERNAME.github.io/mythiclemon-webpage/](https://YOUR-USERNAME.github.io/mythiclemon-webpage/)
-
 ## About
 
 This is the official GitHub Pages website for MythicLemon, showcasing professional Unreal Engine assets, plugins, and tools available on the Fab marketplace.

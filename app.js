@@ -66,10 +66,25 @@ class MythicLemonApp {
         
         if (!grid) return;
 
-        grid.innerHTML = productsToRender.map(product => `
+        grid.innerHTML = productsToRender.map(product => {
+            // Determine badges
+            const badges = [];
+            if (product.featured) badges.push('<span class="badge badge-featured">Featured</span>');
+            
+            // Check if product is new (within last 30 days)
+            const isNew = this.isNewProduct(product);
+            if (isNew) badges.push('<span class="badge badge-new">New</span>');
+            
+            // Check if highly rated
+            if (product.rating && parseFloat(product.rating) >= 4.5) {
+                badges.push('<span class="badge badge-popular">Top Rated</span>');
+            }
+            
+            return `
             <a class="product-card" href="product.html?id=${product.id}" aria-label="View ${product.name}">
                 <div class="product-image">
                     <img src="${product.image}" alt="${product.name}">
+                    ${badges.length > 0 ? `<div class="product-badges">${badges.join('')}</div>` : ''}
                 </div>
                 <div class="product-info">
                     <h3>${product.name}</h3>
@@ -79,11 +94,19 @@ class MythicLemonApp {
                     </div>
                     <div class="product-footer">
                         <span class="price">From ${this.formatUsdPrice(product.price)}</span>
-                        <span class="btn btn-small">Learn More</span>
+                        <span class="btn btn-small btn-cta">View Details →</span>
                     </div>
                 </div>
             </a>
-        `).join('');
+        `;
+        }).join('');
+    }
+    
+    // Check if product is new (within 30 days)
+    isNewProduct(product) {
+        // You can add a 'releaseDate' field to products.json
+        // For now, mark featured products as new
+        return product.featured;
     }
 
     // Render product detail page
@@ -186,11 +209,23 @@ class MythicLemonApp {
             const displayPrice = product.priceRange || product.price;
             priceSection.textContent = this.formatUsdPrice(displayPrice);
         }
-        if (buyButton) buyButton.href = product.fabUrl;
+        if (buyButton) {
+            buyButton.href = product.fabUrl;
+            buyButton.innerHTML = '🛒 Buy Now on Fab';
+            buyButton.classList.add('btn-buy-cta');
+        }
+
+        // Add urgency message
+        const purchaseCard = document.querySelector('.purchase-card');
+        if (purchaseCard) {
+            const urgencyMsg = document.createElement('div');
+            urgencyMsg.className = 'urgency-message';
+            urgencyMsg.innerHTML = '✓ Instant Download<br>✓ Lifetime Updates Included';
+            purchaseCard.insertBefore(urgencyMsg, purchaseCard.firstChild.nextSibling);
+        }
 
         // Add user guide button if available
         if (product.userGuide) {
-            const purchaseCard = document.querySelector('.purchase-card');
             if (purchaseCard && buyButton) {
                 const userGuideBtn = document.createElement('a');
                 userGuideBtn.href = product.userGuide;
@@ -240,6 +275,14 @@ class MythicLemonApp {
             .filter(p => p.category === currentProduct.category && p.id !== currentProduct.id)
             .slice(0, 3);
 
+        // If not enough in same category, add from other categories
+        if (related.length < 3) {
+            const additional = this.products
+                .filter(p => p.id !== currentProduct.id && !related.includes(p))
+                .slice(0, 3 - related.length);
+            related.push(...additional);
+        }
+
         if (related.length === 0) {
             document.querySelector('.related-products').style.display = 'none';
             return;
@@ -255,7 +298,7 @@ class MythicLemonApp {
                     <p>${product.shortDescription}</p>
                     <div class="product-footer">
                         <span class="price">From ${this.formatUsdPrice(product.price)}</span>
-                        <span class="btn btn-small">Learn More</span>
+                        <span class="btn btn-small btn-cta">View Details →</span>
                     </div>
                 </div>
             </a>
@@ -374,6 +417,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 navLinks.classList.remove('active');
                 mobileMenuToggle.setAttribute('aria-expanded', 'false');
             }
+        });
+    }
+    
+    // FAQ Accordion functionality
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    if (faqQuestions.length > 0) {
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+                
+                // Toggle current item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                    question.setAttribute('aria-expanded', 'true');
+                }
+            });
         });
     }
     

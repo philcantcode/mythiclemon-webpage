@@ -53,6 +53,64 @@
     }
     </script>
     
+    <!-- FAQ Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What version of Unreal Engine do I need?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most of our products support Unreal Engine 5.3 and above. Each product page lists specific version requirements. We regularly update our assets to support the latest UE versions."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use these assets in commercial projects?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! All our products come with a standard Fab license, which allows commercial use. You can use them in games, films, architectural visualizations, and any other commercial projects."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need coding experience?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No! Most of our tools are Blueprint-based and require zero C++ knowledge. We provide comprehensive documentation and example projects to help you get started quickly."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What if I need help or support?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Each product includes detailed documentation and example projects. For additional support, you can reach us through the Fab marketplace support system or contact us on social media."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are updates included with my purchase?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! All future updates and improvements are completely free for existing customers. We actively maintain our products and regularly add new features based on user feedback."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I get a refund if it doesn't work for me?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "All purchases are handled through the Fab marketplace, which has its own refund policy. Generally, refunds are available if the product doesn't work as described or has technical issues."
+                }
+            }
+        ]
+    }
+    </script>
+    
     <link rel="stylesheet" href="styles.css">
     <script src="app.js" defer></script>
 </head>
@@ -195,6 +253,74 @@
             </div>
             <div class="view-all" style="margin-top: 2rem;">
                 <a href="https://youtube.com/@mythiclemonstudio" target="_blank" class="btn btn-primary">View All Videos</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <p class="section-subtitle">Everything you need to know about our products</p>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What version of Unreal Engine do I need?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Most of our products support Unreal Engine 5.3 and above. Each product page lists specific version requirements. We regularly update our assets to support the latest UE versions.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Can I use these assets in commercial projects?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! All our products come with a standard Fab license, which allows commercial use. You can use them in games, films, architectural visualizations, and any other commercial projects.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Do I need coding experience?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No! Most of our tools are Blueprint-based and require zero C++ knowledge. We provide comprehensive documentation and example projects to help you get started quickly.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What if I need help or support?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Each product includes detailed documentation and example projects. For additional support, you can reach us through the Fab marketplace support system or contact us on social media.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Are updates included with my purchase?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! All future updates and improvements are completely free for existing customers. We actively maintain our products and regularly add new features based on user feedback.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Can I get a refund if it doesn't work for me?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>All purchases are handled through the Fab marketplace, which has its own refund policy. Generally, refunds are available if the product doesn't work as described or has technical issues.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
