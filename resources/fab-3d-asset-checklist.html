@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete Fab 3D Asset & Content Pack submission checklist - get your UE5 meshes, materials, and environments approved on Epic's Fab marketplace.">
+    <meta name="keywords" content="Fab marketplace, UE5 3D assets, Unreal Engine content pack, asset pack submission, 3D models UE5">
+    <title>Fab 3D Asset Submission Checklist | MythicLemon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .checklist-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .checklist-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        .checklist-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00a8e8 0%, #00d9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .checklist-section {
+            margin-bottom: 3rem;
+        }
+        .checklist-section h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .checklist-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+        .checklist-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0, 168, 232, 0.1);
+        }
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .checkbox.checked {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            position: relative;
+        }
+        .checkbox.checked::after {
+            content: "✓";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+        }
+        .item-content h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .item-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .item-tips {
+            background: rgba(0, 168, 232, 0.05);
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        .item-tips strong {
+            color: var(--primary-color);
+        }
+        .item-code {
+            background: #1a1a2e;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: #00d9ff;
+            margin-top: 0.5rem;
+            overflow-x: auto;
+        }
+        .progress-bar {
+            background: var(--border-color);
+            height: 8px;
+            border-radius: 4px;
+            margin: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .progress-fill {
+            background: var(--primary-color);
+            height: 100%;
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .critical {
+            border-left: 4px solid #f44336;
+        }
+        .section-intro {
+            background: rgba(0, 168, 232, 0.05);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        .section-intro p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <h1>MythicLemon</h1>
+                <p class="tagline">Premium Unreal Engine Assets</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../resources.html">← Back to Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="checklist-container">
+        <div class="checklist-header">
+            <h1>🎨 Fab 3D Asset & Content Pack Checklist</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                Complete checklist for submitting 3D meshes, materials, environments, and content packs to Epic's Fab marketplace
+            </p>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem;">
+                Based on <a href="https://support.fab.com/s/article/FAB-TECHNICAL-REQUIREMENTS" target="_blank" style="color: var(--primary-color);">Fab Technical Requirements</a>
+            </p>
+        </div>
+
+        <!-- Static Mesh Requirements -->
+        <div class="checklist-section">
+            <h2>🔷 Static Mesh Requirements</h2>
+            <div class="section-intro">
+                <p>Static meshes are the foundation of most 3D asset packs. These requirements ensure quality and usability.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="1">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Visual Defects</h3>
+                    <p>Meshes must appear with no visual defects, visible seams, or material issues.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Check for holes, inverted normals, stretching, and texture seams. View from multiple angles.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="2">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Overlapping/Wrapping Lightmap UVs</h3>
+                    <p>Static meshes must have non-overlapping UVs for lightmaps (UV channel 1).</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Open Mesh Editor → UV → check Lightmap UV for overlaps. Rebuild UVs if needed.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="3">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Lightmap Coordinate Index Not 0</h3>
+                    <p>Static meshes must not have Lightmap Coordinate Index of 0 (unless only used by particle systems).</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Index 0 is typically the texture UV. Lightmaps need their own UV channel (usually 1).
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="4">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>LODs Included and Documented</h3>
+                    <p>Meshes must use LODs where applicable. Product description must state what LODs are included (even if zero).</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> "No LODs" is valid but must be stated. For large/hero meshes, LODs are expected.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="5">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Proper Collision</h3>
+                    <p>Meshes must have appropriate collision where applicable.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Simple collision for gameplay, complex for environment. Document collision type in description.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="6">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Modular Assets Snap Correctly</h3>
+                    <p>Products advertising modular use must have meshes that snap together cleanly on a grid.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use standard grid sizes (50, 100, 200). Document the grid size in your description.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="7">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Modular Pivot Points Aligned</h3>
+                    <p>Modular meshes must have pivot points placed for smooth assembly.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Corner, center, or edge - be consistent. Document your pivot convention.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Texture Requirements -->
+        <div class="checklist-section">
+            <h2>🖼️ Texture Requirements</h2>
+            <div class="section-intro">
+                <p>Textures must meet size, format, and quality standards.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="8">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Power of 2 Dimensions</h3>
+                    <p>Texture dimensions should be powers of 2 (e.g., 512, 1024, 2048, 4096).</p>
+                    <div class="item-code">Valid: 1024x512, 2048x2048, 4096x1024
+Invalid: 1000x1000, 1920x1080</div>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Non-power-of-2 textures can't generate mipmaps properly, causing visual issues.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="9">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Maximum 16,384 Pixels Per Dimension</h3>
+                    <p>No texture dimension may exceed 16,384 pixels.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> 8K (8192) is typical max for most use cases. 16K only for special cases.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="10">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Highest Resolution or Appropriate Resolution</h3>
+                    <p>Provide textures at their highest resolution or appropriate resolution for intended use.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> You can provide multiple resolutions. Document available sizes in description.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="11">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Proper Compression Settings</h3>
+                    <p>Use appropriate compression for texture type (BC7 for color, BC5 for normals, etc.).</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Check import settings. Masks and UI textures may need different compression than color textures.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Material Requirements -->
+        <div class="checklist-section">
+            <h2>🎨 Material Requirements</h2>
+            <div class="section-intro">
+                <p>Materials should be optimized and properly organized.</p>
+            </div>
+
+            <div class="checklist-item" data-item="12">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Use Material Instances Where Possible</h3>
+                    <p>Products should use material instances instead of duplicating master materials.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> One master material with many instances is better than many standalone materials.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="13">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Material Defects</h3>
+                    <p>Materials must not have defects, visible seams, or lightmap issues.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Check tiling seams, normal map orientation, and roughness/metallic values.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skeletal Mesh & Animation -->
+        <div class="checklist-section">
+            <h2>🦴 Skeletal Meshes & Characters</h2>
+            <div class="section-intro">
+                <p>Character and animated asset requirements.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="14">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Scale to Epic or MetaHumans Skeleton</h3>
+                    <p>Humanoid skeletal meshes must be scaled correctly to the Epic or MetaHumans skeleton.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Scale to 192cm humanoid reference. Document skeleton compatibility.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="15">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Rigged to Epic/MetaHumans Skeleton (or Custom with Anims)</h3>
+                    <p>Humanoid meshes must use Epic/MetaHumans skeleton, OR include custom skeleton with all necessary animations.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Custom skeletons require distributing complete animation set. Document bone names and modifications.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="16">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>IK Joints Unweighted and Correctly Positioned</h3>
+                    <p>When using Epic/MetaHumans skeleton, IK joints must stay unweighted in same hierarchy position.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Document any additional bones or skeleton modifications on the product page.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="17">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Expected Range of Motion</h3>
+                    <p>Skeletal meshes should have full range of motion in all joints without visual defects.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Test extreme poses. Check for mesh clipping, weight painting issues, and joint deformation.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="18">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Physics Assets Cover Mesh</h3>
+                    <p>Physics Assets must properly cover skeletal meshes where applicable.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Test in Physics Asset Editor. Ensure ragdoll and cloth simulation work as intended.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="19">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Animations Clean and Consistent</h3>
+                    <p>Animations must be clean, consistent, and function visually as intended.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Check for jitter, foot sliding, and proper root motion. Test looping animations for seamless transitions.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="20">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Animated Products Have Preview</h3>
+                    <p>Animated products must include a 3D model in Gallery OR video URL showing animations.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Video is often better for showing animation quality. Include in Long Description.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Structure -->
+        <div class="checklist-section">
+            <h2>📁 Project Structure</h2>
+            <div class="section-intro">
+                <p>Content-only projects have specific folder requirements.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="21">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Local Folders</h3>
+                    <p>Remove Binaries, Build, Intermediate, Saved, and Plugins folders before submission.</p>
+                    <div class="item-code">MyProject/
+├── Config/
+├── Content/
+│   └── MyProject/        ← All assets here
+│       ├── Meshes/
+│       ├── Materials/
+│       ├── Textures/
+│       └── Maps/
+└── MyProject.uproject</div>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Content-only projects must not have Plugins folder.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="22">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Single Top-Level Content Folder</h3>
+                    <p>All assets must be in ONE folder under Content. No other files/folders directly under Content.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Prevents migration conflicts. Use your product name as the folder name.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="23">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Assets Sorted Into Subfolders</h3>
+                    <p>Organize assets by type or feature sets within your top-level folder.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Blueprints/, Materials/, Meshes/, Textures/, etc. Makes finding assets easy.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="24">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>File Paths Under 140 Characters</h3>
+                    <p>All asset paths (from Content folder name) must be 140 characters or less.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Keep names concise. Deep folder nesting adds up quickly.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="25">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>English Alphanumeric Names Only</h3>
+                    <p>Folder and file names must use only English letters, numbers, and underscores.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> No spaces, special characters, or non-ASCII characters. Use PascalCase or snake_case.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="26">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Consistent Naming Convention</h3>
+                    <p>Names must be accurate, descriptive, and consistent within the project.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use prefixes: SM_ (Static Mesh), SK_ (Skeletal), M_ (Material), MI_ (Material Instance), T_ (Texture).
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="27">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Redirectors Cleaned Up</h3>
+                    <p>Projects must have all redirectors fixed.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Right-click Content folder → Fix Up Redirectors in Folder. Run before final export.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Maps Section -->
+        <div class="checklist-section">
+            <h2>🗺️ Demo Maps</h2>
+            <div class="section-intro">
+                <p>Every content pack with 3D assets needs a demonstration map.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="28">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Demonstration Map Included</h3>
+                    <p>Projects with 3D viewport assets must have a map demonstrating them.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Show assets in context. Users want to see how things look in-engine.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="29">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Lighting Built</h3>
+                    <p>Maps must have their lighting built before submission.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Unbuilt lighting = "Preview" watermarks and poor first impressions.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="30">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Errors on Map Load</h3>
+                    <p>Maps must have no errors or consequential warnings on load or when starting Play-In-Editor.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Test in fresh project. Load map, hit Play, check Output Log for errors.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="31">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Z-Fighting</h3>
+                    <p>Maps must have no z-fighting or unreasonably overlapping polygons.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Move overlapping surfaces slightly apart. Common on floor/wall junctions.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="32">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Level Blueprint Dependencies</h3>
+                    <p>Asset Packs must not include Level Blueprints or mandatory Config files.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Level-specific logic can't migrate to other projects. Use reusable Actor components instead.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scale & Quality -->
+        <div class="checklist-section">
+            <h2>📐 Scale & Quality</h2>
+            <div class="section-intro">
+                <p>Assets must be scaled correctly and work together.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="33">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Scaled to 192cm Humanoid</h3>
+                    <p>All assets must be scaled relative to a humanoid scale (192cm tall).</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Use the UE5 mannequin as reference. 1 unit = 1 centimeter.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="34">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Consistent Scale Within Pack</h3>
+                    <p>Assets within a single product must be scaled correctly relative to each other.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> A chair should look right next to a table. Doors should fit door frames.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="35">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Consistent Forward Direction</h3>
+                    <p>All assets must face the same direction vector with Z axis up.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> UE uses X-forward, Z-up convention. Be consistent across all assets.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="36">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Works in Binary Engine Builds</h3>
+                    <p>Content must function in standard Unreal Engine builds (not just source-built).</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Most users use Epic Games Launcher builds. Test in binary before submission.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Page -->
+        <div class="checklist-section">
+            <h2>📝 Product Page</h2>
+            <div class="section-intro">
+                <p>Marketing and metadata requirements.</p>
+            </div>
+
+            <div class="checklist-item" data-item="37">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>English with Proper Grammar</h3>
+                    <p>All text must be in English with correct spelling and grammar.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> First impressions matter. Proofread everything.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="38">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>LOD Information Documented</h3>
+                    <p>Description must state what LODs are included (even if zero).</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> "Includes LOD0-LOD3" or "No LODs included" - be explicit.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="39">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Accurate Screenshots and Media</h3>
+                    <p>Images must accurately display product contents. No misleading post-processing.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Show in-editor views alongside beauty shots. Include wireframe screenshots.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="40">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>AI Usage Disclosed</h3>
+                    <p>Must disclose if generative AI was used during asset creation.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Check "Created with AI" field if AI was used for textures, concepts, or generation.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; text-align: center; margin-top: 3rem;">
+            <h2>Ready to Submit?</h2>
+            <p style="color: var(--text-secondary);">Ensure all critical items (🚨) are checked before submitting your 3D assets!</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <button class="btn-resource" onclick="window.print()" style="display: inline-block; padding: 1rem 2rem; background: var(--primary-color); color: white; border-radius: 8px; border: none; cursor: pointer;">🖨️ Print / Save as PDF</button>
+                <a href="https://support.fab.com/s/article/FAB-TECHNICAL-REQUIREMENTS" target="_blank" class="btn-resource" style="display: inline-block; padding: 1rem 2rem; background: transparent; border: 1px solid var(--primary-color); color: var(--primary-color); border-radius: 8px; text-decoration: none;">📖 Official Fab Requirements</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const items = document.querySelectorAll('.checklist-item');
+        const progressFill = document.getElementById('progressFill');
+
+        items.forEach((item) => {
+            const itemId = item.getAttribute('data-item');
+            const checkbox = item.querySelector('.checkbox');
+            const saved = localStorage.getItem(`fab-3d-asset-checklist-${itemId}`);
+            
+            if (saved === 'true') {
+                checkbox.classList.add('checked');
+            }
+
+            checkbox.addEventListener('click', () => {
+                checkbox.classList.toggle('checked');
+                const isChecked = checkbox.classList.contains('checked');
+                localStorage.setItem(`fab-3d-asset-checklist-${itemId}`, isChecked);
+                updateProgress();
+            });
+        });
+
+        function updateProgress() {
+            const total = items.length;
+            const checked = document.querySelectorAll('.checkbox.checked').length;
+            const percentage = (checked / total) * 100;
+            progressFill.style.width = percentage + '%';
+        }
+
+        updateProgress();
+    </script>
+</body>
+</html>

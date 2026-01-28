@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blueprint best practices for UE5 - organization, naming conventions, performance optimization patterns, and common pitfalls to avoid.">
+    <title>UE5 Blueprint Best Practices Reference | MythicLemon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .guide-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .guide-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        .guide-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00a8e8 0%, #00d9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .practice-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .practice-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .do-dont {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .do, .dont {
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        .do {
+            background: rgba(76, 175, 80, 0.1);
+            border-left: 4px solid #4caf50;
+        }
+        .dont {
+            background: rgba(244, 67, 54, 0.1);
+            border-left: 4px solid #f44336;
+        }
+        .tip-box {
+            background: rgba(0, 168, 232, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--primary-color);
+        }
+        @media (max-width: 768px) {
+            .do-dont {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <h1>MythicLemon</h1>
+                <p class="tagline">Premium Unreal Engine Assets</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../resources.html">← Back to Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="guide-container">
+        <div class="guide-header">
+            <h1>🔧 Blueprint Best Practices</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                Essential guidelines for clean, performant, maintainable blueprints
+            </p>
+        </div>
+
+        <div class="practice-section">
+            <h3>1. Naming Conventions</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Consistent naming makes blueprints readable and maintainable.
+            </p>
+            <div class="do-dont">
+                <div class="do">
+                    <strong style="color: #4caf50;">✓ DO:</strong>
+                    <ul style="color: var(--text-secondary); padding-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>BP_PlayerCharacter</li>
+                        <li>WBP_MainMenu</li>
+                        <li>f_CalculateDamage</li>
+                        <li>b_IsPlayerAlive</li>
+                        <li>v_MaxHealth</li>
+                    </ul>
+                </div>
+                <div class="dont">
+                    <strong style="color: #f44336;">✗ DON'T:</strong>
+                    <ul style="color: var(--text-secondary); padding-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>player (ambiguous)</li>
+                        <li>Thing1 (meaningless)</li>
+                        <li>var (no context)</li>
+                        <li>NewBlueprint (generic)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tip-box">
+                <strong>💡 Prefixes:</strong> BP_ (Blueprint), WBP_ (Widget), f_ (function), b_ (boolean), 
+                v_ (variable), E_ (enum), S_ (struct), M_ (material), T_ (texture)
+            </div>
+        </div>
+
+        <div class="practice-section">
+            <h3>2. Organization & Structure</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Well-organized blueprints are easier to debug and maintain.
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; padding-left: 1.5rem;">
+                <li><strong>Use Categories:</strong> Group variables by purpose (Movement, Combat, UI, etc.)</li>
+                <li><strong>Reroute Nodes:</strong> Keep connection lines tidy with reroute nodes</li>
+                <li><strong>Comment Boxes:</strong> Explain complex logic with colored comment boxes</li>
+                <li><strong>Collapse to Functions:</strong> Turn repeated logic into reusable functions</li>
+                <li><strong>Separate Concerns:</strong> One blueprint = one responsibility</li>
+            </ul>
+        </div>
+
+        <div class="practice-section">
+            <h3>3. Performance Optimization</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Small optimizations add up to significant performance gains.
+            </p>
+            <div class="do-dont">
+                <div class="do">
+                    <strong style="color: #4caf50;">✓ DO:</strong>
+                    <ul style="color: var(--text-secondary); padding-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Cache component references</li>
+                        <li>Use Timers instead of Tick</li>
+                        <li>Disable Tick when not needed</li>
+                        <li>Use Event Dispatchers</li>
+                        <li>Pool frequently spawned actors</li>
+                    </ul>
+                </div>
+                <div class="dont">
+                    <strong style="color: #f44336;">✗ DON'T:</strong>
+                    <ul style="color: var(--text-secondary); padding-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>GetComponent every frame</li>
+                        <li>GetAllActorsOfClass in Tick</li>
+                        <li>Spawn/Destroy every frame</li>
+                        <li>Complex math in Tick</li>
+                        <li>String operations in loops</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="practice-section">
+            <h3>4. Variable Management</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Proper variable scope and access control prevents bugs.
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; padding-left: 1.5rem;">
+                <li><strong>Use Private by Default:</strong> Only expose what's necessary</li>
+                <li><strong>Serialize for Save Data:</strong> Mark variables that need saving</li>
+                <li><strong>RepNotify for Multiplayer:</strong> Use for replicated variables that trigger events</li>
+                <li><strong>Tooltips:</strong> Always add tooltips to public variables</li>
+                <li><strong>Default Values:</strong> Set sensible defaults for all variables</li>
+            </ul>
+        </div>
+
+        <div class="practice-section">
+            <h3>5. Function Design</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Good functions are reusable, testable, and single-purpose.
+            </p>
+            <div class="do-dont">
+                <div class="do">
+                    <strong style="color: #4caf50;">✓ DO:</strong>
+                    <ul style="color: var(--text-secondary); padding-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Single responsibility</li>
+                        <li>Pure functions when possible</li>
+                        <li>Return values over output params</li>
+                        <li>Clear input/output names</li>
+                        <li>Document with tooltips</li>
+                    </ul>
+                </div>
+                <div class="dont">
+                    <strong style="color: #f44336;">✗ DON'T:</strong>
+                    <ul style="color: var(--text-secondary); padding-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Functions that do too much</li>
+                        <li>10+ input parameters</li>
+                        <li>Modify global state unexpectedly</li>
+                        <li>Side effects in getters</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="practice-section">
+            <h3>6. Event Handling</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Use the right event system for the job.
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; padding-left: 1.5rem;">
+                <li><strong>Event Dispatchers:</strong> One-to-many communication (health changed → update UI + play sound)</li>
+                <li><strong>Interfaces:</strong> Polymorphism (Interact interface for doors, chests, NPCs)</li>
+                <li><strong>Direct Function Calls:</strong> One-to-one communication when you have the reference</li>
+                <li><strong>Event Tick:</strong> ONLY for things that MUST update every frame</li>
+                <li><strong>Custom Events:</strong> Async operations, delayed execution, replication</li>
+            </ul>
+        </div>
+
+        <div class="practice-section">
+            <h3>7. Error Handling</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Handle failure cases gracefully to prevent crashes.
+            </p>
+            <div class="tip-box">
+                <ul style="color: var(--text-secondary); line-height: 2; padding-left: 1.5rem; margin: 0;">
+                    <li><strong>Validate References:</strong> Check IsValid before using actor references</li>
+                    <li><strong>Array Bounds:</strong> Check array length before accessing indices</li>
+                    <li><strong>Divide by Zero:</strong> Check denominators before division</li>
+                    <li><strong>Log Warnings:</strong> Use Print String or Log for debugging</li>
+                    <li><strong>Fail Gracefully:</strong> Return default values instead of crashing</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="practice-section">
+            <h3>8. Multiplayer Considerations</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Design for multiplayer from the start, even if not needed yet.
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; padding-left: 1.5rem;">
+                <li><strong>Authority Checks:</strong> Has Authority before server-only logic</li>
+                <li><strong>Replication:</strong> Only replicate what clients need to know</li>
+                <li><strong>RPCs:</strong> Validate inputs in Server RPCs to prevent cheating</li>
+                <li><strong>Client Prediction:</strong> Show immediate feedback, correct if wrong</li>
+                <li><strong>NetUpdateFrequency:</strong> Lower for distant/unimportant actors</li>
+            </ul>
+        </div>
+
+        <div class="practice-section">
+            <h3>9. Debugging Practices</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                Make debugging easier for your future self.
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; padding-left: 1.5rem;">
+                <li><strong>Print Strings:</strong> Use different colors for different systems</li>
+                <li><strong>Draw Debug:</strong> Visualize raycasts, collision, AI paths</li>
+                <li><strong>Breakpoints:</strong> Use blueprint breakpoints to inspect values</li>
+                <li><strong>Watch Window:</strong> Monitor variables during play</li>
+                <li><strong>Log Categories:</strong> Create custom log categories for filtering</li>
+            </ul>
+        </div>
+
+        <div class="practice-section">
+            <h3>10. Common Anti-Patterns to Avoid</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                These patterns lead to bugs and performance issues.
+            </p>
+            <div style="background: rgba(244, 67, 54, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #f44336;">
+                <ul style="color: var(--text-secondary); line-height: 2; padding-left: 1.5rem; margin: 0;">
+                    <li><strong>God Objects:</strong> One blueprint that does everything</li>
+                    <li><strong>Circular Dependencies:</strong> BP_A references BP_B which references BP_A</li>
+                    <li><strong>Magic Numbers:</strong> Use named constants instead of raw numbers</li>
+                    <li><strong>Global State Abuse:</strong> Minimize GameInstance/GameState usage</li>
+                    <li><strong>Copy-Paste Code:</strong> Make it a function instead</li>
+                    <li><strong>Premature Optimization:</strong> Profile first, then optimize</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 2px solid var(--primary-color); margin-top: 3rem;">
+            <h2 style="color: var(--primary-color); margin-bottom: 1rem;">📚 Quick Reference Checklist</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">Before committing any blueprint:</p>
+            <ul style="color: var(--text-secondary); line-height: 2; padding-left: 1.5rem;">
+                <li>✓ All variables have tooltips and categories</li>
+                <li>✓ Functions are single-purpose and documented</li>
+                <li>✓ No "New Blueprint" or generic names</li>
+                <li>✓ Event Tick is disabled if unused</li>
+                <li>✓ Component references are cached</li>
+                <li>✓ Complex sections have comment boxes</li>
+                <li>✓ Connection lines are organized with reroutes</li>
+                <li>✓ No compiler warnings or errors</li>
+            </ul>
+        </div>
+
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; text-align: center; margin-top: 3rem;">
+            <h2 style="margin-bottom: 1rem;">Learn More About UE5 Development</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                Check out our blog for in-depth tutorials and guides
+            </p>
+            <a href="../blog.html" style="display: inline-block; background: var(--primary-color); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600;">View Blog</a>
+        </div>
+    </div>
+</body>
+</html>

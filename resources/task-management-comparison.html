@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compare task management solutions for solo UE5 developers - Jira vs Trello vs in-editor tools. Find what works best for your workflow.">
+    <title>Task Management Comparison for Solo UE5 Devs | MythicLemon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .comparison-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .comparison-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        .comparison-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00a8e8 0%, #00d9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        .method-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        .method-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        .method-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .pros-cons {
+            margin: 1.5rem 0;
+        }
+        .pros-cons h4 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        .pros-cons ul {
+            list-style: none;
+            padding: 0;
+        }
+        .pros-cons li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+        .pros-cons.pros li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+        }
+        .pros-cons.cons li::before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: #f44336;
+            font-weight: bold;
+        }
+        .best-for {
+            background: rgba(0, 168, 232, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        .comparison-table {
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin-bottom: 4rem;
+        }
+        .comparison-table th {
+            background: rgba(0, 168, 232, 0.1);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .comparison-table td {
+            padding: 1rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        .rating {
+            color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <h1>MythicLemon</h1>
+                <p class="tagline">Premium Unreal Engine Assets</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../resources.html">← Back to Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="comparison-container">
+        <div class="comparison-header">
+            <h1>📝 Task Management for Solo UE5 Developers</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                Compare task management approaches and find what works for your workflow
+            </p>
+        </div>
+
+        <div class="method-grid">
+            <div class="method-card" style="border-color: var(--primary-color);">
+                <div class="method-icon">🎮</div>
+                <h3>In-Editor Task Manager</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Manage tasks directly inside Unreal Editor without context switching.
+                </p>
+
+                <div class="pros-cons pros">
+                    <h4>Pros:</h4>
+                    <ul>
+                        <li>Zero context switching</li>
+                        <li>Always visible while working</li>
+                        <li>Fast task creation</li>
+                        <li>Game dev-specific features</li>
+                        <li>Free/affordable plugins available</li>
+                    </ul>
+                </div>
+
+                <div class="pros-cons cons">
+                    <h4>Cons:</h4>
+                    <ul>
+                        <li>Limited collaboration features</li>
+                        <li>No mobile app access</li>
+                        <li>Fewer advanced features</li>
+                    </ul>
+                </div>
+
+                <div class="best-for">
+                    <strong style="color: var(--primary-color);">Best For:</strong> Solo developers, small teams, maximizing focus, avoiding distractions
+                </div>
+            </div>
+
+            <div class="method-card">
+                <div class="method-icon">📋</div>
+                <h3>Trello</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Visual kanban board system for organizing tasks and features.
+                </p>
+
+                <div class="pros-cons pros">
+                    <h4>Pros:</h4>
+                    <ul>
+                        <li>Simple, intuitive interface</li>
+                        <li>Visual board layout</li>
+                        <li>Free tier available</li>
+                        <li>Good mobile apps</li>
+                        <li>Easy to share with others</li>
+                    </ul>
+                </div>
+
+                <div class="pros-cons cons">
+                    <h4>Cons:</h4>
+                    <ul>
+                        <li>Requires browser/app switch</li>
+                        <li>Can be distracting</li>
+                        <li>Limited reporting</li>
+                        <li>Scales poorly for complex projects</li>
+                    </ul>
+                </div>
+
+                <div class="best-for">
+                    <strong style="color: var(--primary-color);">Best For:</strong> Visual thinkers, simple projects, teams needing basic collaboration
+                </div>
+            </div>
+
+            <div class="method-card">
+                <div class="method-icon">📊</div>
+                <h3>Jira</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Enterprise-grade project management with advanced features and workflows.
+                </p>
+
+                <div class="pros-cons pros">
+                    <h4>Pros:</h4>
+                    <ul>
+                        <li>Powerful reporting</li>
+                        <li>Customizable workflows</li>
+                        <li>Sprint planning features</li>
+                        <li>Integration ecosystem</li>
+                        <li>Professional tools</li>
+                    </ul>
+                </div>
+
+                <div class="pros-cons cons">
+                    <h4>Cons:</h4>
+                    <ul>
+                        <li>Massive overkill for solo devs</li>
+                        <li>Expensive ($7.75+/user/month)</li>
+                        <li>Complex setup</li>
+                        <li>Steep learning curve</li>
+                        <li>Slows down workflow</li>
+                    </ul>
+                </div>
+
+                <div class="best-for">
+                    <strong style="color: var(--primary-color);">Best For:</strong> Large teams, enterprise projects, complex requirements tracking
+                </div>
+            </div>
+
+            <div class="method-card">
+                <div class="method-icon">📓</div>
+                <h3>Notion</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    All-in-one workspace combining tasks, docs, and databases.
+                </p>
+
+                <div class="pros-cons pros">
+                    <h4>Pros:</h4>
+                    <ul>
+                        <li>Flexible, customizable</li>
+                        <li>Combines notes + tasks</li>
+                        <li>Templates available</li>
+                        <li>Free for personal use</li>
+                        <li>Beautiful interface</li>
+                    </ul>
+                </div>
+
+                <div class="pros-cons cons">
+                    <h4>Cons:</h4>
+                    <ul>
+                        <li>Can be overwhelming</li>
+                        <li>Requires setup time</li>
+                        <li>Easy to over-organize</li>
+                        <li>Internet required</li>
+                    </ul>
+                </div>
+
+                <div class="best-for">
+                    <strong style="color: var(--primary-color);">Best For:</strong> Documentation-heavy projects, knowledge base needs, flexible workflows
+                </div>
+            </div>
+
+            <div class="method-card">
+                <div class="method-icon">🗒️</div>
+                <h3>Plain Text / Markdown</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Simple TODO.md file in your project folder, edited in VS Code or similar.
+                </p>
+
+                <div class="pros-cons pros">
+                    <h4>Pros:</h4>
+                    <ul>
+                        <li>Completely free</li>
+                        <li>No external services</li>
+                        <li>Fast and lightweight</li>
+                        <li>Version controlled</li>
+                        <li>Zero learning curve</li>
+                    </ul>
+                </div>
+
+                <div class="pros-cons cons">
+                    <h4>Cons:</h4>
+                    <ul>
+                        <li>No visual boards</li>
+                        <li>Manual organization</li>
+                        <li>No notifications</li>
+                        <li>Limited collaboration</li>
+                    </ul>
+                </div>
+
+                <div class="best-for">
+                    <strong style="color: var(--primary-color);">Best For:</strong> Minimalists, offline work, version control integration
+                </div>
+            </div>
+
+            <div class="method-card">
+                <div class="method-icon">✅</div>
+                <h3>Todoist / TickTick</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Personal productivity apps with task management and scheduling.
+                </p>
+
+                <div class="pros-cons pros">
+                    <h4>Pros:</h4>
+                    <ul>
+                        <li>Great for personal productivity</li>
+                        <li>Natural language input</li>
+                        <li>Mobile apps excellent</li>
+                        <li>Calendar integration</li>
+                    </ul>
+                </div>
+
+                <div class="pros-cons cons">
+                    <h4>Cons:</h4>
+                    <ul>
+                        <li>Not dev-project focused</li>
+                        <li>Premium features cost money</li>
+                        <li>Tempting to over-schedule</li>
+                    </ul>
+                </div>
+
+                <div class="best-for">
+                    <strong style="color: var(--primary-color);">Best For:</strong> Personal task management, time blocking, life + dev work combined
+                </div>
+            </div>
+        </div>
+
+        <h2 style="text-align: center; margin-bottom: 2rem;">Comparison for Solo Developers</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>In-Editor</th>
+                    <th>Trello</th>
+                    <th>Jira</th>
+                    <th>Notion</th>
+                    <th>Plain Text</th>
+                    <th>Todoist</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Context Switching</strong></td>
+                    <td><span class="rating">★★★★★</span> None</td>
+                    <td><span class="rating">★★☆☆☆</span> High</td>
+                    <td><span class="rating">★☆☆☆☆</span> Very High</td>
+                    <td><span class="rating">★★☆☆☆</span> High</td>
+                    <td><span class="rating">★★★★☆</span> Low</td>
+                    <td><span class="rating">★★☆☆☆</span> High</td>
+                </tr>
+                <tr>
+                    <td><strong>Setup Time</strong></td>
+                    <td>5 minutes</td>
+                    <td>15 minutes</td>
+                    <td>1-2 hours</td>
+                    <td>30-60 minutes</td>
+                    <td>1 minute</td>
+                    <td>10 minutes</td>
+                </tr>
+                <tr>
+                    <td><strong>Monthly Cost (Solo)</strong></td>
+                    <td>$0-20 one-time</td>
+                    <td>$0-5</td>
+                    <td>$7.75+</td>
+                    <td>$0-8</td>
+                    <td>$0</td>
+                    <td>$0-4</td>
+                </tr>
+                <tr>
+                    <td><strong>Collaboration</strong></td>
+                    <td>Limited</td>
+                    <td>Excellent</td>
+                    <td>Excellent</td>
+                    <td>Good</td>
+                    <td>Basic (via Git)</td>
+                    <td>Good</td>
+                </tr>
+                <tr>
+                    <td><strong>Mobile Access</strong></td>
+                    <td>❌</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                    <td>✅</td>
+                    <td>⚠️ Limited</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td><strong>Offline Work</strong></td>
+                    <td>✅</td>
+                    <td>⚠️ Limited</td>
+                    <td>❌</td>
+                    <td>⚠️ Limited</td>
+                    <td>✅</td>
+                    <td>⚠️ Limited</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 2px solid var(--primary-color); margin-top: 4rem;">
+            <h2 style="color: var(--primary-color); margin-bottom: 1rem;">🎯 Our Recommendation</h2>
+            <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+                For <strong>solo UE5 developers</strong>, an <strong>in-editor task manager</strong> is the best choice. 
+                The productivity gains from eliminating context switching far outweigh any advanced features you'd get from external tools.
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+                <strong>Why?</strong> Every time you switch from UE5 to a browser or app, you break your flow state. 
+                You see notifications, get distracted, and lose precious momentum. In-editor tools keep you focused on making your game.
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.8;">
+                Save Jira for when you're working with a team. Save Trello for planning phases. But for day-to-day 
+                development tasks, keep it in the editor where you're already working.
+            </p>
+        </div>
+
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; text-align: center; margin-top: 3rem;">
+            <h2 style="margin-bottom: 1rem;">Try In-Editor Task Management</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                Stop context switching and stay focused on your game
+            </p>
+            <a href="../product.html?id=easy-kanban-board" style="display: inline-block; background: var(--primary-color); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600;">View Easy Kanban Board</a>
+        </div>
+    </div>
+</body>
+</html>

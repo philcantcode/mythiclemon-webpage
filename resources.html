@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FLLHT9X0QH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FLLHT9X0QH');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free UE5 development resources: checklists, comparison tools, and quick references for Unreal Engine developers">
+    <meta name="keywords" content="Unreal Engine resources, UE5 checklists, game development tools, landscape workflow, optimization guide">
+    <title>Free Developer Resources | MythicLemon</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mythiclemon.com/resources.html">
+    <meta property="og:title" content="Free Developer Resources | MythicLemon">
+    <meta property="og:description" content="Free UE5 development resources: checklists, comparison tools, and quick references to accelerate your workflow.">
+    <meta property="og:image" content="https://www.mythiclemon.com/images/landstamp-pro.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Developer Resources | MythicLemon">
+    <meta name="twitter:description" content="Free UE5 development resources: checklists, comparison tools, and quick references to accelerate your workflow.">
+    
+    <link rel="canonical" href="https://www.mythiclemon.com/resources.html">
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        .resources-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .resources-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00a8e8 0%, #00d9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .resources-hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .resources-section {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .resource-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resource-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 168, 232, 0.2);
+        }
+
+        .resource-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .resource-badge {
+            display: inline-block;
+            background: rgba(0, 168, 232, 0.1);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .resource-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .resource-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .resource-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .resource-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .resource-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-resource {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-resource:hover {
+            background: #0090c7;
+            transform: translateY(-2px);
+        }
+
+        .btn-resource.secondary {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .btn-resource.secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .comparison-table {
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .comparison-table th {
+            background: rgba(0, 168, 232, 0.1);
+            padding: 1rem;
+            text-align: left;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        .comparison-table tr:hover td {
+            background: rgba(0, 168, 232, 0.05);
+        }
+
+        .feature-yes {
+            color: #4caf50;
+        }
+
+        .feature-no {
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resources-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <h1>MythicLemon</h1>
+                <p class="tagline">Premium Unreal Engine Assets</p>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span>☰</span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="user-guides.html">User Guides</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="https://www.fab.com/sellers/MythicLemon" target="_blank" class="cta-button">View on Fab</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="resources-hero">
+        <h1>Free Developer Resources</h1>
+        <p>Practical checklists, comparison tools, and quick references to accelerate your Unreal Engine development workflow</p>
+    </section>
+
+    <!-- Checklists Section -->
+    <section class="resources-section">
+        <div class="section-header">
+            <h2>📋 Checklists</h2>
+            <p>Download and use these checklists to streamline your workflow</p>
+        </div>
+        
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-icon">🗻</div>
+                <span class="resource-badge">CHECKLIST</span>
+                <h3>UE5 Landscape Workflow Checklist</h3>
+                <p>Complete step-by-step checklist for creating professional landscapes in Unreal Engine 5, from planning to final optimization.</p>
+                <div class="resource-meta">
+                    <span>📄 15 steps</span>
+                    <span>⏱️ 5 min read</span>
+                </div>
+                <div class="resource-actions">
+                    <a href="resources/landscape-workflow-checklist.html" class="btn-resource">View Checklist</a>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🎮</div>
+                <span class="resource-badge">CHECKLIST</span>
+                <h3>Game Jam Preparation Checklist</h3>
+                <p>Don't start your game jam unprepared. This checklist covers tools, assets, and workflows to maximize your 48-hour productivity.</p>
+                <div class="resource-meta">
+                    <span>📄 20 steps</span>
+                    <span>⏱️ 7 min read</span>
+                </div>
+                <div class="resource-actions">
+                    <a href="resources/game-jam-checklist.html" class="btn-resource">View Checklist</a>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">⚡</div>
+                <span class="resource-badge">CHECKLIST</span>
+                <h3>UE5 Optimization Checklist</h3>
+                <p>Essential performance optimization checklist for Unreal Engine 5 projects, covering rendering, blueprints, and asset optimization.</p>
+                <div class="resource-meta">
+                    <span>📄 25 steps</span>
+                    <span>⏱️ 10 min read</span>
+                </div>
+                <div class="resource-actions">
+                    <a href="resources/optimization-checklist.html" class="btn-resource">View Checklist</a>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🚀</div>
+                <span class="resource-badge">CHECKLIST</span>
+                <h3>Pre-Release Quality Checklist</h3>
+                <p>Comprehensive quality assurance checklist before releasing your UE5 project or plugin to the marketplace.</p>
+                <div class="resource-meta">
+                    <span>📄 18 steps</span>
+                    <span>⏱️ 8 min read</span>
+                </div>
+                <div class="resource-actions">
+                    <a href="resources/prerelease-checklist.html" class="btn-resource">View Checklist</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Tools Section -->
+    <section class="resources-section">
+        <div class="section-header">
+            <h2>⚖️ Comparison Guides</h2>
+            <p>Make informed decisions with our side-by-side comparisons</p>
+        </div>
+        
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-icon">🔍</div>
+                <span class="resource-badge">COMPARISON</span>
+                <h3>Landscape Creation Methods</h3>
+                <p>Compare manual sculpting, heightmap import, procedural generation, and stamp-based approaches for UE5 landscape creation.</p>
+                <div class="resource-meta">
+                    <span>📊 4 methods</span>
+                    <span>⏱️ 6 min read</span>
+                </div>
+                <div class="resource-actions">
+                    <a href="resources/landscape-methods-comparison.html" class="btn-resource">View Comparison</a>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">📊</div>
+                <span class="resource-badge">COMPARISON</span>
+                <h3>Chart Widget Solutions</h3>
+                <p>Blueprint vs C++, plugin-based vs custom implementation - find the right charting solution for your UE5 project.</p>
+                <div class="resource-meta">
+                    <span>📊 5 solutions</span>
+                    <span>⏱️ 5 min read</span>
+                </div>
+                <div class="resource-actions">
+                    <a href="resources/chart-solutions-comparison.html" class="btn-resource">View Comparison</a>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">📝</div>
+                <span class="resource-badge">COMPARISON</span>
+                <h3>Task Management for Solo Devs</h3>
+                <p>Jira vs Trello vs In-Editor solutions - which task management approach works best for solo UE5 developers?</p>
+                <div class="resource-meta">
+                    <span>📊 6 tools</span>
+                    <span>⏱️ 7 min read</span>
+                </div>
+                <div class="resource-actions">
+                    <a href="resources/task-management-comparison.html" class="btn-resource">View Comparison</a>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">📄</div>
+                <span class="resource-badge">COMPARISON</span>
+                <h3>Document Display Solutions</h3>
+                <p>PDF viewer plugins vs image conversion vs web browser widget - compare solutions for displaying docs in UE5.</p>
+                <div class="resource-meta">
+                    <span>📊 4 approaches</span>
+                    <span>⏱️ 5 min read</span>
+                </div>
+                <div class="resource-actions">
+                    <a href="resources/document-display-comparison.html" class="btn-resource">View Comparison</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick References Section -->
+    <section class="resources-section">
+        <div class="section-header">
+            <h2>📖 Quick References</h2>
+            <p>Essential information at your fingertips</p>
+        </div>
+        
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-icon">🗺️</div>
+                <span class="resource-badge">REFERENCE</span>
+                <h3>Heightmap Size Guide</h3>
+                <p>Quick reference for UE5 landscape sizes, heightmap resolutions, and optimal configurations for different world scales.</p>
+                <div class="resource-meta">
+                    <span>📏 Size chart</span>
+                    <span>⏱️ 3 min read</span>
+                </div>
+                <div class="resource-actions">
+                    <a href="resources/heightmap-size-guide.html" class="btn-resource">View Guide</a>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🎨</div>
+                <span class="resource-badge">REFERENCE</span>
+                <h3>Material Function Library</h3>
+                <p>Common material functions and techniques for landscapes, with ready-to-use blueprint screenshots and explanations.</p>
+                <div class="resource-meta">
+                    <span>🎨 12 functions</span>
+                    <span>⏱️ 8 min read</span>
+                </div>
+                <div class="resource-actions">
+                    <a href="resources/material-functions.html" class="btn-resource">View Library</a>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🔧</div>
+                <span class="resource-badge">REFERENCE</span>
+                <h3>Blueprint Best Practices</h3>
+                <p>Quick reference card for blueprint organization, naming conventions, and performance optimization patterns.</p>
+                <div class="resource-meta">
+                    <span>💡 30 tips</span>
+                    <span>⏱️ 6 min read</span>
+                </div>
+                <div class="resource-actions">
+                    <a href="resources/blueprint-best-practices.html" class="btn-resource">View Reference</a>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🎯</div>
+                <span class="resource-badge">REFERENCE</span>
+                <h3>UE5 Feature Compatibility</h3>
+                <p>Version compatibility matrix for Lumen, Nanite, VSM, and other UE5 features across different engine versions.</p>
+                <div class="resource-meta">
+                    <span>📊 Feature matrix</span>
+                    <span>⏱️ 4 min read</span>
+                </div>
+                <div class="resource-actions">
+                    <a href="resources/feature-compatibility.html" class="btn-resource">View Matrix</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fab Store Submission Guides Section -->
+    <section class="resources-section">
+        <div class="section-header">
+            <h2>🏪 Fab Store Submission Guides</h2>
+            <p>Complete checklists for getting your products approved on Epic's Fab marketplace</p>
+        </div>
+        
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-icon">📋</div>
+                <span class="resource-badge">FAB CHECKLIST</span>
+                <h3>Publisher & Product Page</h3>
+                <p>Essential requirements for all Fab submissions - account setup, product pages, pricing, and business essentials that apply to every product type.</p>
+                <div class="resource-meta">
+                    <span>📄 37 items</span>
+                    <span>⏱️ 15 min read</span>
+                </div>
+                <div class="resource-actions">
+                    <a href="resources/fab-publisher-checklist.html" class="btn-resource">View Checklist</a>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🔌</div>
+                <span class="resource-badge">FAB CHECKLIST</span>
+                <h3>Code Plugin Submission</h3>
+                <p>Complete checklist for UE5 code plugin submissions - .uplugin requirements, copyright headers, compilation, and file structure.</p>
+                <div class="resource-meta">
+                    <span>📄 35 items</span>
+                    <span>⏱️ 20 min read</span>
+                </div>
+                <div class="resource-actions">
+                    <a href="resources/fab-code-plugin-checklist.html" class="btn-resource">View Checklist</a>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🎨</div>
+                <span class="resource-badge">FAB CHECKLIST</span>
+                <h3>3D Asset & Content Pack</h3>
+                <p>Get your meshes, materials, and environments approved - covering LODs, lightmap UVs, collisions, and project structure.</p>
+                <div class="resource-meta">
+                    <span>📄 40 items</span>
+                    <span>⏱️ 18 min read</span>
+                </div>
+                <div class="resource-actions">
+                    <a href="resources/fab-3d-asset-checklist.html" class="btn-resource">View Checklist</a>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">📘</div>
+                <span class="resource-badge">FAB CHECKLIST</span>
+                <h3>Blueprint Product</h3>
+                <p>Submit gameplay systems, templates, and tools - Blueprint quality standards, demo requirements, and documentation guidelines.</p>
+                <div class="resource-meta">
+                    <span>📄 40 items</span>
+                    <span>⏱️ 16 min read</span>
+                </div>
+                <div class="resource-actions">
+                    <a href="resources/fab-blueprint-checklist.html" class="btn-resource">View Checklist</a>
+                </div>
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-icon">🔊</div>
+                <span class="resource-badge">FAB CHECKLIST</span>
+                <h3>Audio Product</h3>
+                <p>Sound effects and music submission guide - audio format requirements, preview URLs, quality standards, and licensing.</p>
+                <div class="resource-meta">
+                    <span>📄 30 items</span>
+                    <span>⏱️ 12 min read</span>
+                </div>
+                <div class="resource-actions">
+                    <a href="resources/fab-audio-checklist.html" class="btn-resource">View Checklist</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="resources-section" style="background: var(--card-bg); padding: 4rem 2rem; text-align: center; margin-top: 4rem;">
+        <h2 style="margin-bottom: 1rem;">Need More Help?</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Check out our comprehensive blog posts and product documentation for in-depth guides and tutorials.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="blog.html" class="btn-resource" style="flex: initial; min-width: 150px;">Read Our Blog</a>
+            <a href="user-guides.html" class="btn-resource secondary" style="flex: initial; min-width: 150px;">View User Guides</a>
+        </div>
+    </section>
+
+    <footer style="background: var(--card-bg); padding: 3rem 2rem; margin-top: 4rem; border-top: 1px solid var(--border-color);">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <div style="margin-bottom: 2rem;">
+                <h3 style="color: var(--text-primary); margin-bottom: 1rem;">MythicLemon</h3>
+                <p style="color: var(--text-secondary);">Premium Unreal Engine Assets & Tools</p>
+            </div>
+            
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                <a href="https://www.fab.com/sellers/MythicLemon" target="_blank" style="color: var(--primary-color); text-decoration: none;">Fab Marketplace</a>
+                <a href="https://x.com/MythicLemon" target="_blank" style="color: var(--primary-color); text-decoration: none;">X (Twitter)</a>
+                <a href="https://youtube.com/@mythiclemonstudio" target="_blank" style="color: var(--primary-color); text-decoration: none;">YouTube</a>
+            </div>
+            
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">&copy; 2026 MythicLemon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>

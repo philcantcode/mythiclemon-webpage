@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete Fab Publisher & Product Page checklist - essential requirements for all Epic Fab marketplace submissions covering account setup, pricing, and marketing.">
+    <meta name="keywords" content="Fab marketplace, UE5 publisher, Unreal Engine marketplace, Fab seller, product page requirements">
+    <title>Fab Publisher & Product Page Checklist | MythicLemon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .checklist-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .checklist-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        .checklist-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00a8e8 0%, #00d9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .checklist-section {
+            margin-bottom: 3rem;
+        }
+        .checklist-section h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .checklist-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+        .checklist-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0, 168, 232, 0.1);
+        }
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .checkbox.checked {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            position: relative;
+        }
+        .checkbox.checked::after {
+            content: "✓";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+        }
+        .item-content h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .item-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .item-tips {
+            background: rgba(0, 168, 232, 0.05);
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        .item-tips strong {
+            color: var(--primary-color);
+        }
+        .item-code {
+            background: #1a1a2e;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: #00d9ff;
+            margin-top: 0.5rem;
+            overflow-x: auto;
+        }
+        .progress-bar {
+            background: var(--border-color);
+            height: 8px;
+            border-radius: 4px;
+            margin: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .progress-fill {
+            background: var(--primary-color);
+            height: 100%;
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .critical {
+            border-left: 4px solid #f44336;
+        }
+        .section-intro {
+            background: rgba(0, 168, 232, 0.05);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        .section-intro p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        .info-box {
+            background: rgba(0, 168, 232, 0.1);
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .info-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .info-box p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <h1>MythicLemon</h1>
+                <p class="tagline">Premium Unreal Engine Assets</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../resources.html">← Back to Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="checklist-container">
+        <div class="checklist-header">
+            <h1>📋 Fab Publisher & Product Page Checklist</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                Essential requirements for all Epic Fab marketplace submissions - account setup, product pages, and business essentials
+            </p>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem;">
+                Based on <a href="https://support.fab.com/s/article/FAB-TECHNICAL-REQUIREMENTS" target="_blank" style="color: var(--primary-color);">Fab Technical Requirements</a>
+            </p>
+        </div>
+
+        <div class="info-box">
+            <h3>📌 About This Checklist</h3>
+            <p>These requirements apply to ALL Fab submissions regardless of product type. Complete this checklist alongside the specific checklist for your product category (Code Plugin, 3D Assets, Blueprints, or Audio).</p>
+        </div>
+
+        <!-- Publisher Account Setup -->
+        <div class="checklist-section">
+            <h2>👤 Publisher Account Setup</h2>
+            <div class="section-intro">
+                <p>Set up your publisher profile correctly to receive payments and maintain credibility.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="1">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Professional Publisher Name</h3>
+                    <p>Publisher name must not be offensive, vulgar, or slanderous. Cannot contain "Epic Games", "Unreal Engine", or other organizations' names.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Choose a professional name that represents your brand. This appears on all your products.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="2">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Accurate Tax Information</h3>
+                    <p>Provide accurate trader, tax, and payout information in Publisher Profile settings.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Required to receive payments. Different requirements by country/region.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="3">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Valid Payout Information</h3>
+                    <p>Configure your payout method to receive earnings.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Payouts issued within 30 days after month end. Minimum $100 threshold to receive payout.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="4">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Primary Email Address Active</h3>
+                    <p>Your Primary Email Address is used for sale invitations and important communications.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Check this email regularly. You'll receive sale invitations with deadlines here.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support Requirements -->
+        <div class="checklist-section">
+            <h2>🎧 Support Requirements</h2>
+            <div class="section-intro">
+                <p>You must support your products. This is an ongoing commitment, not a one-time checkbox.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="5">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Support Channels Configured</h3>
+                    <p>Configure support channels in your Publisher Profile's Publish Settings.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Email, Discord, forum - whatever works for you, but you MUST have one.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="6">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Actively Monitor Support Channels</h3>
+                    <p>Publishers must actively monitor and respond to support requests.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Unresponsive publishers may have products removed. Respond within reasonable timeframes.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="7">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Products Function as Advertised</h3>
+                    <p>Ensure all published products work as described and assist customers reporting issues.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> If something doesn't work, fix it or update the description. Misleading claims = bad reviews and potential removal.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="8">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Professional Communication</h3>
+                    <p>Maintain professionalism - be courteous, approachable, responsive, and respectful.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Harassment or abusive language will not be tolerated. Even frustrated customers deserve respect.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Page - Description -->
+        <div class="checklist-section">
+            <h2>📝 Product Description</h2>
+            <div class="section-intro">
+                <p>Your product page is your sales pitch. Make it accurate and compelling.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="9">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>English with Correct Spelling/Grammar</h3>
+                    <p>All text must be in English with proper spelling and grammar.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Poor grammar looks unprofessional. Use spell check. Have someone proofread.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="10">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Accurate Product Description</h3>
+                    <p>Description must accurately represent what buyers will receive.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Overpromising leads to refunds and bad reviews. Be honest about capabilities and limitations.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="11">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Clear Feature List</h3>
+                    <p>List all major features clearly so buyers know what they're getting.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Bullet points work well. Be specific: "50 meshes" not "lots of meshes".
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="12">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Dependencies Documented</h3>
+                    <p>List any plugins, engine features, or external requirements needed.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> "Requires Enhanced Input Plugin" or "No external dependencies" - be explicit.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Page - Technical Information -->
+        <div class="checklist-section">
+            <h2>⚙️ Technical Information</h2>
+            <div class="section-intro">
+                <p>Fill out all relevant technical fields to help buyers evaluate your product.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="13">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>All Relevant Fields Completed</h3>
+                    <p>Fill in all applicable Technical Information fields.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Incomplete technical info makes your product look unprofessional.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="14">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Supported Platforms Listed</h3>
+                    <p>Accurately list which platforms your product supports.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Don't claim platform support you haven't tested. Windows, Mac, Linux, consoles - be specific.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="15">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Network Replication Status</h3>
+                    <p>If applicable, state whether your product supports network replication.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> "Network Replicated: Yes/No/Not Applicable" - multiplayer compatibility matters to buyers.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="16">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Documentation Link</h3>
+                    <p>Provide link to documentation in Technical Information.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Even a simple PDF or web page helps. Better documentation = fewer support requests.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Page - Category & Tags -->
+        <div class="checklist-section">
+            <h2>🏷️ Category & Tags</h2>
+            <div class="section-intro">
+                <p>Proper categorization helps buyers find your product.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="17">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Most Relevant Category Selected</h3>
+                    <p>Products must exist in the category most relevant to their functionality and style.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Miscategorized products may be rejected or moved by Epic.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="18">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Accurate and Relevant Tags</h3>
+                    <p>Tags must be accurate and relevant to the asset.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Don't spam unrelated tags for SEO. It hurts discovery and trust. Use tags buyers would search for.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Page - Media -->
+        <div class="checklist-section">
+            <h2>🖼️ Media Requirements</h2>
+            <div class="section-intro">
+                <p>Screenshots and videos are your primary sales tools. Make them count.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="19">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Accurate Media Representation</h3>
+                    <p>Images and videos must accurately display product contents.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Don't show renders that look better than in-engine. Include actual editor screenshots.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="20">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>High-Quality Screenshots</h3>
+                    <p>Use high-resolution screenshots that showcase your product well.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> 1920x1080 minimum. 4K preferred. Show multiple angles and use cases.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="21">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Video Demo (Recommended)</h3>
+                    <p>Video demonstrations significantly improve conversion rates.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> 1-3 minutes showing setup and usage. YouTube or Vimeo links work well.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disclosures -->
+        <div class="checklist-section">
+            <h2>📢 Required Disclosures</h2>
+            <div class="section-intro">
+                <p>Certain information must be disclosed on your product page.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="22">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>AI Usage Disclosure</h3>
+                    <p>Must disclose if generative AI tools were used during creation.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Check "Created with AI" if you used AI for code, art, audio, or documentation.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="23">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Mature Content Rating</h3>
+                    <p>Accurately rate mature content for ALL images, files, and Additional Files.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> If ANY part is mature, the whole product should be rated mature.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="24">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Promotional Content Disclosure</h3>
+                    <p>Disclose if offer contains paid advertisements or brand promotion.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Product placement, logos, slogans promoting real-world brands must be disclosed.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="25">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Third-Party Software Usage</h3>
+                    <p>Declare if product includes, uses, or distributes third-party software.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Fonts, sounds, APIs, libraries from other sources count as third-party.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="26">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Experimental/Beta Features Documented</h3>
+                    <p>If using experimental or beta engine features, state this clearly.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Warn users about potential instability or future breaking changes.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing -->
+        <div class="checklist-section">
+            <h2>💰 Pricing</h2>
+            <div class="section-intro">
+                <p>Set your pricing appropriately and understand the payout structure.</p>
+            </div>
+
+            <div class="checklist-item" data-item="27">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Price Reflects Value</h3>
+                    <p>Prices should reflect the approximate value of the asset.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Research similar products. Consider your effort, uniqueness, and target market.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="28">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Price in USD</h3>
+                    <p>Price selections are in US Dollars. International prices are calculated automatically.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Epic converts to local currencies and may adjust for local pricing practices.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="29">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Understand Payout Terms</h3>
+                    <p>Payouts issued within 30 days after month end. $100 minimum threshold.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> If you don't hit $100, it rolls over. Refunds deducted from next payout.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- File Hosting -->
+        <div class="checklist-section">
+            <h2>📤 File Hosting (Project File Link)</h2>
+            <div class="section-intro">
+                <p>Your files are submitted via a hosted download link.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="30">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Valid Hosting Site</h3>
+                    <p>Use Google Drive, Dropbox, OneDrive, or similar hosting service.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Link must work for Epic to download. Test it yourself in an incognito window.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="31">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Link Active During Review</h3>
+                    <p>Keep link active until Epic generates a build.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Don't delete or change the link until your product is approved and live.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="32">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>ZIP Archive Only</h3>
+                    <p>Files must be in .zip format. No .rar, .7z, or other archive formats.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> ZIP is the only accepted archive format on Fab.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="33">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Password in Version Notes (if applicable)</h3>
+                    <p>If your zip is password-protected, provide the password in Version Notes.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Epic needs access to build your product. Unprotected is faster to process.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Legal & Content Guidelines -->
+        <div class="checklist-section">
+            <h2>⚖️ Legal & Content Guidelines</h2>
+            <div class="section-intro">
+                <p>Ensure your content complies with Epic's policies.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="34">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Prohibited Content</h3>
+                    <p>Content must comply with Epic Games Content Guidelines.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Review <a href="https://www.epicgames.com/site/content-guidelines" target="_blank" style="color: var(--primary-color);">Epic Games Content Guidelines</a> for what's not allowed.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="35">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>You Own Rights to Content</h3>
+                    <p>You must have rights to all content you're distributing.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Don't sell others' work. Have proper licenses for any third-party components.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="36">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Executables or Installers</h3>
+                    <p>Cannot distribute .exe, .msi, .dmg, .iso, or other executables.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> If external tools are needed, provide documentation for users to download them.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="37">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Privacy Respect</h3>
+                    <p>Don't share private user information without permission.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Names, emails, phone numbers of others should never be shared publicly.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Checklists -->
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; margin-top: 3rem;">
+            <h2 style="margin-bottom: 1rem;">📑 Product-Specific Checklists</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Complete this general checklist alongside the specific checklist for your product type:</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                <a href="fab-code-plugin-checklist.html" style="display: block; padding: 1rem; background: rgba(0, 168, 232, 0.1); border-radius: 8px; text-decoration: none; color: var(--text-primary); transition: all 0.3s ease;">
+                    <strong>🔌 Code Plugins</strong><br>
+                    <span style="font-size: 0.9rem; color: var(--text-secondary);">.uplugin, C++, compilation</span>
+                </a>
+                <a href="fab-3d-asset-checklist.html" style="display: block; padding: 1rem; background: rgba(0, 168, 232, 0.1); border-radius: 8px; text-decoration: none; color: var(--text-primary); transition: all 0.3s ease;">
+                    <strong>🎨 3D Assets</strong><br>
+                    <span style="font-size: 0.9rem; color: var(--text-secondary);">Meshes, materials, environments</span>
+                </a>
+                <a href="fab-blueprint-checklist.html" style="display: block; padding: 1rem; background: rgba(0, 168, 232, 0.1); border-radius: 8px; text-decoration: none; color: var(--text-primary); transition: all 0.3s ease;">
+                    <strong>📘 Blueprints</strong><br>
+                    <span style="font-size: 0.9rem; color: var(--text-secondary);">Systems, templates, tools</span>
+                </a>
+                <a href="fab-audio-checklist.html" style="display: block; padding: 1rem; background: rgba(0, 168, 232, 0.1); border-radius: 8px; text-decoration: none; color: var(--text-primary); transition: all 0.3s ease;">
+                    <strong>🔊 Audio</strong><br>
+                    <span style="font-size: 0.9rem; color: var(--text-secondary);">Sound effects, music</span>
+                </a>
+            </div>
+        </div>
+
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; text-align: center; margin-top: 2rem;">
+            <h2>Ready to Submit?</h2>
+            <p style="color: var(--text-secondary);">Complete both this checklist and your product-specific checklist before submission!</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <button class="btn-resource" onclick="window.print()" style="display: inline-block; padding: 1rem 2rem; background: var(--primary-color); color: white; border-radius: 8px; border: none; cursor: pointer;">🖨️ Print / Save as PDF</button>
+                <a href="https://support.fab.com/s/article/FAB-TECHNICAL-REQUIREMENTS" target="_blank" class="btn-resource" style="display: inline-block; padding: 1rem 2rem; background: transparent; border: 1px solid var(--primary-color); color: var(--primary-color); border-radius: 8px; text-decoration: none;">📖 Official Fab Requirements</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const items = document.querySelectorAll('.checklist-item');
+        const progressFill = document.getElementById('progressFill');
+
+        items.forEach((item) => {
+            const itemId = item.getAttribute('data-item');
+            const checkbox = item.querySelector('.checkbox');
+            const saved = localStorage.getItem(`fab-publisher-checklist-${itemId}`);
+            
+            if (saved === 'true') {
+                checkbox.classList.add('checked');
+            }
+
+            checkbox.addEventListener('click', () => {
+                checkbox.classList.toggle('checked');
+                const isChecked = checkbox.classList.contains('checked');
+                localStorage.setItem(`fab-publisher-checklist-${itemId}`, isChecked);
+                updateProgress();
+            });
+        });
+
+        function updateProgress() {
+            const total = items.length;
+            const checked = document.querySelectorAll('.checkbox.checked').length;
+            const percentage = (checked / total) * 100;
+            progressFill.style.width = percentage + '%';
+        }
+
+        updateProgress();
+    </script>
+</body>
+</html>

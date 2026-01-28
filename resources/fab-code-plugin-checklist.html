@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete Fab Code Plugin submission checklist - all requirements for getting your Unreal Engine plugin approved on Epic's Fab marketplace.">
+    <meta name="keywords" content="Fab marketplace, UE5 plugin submission, Unreal Engine plugin, code plugin checklist, Epic Games Store">
+    <title>Fab Code Plugin Submission Checklist | MythicLemon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .checklist-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .checklist-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        .checklist-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00a8e8 0%, #00d9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .checklist-section {
+            margin-bottom: 3rem;
+        }
+        .checklist-section h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .checklist-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+        .checklist-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0, 168, 232, 0.1);
+        }
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .checkbox.checked {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            position: relative;
+        }
+        .checkbox.checked::after {
+            content: "✓";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+        }
+        .item-content h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .item-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .item-tips {
+            background: rgba(0, 168, 232, 0.05);
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        .item-tips strong {
+            color: var(--primary-color);
+        }
+        .item-code {
+            background: #1a1a2e;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: #00d9ff;
+            margin-top: 0.5rem;
+            overflow-x: auto;
+        }
+        .progress-bar {
+            background: var(--border-color);
+            height: 8px;
+            border-radius: 4px;
+            margin: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .progress-fill {
+            background: var(--primary-color);
+            height: 100%;
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .critical {
+            border-left: 4px solid #f44336;
+        }
+        .section-intro {
+            background: rgba(0, 168, 232, 0.05);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        .section-intro p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <h1>MythicLemon</h1>
+                <p class="tagline">Premium Unreal Engine Assets</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../resources.html">← Back to Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="checklist-container">
+        <div class="checklist-header">
+            <h1>🔌 Fab Code Plugin Submission Checklist</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                Complete checklist for getting your Unreal Engine code plugin approved on Epic's Fab marketplace
+            </p>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem;">
+                Based on <a href="https://support.fab.com/s/article/FAB-TECHNICAL-REQUIREMENTS" target="_blank" style="color: var(--primary-color);">Fab Technical Requirements</a>
+            </p>
+        </div>
+
+        <!-- .uplugin Descriptor Section -->
+        <div class="checklist-section">
+            <h2>📄 .uplugin Descriptor</h2>
+            <div class="section-intro">
+                <p>Your .uplugin file is the heart of your plugin submission. These fields are mandatory for Fab approval.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="1">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>EngineVersion Key Present</h3>
+                    <p>Must specify the major engine version (e.g., 5.3.0) the plugin is built for.</p>
+                    <div class="item-code">"EngineVersion": "5.3.0",</div>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Each Project Version needs a separate .uplugin with matching EngineVersion for each supported engine version.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="2">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>PlatformAllowList or PlatformDenyList</h3>
+                    <p>Each module must specify compilation platforms.</p>
+                    <div class="item-code">"PlatformAllowList": [ "Win64", "Mac", "Linux", "IOS", "Android" ]</div>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> For UE4 plugins, use "WhitelistPlatforms" or "BlacklistPlatforms" instead.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="3">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>FabURL Key</h3>
+                    <p>Required launcher URL for automatic plugin installation from projects.</p>
+                    <div class="item-code">"FabURL": "com.epicgames.launcher://ue/Fab/product/YOUR_PRODUCT_ID"</div>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Get your product ID from the end of your Publisher Portal URL after initial submission.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="4">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Dependencies on User-Made Plugins</h3>
+                    <p>Plugins can depend on engine plugins, but NOT on other third-party/user-made plugins.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> If you need shared functionality, include it directly in your plugin or use engine-provided alternatives.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Source Code Section -->
+        <div class="checklist-section">
+            <h2>💻 Source Code Requirements</h2>
+            <div class="section-intro">
+                <p>Your source code must meet these standards for compilation and distribution.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="5">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Copyright Headers on All Files</h3>
+                    <p>Every source and header file must have a commented copyright notice with your name/company and publishing year.</p>
+                    <div class="item-code">// Copyright 2026 YourCompany. All Rights Reserved.</div>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Do NOT use the auto-generated Epic Games copyright text. This WILL get your plugin rejected.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="6">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>At Least One C++ Module</h3>
+                    <p>Code plugins must contain at least one module of C++ code (can also contain content).</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Blueprint-only projects should be submitted as "Asset Pack" distribution, not code plugins.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="7">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Closed-Source UE-Dependent Code</h3>
+                    <p>All code that requires Unreal Engine source to compile must be included. Only code NOT dependent on UE source may be pre-compiled.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Customers need source for UE-dependent code to compile against source-built engine versions.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="8">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Plugin Adds Genuine Functionality</h3>
+                    <p>Must introduce new editor functionality, integrate UE with third-party systems, or expose complex gameplay logic to blueprints.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Wrapper plugins that don't add substantial value may be rejected.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="9">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Executables or Installers</h3>
+                    <p>Plugins must not distribute .exe, .msi, or any executable/installer files.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> If your plugin needs external tools, provide documentation for users to download them separately.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compilation Section -->
+        <div class="checklist-section">
+            <h2>🔧 Compilation Requirements</h2>
+            <div class="section-intro">
+                <p>Epic builds your plugin binaries. Ensure it compiles cleanly.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="10">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Zero Errors, Zero Consequential Warnings</h3>
+                    <p>Plugin must compile without errors or significant warnings.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Test compilation before submission using the Package command in the Plugins window.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="11">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Test Package Command</h3>
+                    <p>Use "Package..." in the Plugins window to test Epic's build process.</p>
+                    <div class="item-code">Engine\Build\BatchFiles\RunUAT.bat BuildPlugin -Plugin=[Path to .uplugin] -Package=[Output directory] -Rocket</div>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Run this from installed binary builds of each engine version you support.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="12">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>IWYU Compatibility (4.18+)</h3>
+                    <p>Plugins for UE 4.18+ must be Include-What-You-Use compatible.</p>
+                    <div class="item-code">PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;</div>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Add this to your module's .Build.cs file. Include headers directly instead of relying on PCH.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="13">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Use ModuleDirectory for Include Paths (4.20+)</h3>
+                    <p>Include paths for your own plugin directories must use ModuleDirectory.</p>
+                    <div class="item-code">PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "MyFolder"));</div>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Add "using System.IO;" at the top of your .Build.cs file.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- File Structure Section -->
+        <div class="checklist-section">
+            <h2>📁 File Structure</h2>
+            <div class="section-intro">
+                <p>Proper folder structure is required for Fab processing and distribution.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="14">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Local/Build Folders</h3>
+                    <p>Remove Binaries, Build, Intermediate, and Saved folders before zipping.</p>
+                    <div class="item-code">MyPlugin/
+├── Config/
+├── Content/
+├── Resources/
+├── Source/
+│   ├── MyModule/
+│   │   ├── Private/
+│   │   ├── Public/
+│   │   └── MyModule.Build.cs
+│   └── ThirdParty/
+└── MyPlugin.uplugin</div>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Epic rebuilds binaries. Including local folders will cause rejection.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="15">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>File Paths Under 170 Characters</h3>
+                    <p>All file paths starting from plugin folder must be 170 characters or less.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Keep folder and file names concise. Avoid deeply nested structures.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="16">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Third-Party in ThirdParty Folder</h3>
+                    <p>Third-party dependencies must be in a ThirdParty folder inside Source.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Must have proof of permission for all third-party code. Fill out the Third-Party Software Declaration form.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="17">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>FilterPlugin.ini for Extra Folders</h3>
+                    <p>For distribution of non-standard folders (Docs, etc.), create Config/FilterPlugin.ini.</p>
+                    <div class="item-code">[FilterPlugin]
+/Docs/...
+/MyOtherFolder/...</div>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Without this, extra folders won't be distributed to customers.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="18">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>English Alphanumeric Names Only</h3>
+                    <p>Folder and file names must contain only English letters, numbers, and underscores.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Avoid spaces, special characters, and non-ASCII characters in paths.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Engine Versions Section -->
+        <div class="checklist-section">
+            <h2>🎮 Engine Version Support</h2>
+            <div class="section-intro">
+                <p>Manage your supported engine versions correctly.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="19">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Latest Engine Version Required on Initial Submit</h3>
+                    <p>New products must support the latest version of Unreal Engine.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Check current UE version before submission. Epic won't approve outdated initial submissions.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="20">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Separate Project Version Per Engine Version</h3>
+                    <p>Code plugins need a different Project Version (with different Project File Link) for each supported engine version.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Each zip must have the correct EngineVersion in .uplugin. Can't just change the version value.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="21">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Support at Least One of Latest Three Versions</h3>
+                    <p>Published products must maintain support for at least one of the three latest engine versions.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Epic will only build for the three latest versions by default. Older versions require special request.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Third-Party Software Section -->
+        <div class="checklist-section">
+            <h2>📦 Third-Party Software</h2>
+            <div class="section-intro">
+                <p>Declare all third-party software usage properly.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="22">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Declare Third-Party Software Usage</h3>
+                    <p>Must declare whether plugin includes, uses, depends on, or distributes any third-party software.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Third-party means fonts, graphics, sounds, APIs, code, or libraries from sources other than you or Epic.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="23">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Complete Third-Party Declaration Form</h3>
+                    <p>If using third-party software, complete the official declaration form.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> <a href="https://epicgames.formstack.com/forms/third_party_software_declaration_form" target="_blank" style="color: var(--primary-color);">Submit form here</a>. Include license info and proof of permission.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Project Section -->
+        <div class="checklist-section">
+            <h2>📚 Example Project & Documentation</h2>
+            <div class="section-intro">
+                <p>Plugins are installed as engine plugins. Example projects help customers get started.</p>
+            </div>
+
+            <div class="checklist-item" data-item="24">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Provide Example Project (Strongly Recommended)</h3>
+                    <p>Since plugins install to Engine/Plugins/Fab, an example project helps demonstrate functionality.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Add link in Technical Information under "Example Project:". Host on Google Drive/Dropbox/OneDrive.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="25">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Example Project Dependencies Only</h3>
+                    <p>Example projects should depend on your plugin but NOT contain the actual plugin files.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Users install the plugin from Fab separately. Example project just references it.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="26">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Include Video or Demo for Blueprint Products</h3>
+                    <p>Blueprint-based plugins must include a downloadable demo project OR video URL in the description.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Required by Fab guidelines. Without this, your submission will be rejected.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="27">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Documentation Provided</h3>
+                    <p>Products requiring setup knowledge must have or link to free documentation.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Web guides, PDF files, code comments, videos, or in-editor tutorials. Must be in English.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project File Link Section -->
+        <div class="checklist-section">
+            <h2>🔗 Project File Link</h2>
+            <div class="section-intro">
+                <p>Your hosted zip file for Epic to download and build.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="28">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Valid Hosting Site Link</h3>
+                    <p>Project File Link must navigate to Google Drive, Dropbox, OneDrive, etc.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Link must remain active until Epic generates a build. Don't remove until approved.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="29">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Single Plugin Folder in Zip</h3>
+                    <p>Zip must contain only ONE Unreal Engine plugin folder.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Don't include project files, multiple plugins, or extra content outside the plugin folder.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="30">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Password in Version Notes</h3>
+                    <p>If zip is password-protected, provide password in the Version Notes field.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Epic reviewers need access. Unprotected zips are faster to process.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Page Section -->
+        <div class="checklist-section">
+            <h2>📝 Product Page Requirements</h2>
+            <div class="section-intro">
+                <p>Marketing and metadata for your listing.</p>
+            </div>
+
+            <div class="checklist-item" data-item="31">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>English with Correct Grammar</h3>
+                    <p>All text must be in English with proper spelling and grammar.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Run description through a spell checker. Poor grammar = unprofessional impression.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="32">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Accurate Tags and Category</h3>
+                    <p>Tags must be relevant. Category must match plugin functionality.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Don't spam unrelated tags for SEO. This hurts discoverability and trust.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="33">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>All Technical Information Fields Filled</h3>
+                    <p>Complete all relevant Technical Information fields including dependencies and prerequisites.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> List experimental/beta engine features used. State clearly if no external dependencies.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="34">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Accurate Media</h3>
+                    <p>Images, videos, and 3D models must accurately display product contents.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Don't show features you don't deliver. Include in-editor screenshots, not just renders.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="35">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>AI Usage Disclosure</h3>
+                    <p>Must disclose if generative AI tools were used during creation.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Check the "Created with AI" field if you used AI for code, assets, or documentation.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; text-align: center; margin-top: 3rem;">
+            <h2>Ready to Submit?</h2>
+            <p style="color: var(--text-secondary);">Ensure all critical items (🚨) are checked before submitting your code plugin!</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <button class="btn-resource" onclick="window.print()" style="display: inline-block; padding: 1rem 2rem; background: var(--primary-color); color: white; border-radius: 8px; border: none; cursor: pointer;">🖨️ Print / Save as PDF</button>
+                <a href="https://support.fab.com/s/article/FAB-TECHNICAL-REQUIREMENTS" target="_blank" class="btn-resource" style="display: inline-block; padding: 1rem 2rem; background: transparent; border: 1px solid var(--primary-color); color: var(--primary-color); border-radius: 8px; text-decoration: none;">📖 Official Fab Requirements</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const items = document.querySelectorAll('.checklist-item');
+        const progressFill = document.getElementById('progressFill');
+
+        items.forEach((item) => {
+            const itemId = item.getAttribute('data-item');
+            const checkbox = item.querySelector('.checkbox');
+            const saved = localStorage.getItem(`fab-code-plugin-checklist-${itemId}`);
+            
+            if (saved === 'true') {
+                checkbox.classList.add('checked');
+            }
+
+            checkbox.addEventListener('click', () => {
+                checkbox.classList.toggle('checked');
+                const isChecked = checkbox.classList.contains('checked');
+                localStorage.setItem(`fab-code-plugin-checklist-${itemId}`, isChecked);
+                updateProgress();
+            });
+        });
+
+        function updateProgress() {
+            const total = items.length;
+            const checked = document.querySelectorAll('.checkbox.checked').length;
+            const percentage = (checked / total) * 100;
+            progressFill.style.width = percentage + '%';
+        }
+
+        updateProgress();
+    </script>
+</body>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete UE5 optimization checklist - improve performance with this comprehensive guide covering rendering, blueprints, and asset optimization.">
+    <title>UE5 Optimization Checklist | MythicLemon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .checklist-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .checklist-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        .checklist-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00a8e8 0%, #00d9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .checklist-section {
+            margin-bottom: 3rem;
+        }
+        .checklist-section h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .checklist-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+        .checklist-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0, 168, 232, 0.1);
+        }
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .checkbox.checked {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            position: relative;
+        }
+        .checkbox.checked::after {
+            content: "✓";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+        }
+        .item-content h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .item-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .item-tips {
+            background: rgba(0, 168, 232, 0.05);
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        .item-tips strong {
+            color: var(--primary-color);
+        }
+        .progress-bar {
+            background: var(--border-color);
+            height: 8px;
+            border-radius: 4px;
+            margin: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .progress-fill {
+            background: var(--primary-color);
+            height: 100%;
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <h1>MythicLemon</h1>
+                <p class="tagline">Premium Unreal Engine Assets</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../resources.html">← Back to Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="checklist-container">
+        <div class="checklist-header">
+            <h1>⚡ UE5 Optimization Checklist</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                Essential performance optimization for Unreal Engine 5 projects
+            </p>
+        </div>
+
+        <div class="checklist-section">
+            <h2>Rendering Optimization</h2>
+
+            <div class="checklist-item" data-item="1">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Enable Nanite on Static Meshes</h3>
+                    <p>Convert high-poly static meshes to Nanite for automatic LOD and reduced draw calls.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Right-click mesh → Nanite → Enable. Best for meshes with 1000+ triangles. Not suitable for translucent or WPO materials.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="2">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Use Lumen with Care</h3>
+                    <p>Optimize Lumen settings for your target platform. Consider disabling for lower-end hardware.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Reduce Lumen Scene Detail, Final Gather Quality. Use Hardware Ray Tracing if supported. Test on target hardware.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="3">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Set Up Proper LODs</h3>
+                    <p>Ensure all meshes have appropriate LOD levels for distance-based optimization.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use automatic LOD generation or import from modeling software. Aim for 3-4 LOD levels. Test with "r.ForceLOD" console command.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="4">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Optimize Shadow Rendering</h3>
+                    <p>Configure shadow cascade distances and resolution for performance.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Reduce Dynamic Shadow Distance, use fewer cascades, enable Virtual Shadow Maps (VSM) for better performance.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="5">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Implement Occlusion Culling</h3>
+                    <p>Enable and configure Visibility Culling to avoid rendering hidden objects.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use Cull Distance Volumes, Hierarchical Z-Buffer Occlusion. Visualize with "r.VisualizeOccludedPrimitives 1".
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <h2>Blueprint Optimization</h2>
+
+            <div class="checklist-item" data-item="6">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Minimize Tick Functions</h3>
+                    <p>Disable Tick on actors that don't need per-frame updates.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use Timers instead of Tick. Set "Start with Tick Enabled" to false. Profile with "stat game" to find expensive ticks.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="7">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Cache Component References</h3>
+                    <p>Store GetComponent calls in variables instead of calling repeatedly.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Get component once in BeginPlay, store as variable. Avoid GetActorOfClass in Tick - cache on spawn instead.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="8">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Use Object Pooling</h3>
+                    <p>Pool frequently spawned/destroyed objects to avoid garbage collection spikes.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Pre-spawn projectiles, particles, enemies. Deactivate instead of destroy. Reactivate from pool when needed.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="9">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Optimize Blueprint Nativization</h3>
+                    <p>Enable nativization for performance-critical blueprints (UE4 feature, deprecated in UE5).</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> For UE5, consider converting critical blueprints to C++. Use Blueprint Function Libraries for shared logic.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <h2>Material Optimization</h2>
+
+            <div class="checklist-item" data-item="10">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Reduce Material Complexity</h3>
+                    <p>Keep shader instruction count low, especially for materials used on many objects.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Check Stats panel in Material Editor. Aim for <300 instructions. Use cheaper nodes (Lerp vs If, Multiply vs Power).
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="11">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Use Material Instances</h3>
+                    <p>Create Material Instances instead of duplicating base materials.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> One base material with parameters, many instances. Reduces shader compilation and memory usage.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="12">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Optimize Texture Sampling</h3>
+                    <p>Minimize texture lookups and use appropriate compression settings.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Combine masks into RGB channels. Use BC7 for color, BC5 for normals. Enable mipmaps. Avoid Wrap mode when possible.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <h2>Asset Optimization</h2>
+
+            <div class="checklist-item" data-item="13">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Compress Textures Properly</h3>
+                    <p>Use correct compression settings for each texture type.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> BC1 (DXT1) for simple color, BC3 (DXT5) with alpha, BC5 for normal maps, BC7 for high-quality color.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="14">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Right-Size Texture Resolutions</h3>
+                    <p>Don't use 4K textures on small objects. Scale appropriately.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Small props: 512-1024, Medium: 2048, Large/Hero: 4096. Use "r.ScreenPercentage" to test lower resolutions.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="15">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Optimize Audio Assets</h3>
+                    <p>Compress audio files and use streaming for music/ambient sounds.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Enable streaming for sounds >5 seconds. Use Ogg Vorbis compression. Reduce quality for distant/ambient sounds.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <h2>Memory Optimization</h2>
+
+            <div class="checklist-item" data-item="16">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Enable Texture Streaming</h3>
+                    <p>Use texture streaming pool to manage VRAM usage dynamically.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Increase pool size in Project Settings. Monitor with "stat streaming". Force streaming with "r.Streaming.PoolSize".
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="17">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Implement Level Streaming</h3>
+                    <p>Split large worlds into streaming levels to reduce memory footprint.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use World Partition (UE5) or Level Streaming Volumes. Unload distant areas. Keep persistent level minimal.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="18">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Profile Memory Usage</h3>
+                    <p>Regularly check memory usage and identify heavy assets.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use "memreport", "obj list", and Size Map. Look for unexpectedly large assets. Check for memory leaks.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <h2>Network Optimization (Multiplayer)</h2>
+
+            <div class="checklist-item" data-item="19">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Minimize Replication</h3>
+                    <p>Only replicate variables that clients actually need.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use RepNotify sparingly. Set NetUpdateFrequency appropriately. Don't replicate cosmetic variables.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="20">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Implement Relevancy</h3>
+                    <p>Configure net relevancy to avoid sending updates for distant actors.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Adjust NetCullDistanceSquared. Use Always Relevant sparingly. Test with "stat net".
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <h2>Build & Package Settings</h2>
+
+            <div class="checklist-item" data-item="21">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Use Shipping Build</h3>
+                    <p>Build in Shipping configuration for final release, not Development.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Shipping removes debug code, console commands, and logging. Significantly smaller and faster.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="22">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Enable Pak File Compression</h3>
+                    <p>Compress pak files to reduce download and install size.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Enable in Project Settings → Packaging. Use Oodle compression for best results. Test load times.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="23">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Exclude Development Content</h3>
+                    <p>Don't package dev-only content like test maps and debug blueprints.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use "Cook Only" filter. Mark dev folders as "Developer Content". Check packaged size regularly.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <h2>Profiling & Testing</h2>
+
+            <div class="checklist-item" data-item="24">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Profile with Built-In Tools</h3>
+                    <p>Use UE5's profiling commands to identify bottlenecks.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> "stat fps", "stat unit", "stat gpu". Use GPU Visualizer (Ctrl+Shift+,). Profile worst-case scenarios.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="25">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Test on Target Hardware</h3>
+                    <p>Always test on minimum spec hardware, not just your dev machine.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Test on console, mobile, or low-end PC as appropriate. Use Scalability settings. Hit target framerate consistently.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; text-align: center; margin-top: 3rem;">
+            <h2>Save This Checklist</h2>
+            <p>Print this page or save as PDF for quick reference during optimization.</p>
+            <button class="btn-resource" onclick="window.print()" style="display: inline-block; padding: 1rem 2rem; background: var(--primary-color); color: white; border-radius: 8px; margin-top: 1rem; border: none; cursor: pointer;">🖨️ Print / Save as PDF</button>
+        </div>
+    </div>
+
+    <script>
+        const items = document.querySelectorAll('.checklist-item');
+        const progressFill = document.getElementById('progressFill');
+
+        items.forEach((item) => {
+            const itemId = item.getAttribute('data-item');
+            const checkbox = item.querySelector('.checkbox');
+            const saved = localStorage.getItem(`optimization-checklist-${itemId}`);
+            
+            if (saved === 'true') {
+                checkbox.classList.add('checked');
+            }
+
+            checkbox.addEventListener('click', () => {
+                checkbox.classList.toggle('checked');
+                const isChecked = checkbox.classList.contains('checked');
+                localStorage.setItem(`optimization-checklist-${itemId}`, isChecked);
+                updateProgress();
+            });
+        });
+
+        function updateProgress() {
+            const total = items.length;
+            const checked = document.querySelectorAll('.checkbox.checked').length;
+            const percentage = (checked / total) * 100;
+            progressFill.style.width = percentage + '%';
+        }
+
+        updateProgress();
+    </script>
+</body>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete comparison of UE5 landscape creation methods: manual sculpting, heightmaps, procedural generation, and stamps. Find the best approach for your project.">
+    <title>UE5 Landscape Creation Methods Comparison | MythicLemon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .comparison-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .comparison-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        .comparison-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00a8e8 0%, #00d9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        .method-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        .method-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 168, 232, 0.2);
+        }
+        .method-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .method-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        .pros-cons {
+            margin: 1.5rem 0;
+        }
+        .pros-cons h4 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+        .pros-cons ul {
+            list-style: none;
+            padding: 0;
+        }
+        .pros-cons li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+        .pros-cons.pros li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+        }
+        .pros-cons.cons li::before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: #f44336;
+            font-weight: bold;
+        }
+        .best-for {
+            background: rgba(0, 168, 232, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        .best-for strong {
+            color: var(--primary-color);
+        }
+        .comparison-table {
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin-bottom: 4rem;
+        }
+        .comparison-table th {
+            background: rgba(0, 168, 232, 0.1);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .comparison-table td {
+            padding: 1rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        .rating {
+            color: #ffc107;
+        }
+        .decision-tree {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 3rem;
+        }
+        .decision-tree h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        .decision-step {
+            background: rgba(0, 168, 232, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary-color);
+        }
+        .decision-step strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <h1>MythicLemon</h1>
+                <p class="tagline">Premium Unreal Engine Assets</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../resources.html">← Back to Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="comparison-container">
+        <div class="comparison-header">
+            <h1>🗻 UE5 Landscape Creation Methods</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                Complete comparison: Manual Sculpting vs Heightmaps vs Procedural vs Stamps
+            </p>
+        </div>
+
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; margin-bottom: 3rem;">
+            <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary);">
+                There are four primary approaches to creating landscapes in Unreal Engine 5. Each has distinct advantages and ideal use cases. 
+                This guide helps you choose the right method for your project based on your goals, timeline, and desired aesthetic.
+            </p>
+        </div>
+
+        <!-- Method Cards -->
+        <div class="method-grid">
+            <!-- Manual Sculpting -->
+            <div class="method-card">
+                <div class="method-icon">✋</div>
+                <h3>Manual Sculpting</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Using UE5's built-in sculpting tools to hand-craft terrain directly in the editor.
+                </p>
+
+                <div class="pros-cons pros">
+                    <h4>Pros:</h4>
+                    <ul>
+                        <li>Total artistic control</li>
+                        <li>No external tools needed</li>
+                        <li>Immediate visual feedback</li>
+                        <li>Great for small areas</li>
+                    </ul>
+                </div>
+
+                <div class="pros-cons cons">
+                    <h4>Cons:</h4>
+                    <ul>
+                        <li>Very time-consuming</li>
+                        <li>Hard to achieve realism</li>
+                        <li>Difficult to iterate</li>
+                        <li>Not scalable for large worlds</li>
+                    </ul>
+                </div>
+
+                <div class="best-for">
+                    <strong>Best For:</strong> Stylized games, small environments, fine-tuning existing terrain, fantasy worlds
+                </div>
+            </div>
+
+            <!-- Heightmap Import -->
+            <div class="method-card">
+                <div class="method-icon">🗺️</div>
+                <h3>Heightmap Import</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Creating terrain in external tools (Gaea, World Machine) and importing as heightmaps.
+                </p>
+
+                <div class="pros-cons pros">
+                    <h4>Pros:</h4>
+                    <ul>
+                        <li>Photorealistic results</li>
+                        <li>Powerful erosion simulation</li>
+                        <li>Can use real-world data</li>
+                        <li>Great for hero mountains</li>
+                    </ul>
+                </div>
+
+                <div class="pros-cons cons">
+                    <h4>Cons:</h4>
+                    <ul>
+                        <li>Requires external software</li>
+                        <li>Learning curve for tools</li>
+                        <li>Slow iteration (export/import)</li>
+                        <li>Fixed resolution limitations</li>
+                    </ul>
+                </div>
+
+                <div class="best-for">
+                    <strong>Best For:</strong> AAA-quality environments, realistic mountains, one-off showcase pieces, real-world locations
+                </div>
+            </div>
+
+            <!-- Procedural Generation -->
+            <div class="method-card">
+                <div class="method-icon">🎲</div>
+                <h3>Procedural Generation</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Using PCG (Procedural Content Generation) or blueprints to generate terrain algorithmically.
+                </p>
+
+                <div class="pros-cons pros">
+                    <h4>Pros:</h4>
+                    <ul>
+                        <li>Infinite variety</li>
+                        <li>Excellent for large worlds</li>
+                        <li>Highly tweakable</li>
+                        <li>Can generate on-the-fly</li>
+                    </ul>
+                </div>
+
+                <div class="pros-cons cons">
+                    <h4>Cons:</h4>
+                    <ul>
+                        <li>Complex to set up</li>
+                        <li>Less artistic control</li>
+                        <li>Can look repetitive</li>
+                        <li>Requires programming knowledge</li>
+                    </ul>
+                </div>
+
+                <div class="best-for">
+                    <strong>Best For:</strong> Roguelikes, survival games, endless runners, procedurally generated worlds
+                </div>
+            </div>
+
+            <!-- Stamp-Based (Landstamp Pro) -->
+            <div class="method-card" style="border-color: var(--primary-color);">
+                <div class="method-icon">🎯</div>
+                <h3>Stamp-Based Creation</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Using pre-made stamps (like Landstamp Pro) to quickly place realistic terrain features.
+                </p>
+
+                <div class="pros-cons pros">
+                    <h4>Pros:</h4>
+                    <ul>
+                        <li>Extremely fast workflow</li>
+                        <li>Professional quality results</li>
+                        <li>Easy to learn</li>
+                        <li>Great artistic control</li>
+                        <li>Perfect for varied terrain</li>
+                    </ul>
+                </div>
+
+                <div class="pros-cons cons">
+                    <h4>Cons:</h4>
+                    <ul>
+                        <li>Requires stamp library</li>
+                        <li>Initial cost for quality stamps</li>
+                        <li>Can recognize repeated stamps</li>
+                    </ul>
+                </div>
+
+                <div class="best-for">
+                    <strong>Best For:</strong> Open world games, game jams, rapid prototyping, varied environments, solo developers
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <h2 style="text-align: center; margin-bottom: 2rem; color: var(--text-primary);">Feature Comparison</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Manual Sculpting</th>
+                    <th>Heightmap Import</th>
+                    <th>Procedural</th>
+                    <th>Stamps</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Speed</strong></td>
+                    <td><span class="rating">★☆☆☆☆</span> Very Slow</td>
+                    <td><span class="rating">★★☆☆☆</span> Slow</td>
+                    <td><span class="rating">★★★★☆</span> Fast (after setup)</td>
+                    <td><span class="rating">★★★★★</span> Very Fast</td>
+                </tr>
+                <tr>
+                    <td><strong>Quality</strong></td>
+                    <td><span class="rating">★★☆☆☆</span> Variable</td>
+                    <td><span class="rating">★★★★★</span> Excellent</td>
+                    <td><span class="rating">★★★☆☆</span> Good</td>
+                    <td><span class="rating">★★★★☆</span> Very Good</td>
+                </tr>
+                <tr>
+                    <td><strong>Learning Curve</strong></td>
+                    <td><span class="rating">★★☆☆☆</span> Easy</td>
+                    <td><span class="rating">★★★★☆</span> Hard</td>
+                    <td><span class="rating">★★★★★</span> Very Hard</td>
+                    <td><span class="rating">★☆☆☆☆</span> Very Easy</td>
+                </tr>
+                <tr>
+                    <td><strong>Artistic Control</strong></td>
+                    <td><span class="rating">★★★★★</span> Total</td>
+                    <td><span class="rating">★★★★☆</span> High</td>
+                    <td><span class="rating">★★☆☆☆</span> Limited</td>
+                    <td><span class="rating">★★★★☆</span> High</td>
+                </tr>
+                <tr>
+                    <td><strong>Scalability</strong></td>
+                    <td><span class="rating">★☆☆☆☆</span> Poor</td>
+                    <td><span class="rating">★★★☆☆</span> Medium</td>
+                    <td><span class="rating">★★★★★</span> Excellent</td>
+                    <td><span class="rating">★★★★☆</span> Very Good</td>
+                </tr>
+                <tr>
+                    <td><strong>Iteration Speed</strong></td>
+                    <td><span class="rating">★★★★☆</span> Good</td>
+                    <td><span class="rating">★★☆☆☆</span> Slow</td>
+                    <td><span class="rating">★★★★☆</span> Good</td>
+                    <td><span class="rating">★★★★★</span> Excellent</td>
+                </tr>
+                <tr>
+                    <td><strong>Cost</strong></td>
+                    <td>$0 (Built-in)</td>
+                    <td>$99+ (External tools)</td>
+                    <td>$0 (Built-in)</td>
+                    <td>$20-50 (Stamp packs)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Decision Tree -->
+        <div class="decision-tree">
+            <h2>🎯 Which Method Should You Choose?</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Answer these questions to find your ideal approach:</p>
+
+            <div class="decision-step">
+                <strong>Do you need photorealistic, geologically accurate terrain?</strong>
+                → Use <span style="color: var(--primary-color);">Heightmap Import</span> (Gaea, World Machine)
+            </div>
+
+            <div class="decision-step">
+                <strong>Are you building an infinite/procedurally generated world?</strong>
+                → Use <span style="color: var(--primary-color);">Procedural Generation</span> (PCG, Runtime generation)
+            </div>
+
+            <div class="decision-step">
+                <strong>Do you need to create varied terrain quickly (game jam, prototyping)?</strong>
+                → Use <span style="color: var(--primary-color);">Stamp-Based</span> (Landstamp Pro)
+            </div>
+
+            <div class="decision-step">
+                <strong>Are you making a small, stylized environment with unique art style?</strong>
+                → Use <span style="color: var(--primary-color);">Manual Sculpting</span>
+            </div>
+
+            <div class="decision-step">
+                <strong>Building an open world with mountains, valleys, and varied biomes?</strong>
+                → Use <span style="color: var(--primary-color);">Stamps + Manual Touch-up</span> (Best hybrid approach)
+            </div>
+        </div>
+
+        <!-- Hybrid Approach -->
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 2px solid var(--primary-color); margin-bottom: 3rem;">
+            <h2 style="color: var(--primary-color); margin-bottom: 1rem;">💡 Pro Tip: Hybrid Approach</h2>
+            <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+                Most professional developers use a <strong>combination of methods</strong>:
+            </p>
+            <ol style="color: var(--text-secondary); line-height: 2; padding-left: 1.5rem;">
+                <li><strong>Start with stamps</strong> (Landstamp Pro) for 80% of terrain - mountains, valleys, hills</li>
+                <li><strong>Import hero heightmaps</strong> from Gaea for showcase pieces or main mountains</li>
+                <li><strong>Manual sculpting</strong> for blending seams and custom details</li>
+                <li><strong>Procedural generation</strong> for grass variation and micro-detail</li>
+            </ol>
+            <p style="color: var(--text-secondary); line-height: 1.8; margin-top: 1rem;">
+                This gives you speed + quality + control. Learn more in our <a href="../blogs/landstamp-vs-manual-sculpting-comparison.html" style="color: var(--primary-color);">Landstamp vs Manual Sculpting comparison</a>.
+            </p>
+        </div>
+
+        <!-- Product Recommendations -->
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; text-align: center;">
+            <h2 style="margin-bottom: 1rem;">Ready to Speed Up Your Workflow?</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                Check out our landscape creation tools and asset packs
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="../product.html?id=landstamp-pro" style="display: inline-block; background: var(--primary-color); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600;">View Landstamp Pro</a>
+                <a href="../product.html?id=landscape-pack" style="display: inline-block; background: transparent; border: 1px solid var(--border-color); color: var(--text-primary); padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600;">View Landscape Packs</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

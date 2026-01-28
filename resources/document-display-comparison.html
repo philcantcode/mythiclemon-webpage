@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compare document display solutions for UE5 - PDF viewers vs image conversion vs web widgets. Choose the best approach for your in-game documentation.">
+    <title>Document Display Solutions for UE5 | MythicLemon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .comparison-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .comparison-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        .comparison-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00a8e8 0%, #00d9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        .method-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        .method-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        .pros-cons {
+            margin: 1.5rem 0;
+        }
+        .pros-cons ul {
+            list-style: none;
+            padding: 0;
+        }
+        .pros-cons li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-secondary);
+        }
+        .pros-cons.pros li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+        }
+        .pros-cons.cons li::before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: #f44336;
+            font-weight: bold;
+        }
+        .best-for {
+            background: rgba(0, 168, 232, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        .comparison-table {
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin-bottom: 4rem;
+        }
+        .comparison-table th {
+            background: rgba(0, 168, 232, 0.1);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .comparison-table td {
+            padding: 1rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <h1>MythicLemon</h1>
+                <p class="tagline">Premium Unreal Engine Assets</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../resources.html">← Back to Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="comparison-container">
+        <div class="comparison-header">
+            <h1>📄 Document Display Solutions for UE5</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                Compare approaches for displaying documents, manuals, and PDFs in Unreal Engine
+            </p>
+        </div>
+
+        <div class="method-grid">
+            <div class="method-card" style="border-color: var(--primary-color);">
+                <h3>📑 PDF Viewer Plugin</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Native PDF rendering directly in UMG widgets using specialized plugins.
+                </p>
+                <div class="pros-cons pros">
+                    <h4>Pros:</h4>
+                    <ul>
+                        <li>Native UE5 widget</li>
+                        <li>No external dependencies</li>
+                        <li>Fast rendering</li>
+                        <li>Works offline</li>
+                        <li>Supports all platforms</li>
+                    </ul>
+                </div>
+                <div class="pros-cons cons">
+                    <h4>Cons:</h4>
+                    <ul>
+                        <li>Plugin cost (~$20)</li>
+                        <li>Limited formatting control</li>
+                        <li>Some PDF features unsupported</li>
+                    </ul>
+                </div>
+                <div class="best-for">
+                    <strong style="color: var(--primary-color);">Best For:</strong> Training sims, in-game manuals, documentation viewers
+                </div>
+            </div>
+
+            <div class="method-card">
+                <h3>🖼️ Image Conversion</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Convert PDF pages to PNG/JPEG images and display in image widgets.
+                </p>
+                <div class="pros-cons pros">
+                    <h4>Pros:</h4>
+                    <ul>
+                        <li>Free (built-in UE)</li>
+                        <li>Simple implementation</li>
+                        <li>Universal compatibility</li>
+                        <li>Easy to customize</li>
+                    </ul>
+                </div>
+                <div class="pros-cons cons">
+                    <h4>Cons:</h4>
+                    <ul>
+                        <li>Large texture memory</li>
+                        <li>No text selection</li>
+                        <li>No zoom quality</li>
+                        <li>Manual conversion needed</li>
+                    </ul>
+                </div>
+                <div class="best-for">
+                    <strong style="color: var(--primary-color);">Best For:</strong> Static docs, small page counts, maximum compatibility
+                </div>
+            </div>
+
+            <div class="method-card">
+                <h3>🌐 Web Browser Widget</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Embed HTML/PDF using UE's web browser widget component.
+                </p>
+                <div class="pros-cons pros">
+                    <h4>Pros:</h4>
+                    <ul>
+                        <li>Rich formatting</li>
+                        <li>Interactive content</li>
+                        <li>HTML5 features</li>
+                        <li>Text selection works</li>
+                    </ul>
+                </div>
+                <div class="pros-cons cons">
+                    <h4>Cons:</h4>
+                    <ul>
+                        <li>Desktop only (no mobile)</li>
+                        <li>Performance overhead</li>
+                        <li>Security considerations</li>
+                        <li>Complex setup</li>
+                    </ul>
+                </div>
+                <div class="best-for">
+                    <strong style="color: var(--primary-color);">Best For:</strong> Desktop-only apps, HTML docs, rich interactive content
+                </div>
+            </div>
+
+            <div class="method-card">
+                <h3>📝 Markdown to UMG</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Write documentation in Markdown and render to native UMG using plugins.
+                </p>
+                <div class="pros-cons pros">
+                    <h4>Pros:</h4>
+                    <ul>
+                        <li>Full UMG integration</li>
+                        <li>Perfect styling control</li>
+                        <li>Lightweight</li>
+                        <li>Easy to update</li>
+                        <li>Version control friendly</li>
+                    </ul>
+                </div>
+                <div class="pros-cons cons">
+                    <h4>Cons:</h4>
+                        <li>Requires Markdown plugin</li>
+                        <li>Limited to Markdown syntax</li>
+                        <li>No complex layouts</li>
+                    </ul>
+                </div>
+                <div class="best-for">
+                    <strong style="color: var(--primary-color);">Best For:</strong> Game tutorials, quest text, dialogue, changelogs
+                </div>
+            </div>
+        </div>
+
+        <h2 style="text-align: center; margin-bottom: 2rem;">Feature Comparison</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>PDF Plugin</th>
+                    <th>Image Conversion</th>
+                    <th>Web Browser</th>
+                    <th>Markdown</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Implementation</strong></td>
+                    <td>Easy</td>
+                    <td>Very Easy</td>
+                    <td>Medium</td>
+                    <td>Easy</td>
+                </tr>
+                <tr>
+                    <td><strong>Platform Support</strong></td>
+                    <td>All platforms</td>
+                    <td>All platforms</td>
+                    <td>Desktop only</td>
+                    <td>All platforms</td>
+                </tr>
+                <tr>
+                    <td><strong>Memory Usage</strong></td>
+                    <td>Low</td>
+                    <td>High</td>
+                    <td>Medium</td>
+                    <td>Very Low</td>
+                </tr>
+                <tr>
+                    <td><strong>Text Selection</strong></td>
+                    <td>Limited</td>
+                    <td>None</td>
+                    <td>Yes</td>
+                    <td>Limited</td>
+                </tr>
+                <tr>
+                    <td><strong>File Size Impact</strong></td>
+                    <td>Small (PDFs)</td>
+                    <td>Large (images)</td>
+                    <td>Small (HTML)</td>
+                    <td>Tiny (text)</td>
+                </tr>
+                <tr>
+                    <td><strong>Offline</strong></td>
+                    <td>✅</td>
+                    <td>✅</td>
+                    <td>✅ (local HTML)</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td><strong>Cost</strong></td>
+                    <td>~$20 plugin</td>
+                    <td>Free</td>
+                    <td>Free</td>
+                    <td>~$15 plugin</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 2px solid var(--primary-color);">
+            <h2 style="color: var(--primary-color); margin-bottom: 1rem;">🎯 Decision Guide</h2>
+            <ul style="color: var(--text-secondary); line-height: 2; list-style: none; padding: 0;">
+                <li><strong>✓ Use PDF Plugin if:</strong> You have existing PDFs, need cross-platform support, want professional document viewing</li>
+                <li><strong>✓ Use Image Conversion if:</strong> You have very few pages, need 100% compatibility, documents rarely change</li>
+                <li><strong>✓ Use Web Browser if:</strong> Desktop-only, need rich formatting, have HTML content already</li>
+                <li><strong>✓ Use Markdown if:</strong> You're writing new content, want UMG styling, need lightweight solution</li>
+            </ul>
+        </div>
+
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; text-align: center; margin-top: 3rem;">
+            <h2 style="margin-bottom: 1rem;">Display Documents in Your UE5 Project</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                Check out our documentation display plugins
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="../product.html?id=simple-pdf-viewer" style="display: inline-block; background: var(--primary-color); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Simple PDF Viewer</a>
+                <a href="../product.html?id=markdown-4-blueprints" style="display: inline-block; background: transparent; border: 1px solid var(--border-color); color: var(--text-primary); padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Markdown 4 Blueprints</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete Fab Blueprint Product submission checklist - get your UE5 Blueprint systems, game templates, and tools approved on Epic's Fab marketplace.">
+    <meta name="keywords" content="Fab marketplace, UE5 Blueprint submission, Unreal Engine blueprints, game template, blueprint asset pack">
+    <title>Fab Blueprint Product Submission Checklist | MythicLemon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .checklist-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .checklist-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        .checklist-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00a8e8 0%, #00d9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .checklist-section {
+            margin-bottom: 3rem;
+        }
+        .checklist-section h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .checklist-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+        .checklist-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0, 168, 232, 0.1);
+        }
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .checkbox.checked {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            position: relative;
+        }
+        .checkbox.checked::after {
+            content: "✓";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+        }
+        .item-content h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .item-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .item-tips {
+            background: rgba(0, 168, 232, 0.05);
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        .item-tips strong {
+            color: var(--primary-color);
+        }
+        .item-code {
+            background: #1a1a2e;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: #00d9ff;
+            margin-top: 0.5rem;
+            overflow-x: auto;
+        }
+        .progress-bar {
+            background: var(--border-color);
+            height: 8px;
+            border-radius: 4px;
+            margin: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .progress-fill {
+            background: var(--primary-color);
+            height: 100%;
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .critical {
+            border-left: 4px solid #f44336;
+        }
+        .section-intro {
+            background: rgba(0, 168, 232, 0.05);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        .section-intro p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <h1>MythicLemon</h1>
+                <p class="tagline">Premium Unreal Engine Assets</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../resources.html">← Back to Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="checklist-container">
+        <div class="checklist-header">
+            <h1>📘 Fab Blueprint Product Checklist</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                Complete checklist for submitting Blueprint systems, game templates, and gameplay tools to Epic's Fab marketplace
+            </p>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem;">
+                Based on <a href="https://support.fab.com/s/article/FAB-TECHNICAL-REQUIREMENTS" target="_blank" style="color: var(--primary-color);">Fab Technical Requirements</a>
+            </p>
+        </div>
+
+        <!-- Demo & Preview Requirements -->
+        <div class="checklist-section">
+            <h2>🎬 Demo & Preview Requirements</h2>
+            <div class="section-intro">
+                <p>Blueprint products MUST demonstrate functionality. This is a critical requirement that will reject your submission if missed.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="1">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Demo Project OR Video URL Required</h3>
+                    <p>Blueprint-based products MUST include a downloadable demo project OR a video URL in the Long Description.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> This is a hard requirement. Without demonstration, your submission WILL be rejected.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="2">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Video Shows All Major Features</h3>
+                    <p>If using video, demonstrate all advertised functionality in action.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Show Blueprint nodes in use, runtime behavior, and setup process. 2-5 minutes is ideal.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="3">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Demo Project is Standalone</h3>
+                    <p>Demo projects should work immediately without requiring additional setup or plugins.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Include all dependencies. Test download and open from scratch.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blueprint Quality -->
+        <div class="checklist-section">
+            <h2>📐 Blueprint Quality</h2>
+            <div class="section-intro">
+                <p>Clean, readable Blueprints are essential for user satisfaction and support reduction.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="4">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Errors or Consequential Warnings</h3>
+                    <p>Blueprints must generate no errors or significant warnings when compiled.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Check the Compiler Results panel. Fix all red and yellow issues.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="5">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Loose/Disconnected Nodes</h3>
+                    <p>Blueprints must have no loose nodes unless commented for example/tutorial purposes.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Delete unused nodes. If keeping for documentation, add clear comments explaining why.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="6">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Neat Layout</h3>
+                    <p>Blueprints must be neatly laid out with organized node placement.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Use alignment tools. Keep related logic grouped. Avoid spaghetti connections.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="7">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Use Functions to Organize Logic</h3>
+                    <p>Make reasonable use of functions to structure complex logic.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> If an Event Graph is scrolling for pages, break it into functions. Makes reading and debugging easier.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="8">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Descriptive Names for Everything</h3>
+                    <p>Functions, variables, and events must have names reflecting their purpose.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> "UpdateHealthBar" not "Function1". "PlayerHealth" not "Variable2". Be explicit.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="9">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Comments on Complex Sections</h3>
+                    <p>Add comment boxes explaining non-obvious logic flows.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Comment why, not what. "// Delay for network sync" is better than "// Wait 0.1 seconds".
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="10">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Category Organization for Exposed Variables</h3>
+                    <p>Group related variables using Category metadata.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> "Movement|Speed", "Combat|Damage" - helps users find settings in Details panel.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="11">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Tooltips on Public Variables</h3>
+                    <p>Every exposed Blueprint property should have a clear tooltip.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Explain what it does, valid ranges, and effects. Users read tooltips before documentation.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Structure -->
+        <div class="checklist-section">
+            <h2>📁 Project Structure</h2>
+            <div class="section-intro">
+                <p>Content-only projects (including Blueprint packs) have specific folder requirements.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="12">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Local Folders in Submission</h3>
+                    <p>Remove Binaries, Build, Intermediate, Saved, and Plugins folders before zipping.</p>
+                    <div class="item-code">MyBlueprintPack/
+├── Config/
+├── Content/
+│   └── MyBlueprintPack/
+│       ├── Blueprints/
+│       ├── UI/
+│       ├── Data/
+│       └── Maps/
+└── MyBlueprintPack.uproject</div>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Content-only projects must not have a Plugins folder.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="13">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Single Top-Level Content Folder</h3>
+                    <p>All assets in ONE folder under Content. No other files directly under Content.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> This prevents migration conflicts when users import to their projects.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="14">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Level Blueprints for Asset Packs</h3>
+                    <p>Asset Packs (Distribution Method) must not include Level Blueprints.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Level Blueprints can't migrate to other projects. Use Actor Blueprints or GameMode instead.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="15">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Mandatory Config Files for Asset Packs</h3>
+                    <p>Asset Packs must not require custom .ini configuration files.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> If your system needs configuration, make it Blueprint-editable on an Actor or GameMode.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="16">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>File Paths Under 140 Characters</h3>
+                    <p>All asset paths (from Content folder) must be 140 characters or less.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Keep folder and file names concise. Deep nesting adds up quickly.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="17">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>English Alphanumeric Names Only</h3>
+                    <p>Folder and file names must use only English letters, numbers, and underscores.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> No spaces, special characters, or non-ASCII characters in asset names.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="18">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Redirectors Cleaned Up</h3>
+                    <p>Fix all asset redirectors before submission.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Right-click Content folder → Fix Up Redirectors in Folder.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dependencies -->
+        <div class="checklist-section">
+            <h2>🔗 Dependencies</h2>
+            <div class="section-intro">
+                <p>Blueprint products must work without unexpected dependencies.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="19">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Dependencies Clearly Documented</h3>
+                    <p>All required dependencies must be stated in the product description.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> If you use Enhanced Input, Paper2D, or any plugin - list it explicitly.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="20">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Dependencies Available on Fab</h3>
+                    <p>Required external dependencies must be available through Fab.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Don't depend on other marketplace plugins users need to purchase separately.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="21">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Unused Plugin Dependencies Disabled</h3>
+                    <p>Unused engine plugin dependencies in .uproject must have "Enabled": false.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Check .uproject file. Remove or disable plugins you don't actually need.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="22">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Experimental/Beta Features Documented</h3>
+                    <p>If using experimental or beta engine features, clearly state this in the description.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Warn users about potential instability or future breaking changes.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo Map Requirements -->
+        <div class="checklist-section">
+            <h2>🗺️ Demo Map</h2>
+            <div class="section-intro">
+                <p>Every Blueprint product needs a working demonstration.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="23">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Demonstration Map Included</h3>
+                    <p>Include a map that demonstrates all major functionality.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Users need to see it working immediately, not figure out setup on their own.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="24">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Errors on Map Load</h3>
+                    <p>Map must load and run PIE without errors or consequential warnings.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Test in fresh project after import. Check Output Log for any red/yellow messages.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="25">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Lighting Built</h3>
+                    <p>Demo maps must have lighting built (no "Preview" watermarks).</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Build → Build Lighting Only. Professional appearance matters.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="26">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Clear Usage Instructions in Map</h3>
+                    <p>Include on-screen text or widgets explaining how to use/test the system.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> "Press E to interact" type prompts. Make it obvious what to do.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documentation -->
+        <div class="checklist-section">
+            <h2>📚 Documentation</h2>
+            <div class="section-intro">
+                <p>Blueprint products require setup knowledge. Documentation is essential.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="27">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Documentation Provided or Linked</h3>
+                    <p>Products requiring setup must have or link to free documentation.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Web guide, PDF, video, or in-editor tutorial. Must be in English.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="28">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Getting Started Guide</h3>
+                    <p>Include step-by-step instructions for initial setup.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> From import to working feature in clear numbered steps.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="29">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>API/Interface Documentation</h3>
+                    <p>Document all public functions, events, and variables users can interact with.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> What it does, expected parameters, return values, example usage.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="30">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Example Use Cases</h3>
+                    <p>Show common implementation patterns and integrations.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Users learn by example. Cover basic AND advanced scenarios.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Engine Version Support -->
+        <div class="checklist-section">
+            <h2>🎮 Engine Version Support</h2>
+            <div class="section-intro">
+                <p>Content-only projects have simpler version management than code plugins.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="31">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Latest Engine Version on Initial Submit</h3>
+                    <p>New products must support the latest version of Unreal Engine.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Check current UE version before submission.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="32">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Support at Least One of Latest Three Versions</h3>
+                    <p>Published products must maintain support for one of the three latest engine versions.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> For content-only, you can add new engine versions to existing Project Version.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="33">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Works in Binary Engine Builds</h3>
+                    <p>Content must function in standard launcher-installed Unreal Engine.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Don't rely on source-build-only features.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Page -->
+        <div class="checklist-section">
+            <h2>📝 Product Page</h2>
+            <div class="section-intro">
+                <p>Marketing and metadata requirements.</p>
+            </div>
+
+            <div class="checklist-item" data-item="34">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>English with Proper Grammar</h3>
+                    <p>All text must be in English with correct spelling and grammar.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> First impressions matter. Proofread everything.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="35">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Technical Info Complete</h3>
+                    <p>Fill all relevant Technical Information fields including dependencies.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Network Replicated? Input required? List all technical specifics.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="36">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Accurate Tags and Category</h3>
+                    <p>Use relevant tags. Category must match product functionality.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> "Blueprints", "Systems", appropriate genre/type tags.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="37">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Accurate Screenshots</h3>
+                    <p>Show Blueprint graphs, editor setup, and runtime behavior.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Include both in-editor and in-game screenshots. Show the Blueprints themselves.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="38">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>AI Usage Disclosed</h3>
+                    <p>Disclose if generative AI was used during creation.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Check "Created with AI" field if AI assisted with code, assets, or documentation.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testing -->
+        <div class="checklist-section">
+            <h2>🧪 Testing</h2>
+            <div class="section-intro">
+                <p>Thorough testing prevents negative reviews and support burden.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="39">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Test in Fresh Project</h3>
+                    <p>Import to a completely new UE5 project and verify everything works.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Your dev project has context. Fresh project reveals missing dependencies.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="40">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Test Packaged Build</h3>
+                    <p>Package the project and verify functionality in standalone build.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Editor-only features won't work in packaged games. Test both Development and Shipping.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; text-align: center; margin-top: 3rem;">
+            <h2>Ready to Submit?</h2>
+            <p style="color: var(--text-secondary);">Ensure all critical items (🚨) are checked before submitting your Blueprint product!</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <button class="btn-resource" onclick="window.print()" style="display: inline-block; padding: 1rem 2rem; background: var(--primary-color); color: white; border-radius: 8px; border: none; cursor: pointer;">🖨️ Print / Save as PDF</button>
+                <a href="https://support.fab.com/s/article/FAB-TECHNICAL-REQUIREMENTS" target="_blank" class="btn-resource" style="display: inline-block; padding: 1rem 2rem; background: transparent; border: 1px solid var(--primary-color); color: var(--primary-color); border-radius: 8px; text-decoration: none;">📖 Official Fab Requirements</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const items = document.querySelectorAll('.checklist-item');
+        const progressFill = document.getElementById('progressFill');
+
+        items.forEach((item) => {
+            const itemId = item.getAttribute('data-item');
+            const checkbox = item.querySelector('.checkbox');
+            const saved = localStorage.getItem(`fab-blueprint-checklist-${itemId}`);
+            
+            if (saved === 'true') {
+                checkbox.classList.add('checked');
+            }
+
+            checkbox.addEventListener('click', () => {
+                checkbox.classList.toggle('checked');
+                const isChecked = checkbox.classList.contains('checked');
+                localStorage.setItem(`fab-blueprint-checklist-${itemId}`, isChecked);
+                updateProgress();
+            });
+        });
+
+        function updateProgress() {
+            const total = items.length;
+            const checked = document.querySelectorAll('.checkbox.checked').length;
+            const percentage = (checked / total) * 100;
+            progressFill.style.width = percentage + '%';
+        }
+
+        updateProgress();
+    </script>
+</body>
+</html>

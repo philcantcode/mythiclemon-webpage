@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete Fab Audio Product submission checklist - get your UE5 sound effects, music, and audio assets approved on Epic's Fab marketplace.">
+    <meta name="keywords" content="Fab marketplace, UE5 audio submission, Unreal Engine sounds, sound effects, music assets">
+    <title>Fab Audio Product Submission Checklist | MythicLemon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .checklist-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .checklist-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        .checklist-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00a8e8 0%, #00d9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .checklist-section {
+            margin-bottom: 3rem;
+        }
+        .checklist-section h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .checklist-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+        .checklist-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0, 168, 232, 0.1);
+        }
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .checkbox.checked {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            position: relative;
+        }
+        .checkbox.checked::after {
+            content: "✓";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+        }
+        .item-content h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .item-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .item-tips {
+            background: rgba(0, 168, 232, 0.05);
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        .item-tips strong {
+            color: var(--primary-color);
+        }
+        .item-code {
+            background: #1a1a2e;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: #00d9ff;
+            margin-top: 0.5rem;
+            overflow-x: auto;
+        }
+        .progress-bar {
+            background: var(--border-color);
+            height: 8px;
+            border-radius: 4px;
+            margin: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .progress-fill {
+            background: var(--primary-color);
+            height: 100%;
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .critical {
+            border-left: 4px solid #f44336;
+        }
+        .section-intro {
+            background: rgba(0, 168, 232, 0.05);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        .section-intro p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <h1>MythicLemon</h1>
+                <p class="tagline">Premium Unreal Engine Assets</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../resources.html">← Back to Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="checklist-container">
+        <div class="checklist-header">
+            <h1>🔊 Fab Audio Product Checklist</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                Complete checklist for submitting sound effects, music, and audio assets to Epic's Fab marketplace
+            </p>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem;">
+                Based on <a href="https://support.fab.com/s/article/FAB-TECHNICAL-REQUIREMENTS" target="_blank" style="color: var(--primary-color);">Fab Technical Requirements</a>
+            </p>
+        </div>
+
+        <!-- Audio Preview Requirements -->
+        <div class="checklist-section">
+            <h2>🎧 Audio Preview Requirements</h2>
+            <div class="section-intro">
+                <p>Audio products MUST have a way for buyers to preview the sounds before purchase.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="1">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Audio Preview URL in Description</h3>
+                    <p>Audio products MUST include an audio preview URL in the Long Description.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> This is a hard requirement. Link to SoundCloud, YouTube, or hosted audio player.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="2">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Preview Represents Product Quality</h3>
+                    <p>Audio preview should accurately represent the quality and style of included files.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Include a mix of sounds from your pack. Don't just showcase the best one.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="3">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Preview Accessible Without Account</h3>
+                    <p>Buyers should be able to listen without creating accounts on third-party sites.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> SoundCloud embeds work well. Avoid platforms requiring login.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Audio File Requirements -->
+        <div class="checklist-section">
+            <h2>📁 Audio File Requirements</h2>
+            <div class="section-intro">
+                <p>Technical requirements for audio files in Unreal Engine projects.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="4">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>WAV Format for Import</h3>
+                    <p>Audio files must be imported into the engine as .wav files.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> UE imports WAV format. Don't submit MP3, OGG, or other formats as source.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="5">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Hitching or Distortion</h3>
+                    <p>Audio files must not contain unintended hitching, clicks, pops, or distortion.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Listen to each file carefully. Check starts, ends, and loop points for artifacts.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="6">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Highest Quality Possible</h3>
+                    <p>Provide audio files in the highest quality possible.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> 44.1kHz or 48kHz, 16-bit or 24-bit. Don't upscale compressed sources.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="7">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Consistent Volume Levels</h3>
+                    <p>Audio files in a pack should have consistent, normalized volume levels.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Normalize to -3dB to -6dB peak. Users shouldn't need to adjust each sound individually.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="8">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Clean Loop Points (if applicable)</h3>
+                    <p>Looping audio should loop seamlessly without clicks or pops.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Test loops in-engine. Use zero-crossing points for loop boundaries.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="9">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Appropriate Silence Trimming</h3>
+                    <p>Remove excessive silence at start and end of files (keep intentional timing).</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Brief fade-in/out is fine. Don't trim natural decay from reverb/instruments.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Structure -->
+        <div class="checklist-section">
+            <h2>📂 Project Structure</h2>
+            <div class="section-intro">
+                <p>Content-only projects have specific folder requirements.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="10">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Local Folders</h3>
+                    <p>Remove Binaries, Build, Intermediate, Saved, and Plugins folders.</p>
+                    <div class="item-code">MyAudioPack/
+├── Config/
+├── Content/
+│   └── MyAudioPack/
+│       ├── Ambience/
+│       ├── Music/
+│       ├── SFX/
+│       └── Cues/
+└── MyAudioPack.uproject</div>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Audio-only projects are content-only and must not have Plugins folder.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item critical" data-item="11">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Single Top-Level Content Folder</h3>
+                    <p>All assets in ONE folder under Content. No other files directly under Content.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Prevents migration conflicts when users import to their projects.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="12">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Logical Subfolder Organization</h3>
+                    <p>Organize sounds by type, category, or usage.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Ambience/, Music/, SFX/Weapons/, SFX/UI/, etc. Makes finding assets easy.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="13">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Descriptive File Names</h3>
+                    <p>Name files clearly to describe what they are.</p>
+                    <div class="item-code">Good: Explosion_Large_01.wav, Footstep_Grass_Walk.wav
+Bad: Sound1.wav, final_v2_FINAL.wav</div>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Include variations in name: _01, _02, etc. Users will search for these.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="14">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>File Paths Under 140 Characters</h3>
+                    <p>All asset paths must be 140 characters or less.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Keep folder and file names concise but descriptive.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="15">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>English Alphanumeric Names Only</h3>
+                    <p>Use only English letters, numbers, and underscores in names.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> No spaces, special characters, or non-ASCII characters.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="16">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Redirectors Cleaned Up</h3>
+                    <p>Fix all asset redirectors before submission.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Right-click Content folder → Fix Up Redirectors in Folder.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sound Cues & MetaSounds -->
+        <div class="checklist-section">
+            <h2>🎛️ Sound Cues & MetaSounds</h2>
+            <div class="section-intro">
+                <p>Adding Sound Cues or MetaSounds increases product value and usability.</p>
+            </div>
+
+            <div class="checklist-item" data-item="17">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Consider Including Sound Cues</h3>
+                    <p>Pre-configured Sound Cues add value for users.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Randomized variations, attenuation settings, and pitch modulation ready to use.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="18">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Document Cue Features</h3>
+                    <p>If including Cues, document what they do.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> "Random variation of 5 sounds with pitch randomization" helps users understand value.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="19">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Attenuation Settings Appropriate</h3>
+                    <p>If providing attenuation, ensure distances are appropriate for sound type.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Gunshots should be heard far away. Footsteps should be closer range.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo Map -->
+        <div class="checklist-section">
+            <h2>🗺️ Demo Map</h2>
+            <div class="section-intro">
+                <p>A demo map showing audio in context is helpful but not always required.</p>
+            </div>
+
+            <div class="checklist-item" data-item="20">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Consider Including Demo Map</h3>
+                    <p>For ambient sounds or music, a demo map can showcase the audio in context.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Simple environment with audio triggers. Especially useful for ambient packs.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="21">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>No Errors on Map Load</h3>
+                    <p>If including a map, it must load without errors or consequential warnings.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Test in fresh project. Check Output Log for issues.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Engine Version Support -->
+        <div class="checklist-section">
+            <h2>🎮 Engine Version Support</h2>
+            <div class="section-intro">
+                <p>Audio-only content has straightforward version support.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="22">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Latest Engine Version on Initial Submit</h3>
+                    <p>New products must support the latest version of Unreal Engine.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Audio assets are generally compatible across versions. Just set the latest.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="23">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Support at Least One of Latest Three Versions</h3>
+                    <p>Maintain support for one of the three latest engine versions.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Audio-only content rarely needs updates for new engine versions.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Page -->
+        <div class="checklist-section">
+            <h2>📝 Product Page</h2>
+            <div class="section-intro">
+                <p>Marketing and metadata requirements for audio products.</p>
+            </div>
+
+            <div class="checklist-item" data-item="24">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>English with Proper Grammar</h3>
+                    <p>All text must be in English with correct spelling and grammar.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Professional descriptions inspire confidence in audio quality.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="25">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Sound Count and Types Listed</h3>
+                    <p>Document exactly how many sounds and what types are included.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> "50 Explosion SFX (10 Large, 20 Medium, 20 Small)" is better than "Lots of explosions".
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="26">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Technical Specs Documented</h3>
+                    <p>Include sample rate, bit depth, and file format information.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> "All files: 48kHz, 16-bit WAV, Stereo" in Technical Information.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="27">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Accurate Tags</h3>
+                    <p>Use relevant tags for the type of audio content.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> "Audio", "Sound Effects", "Music", genre-specific tags as appropriate.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="28">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>AI Usage Disclosed</h3>
+                    <p>Disclose if generative AI was used to create the audio.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> AI-generated music or sound effects must be declared.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Licensing -->
+        <div class="checklist-section">
+            <h2>⚖️ Licensing & Rights</h2>
+            <div class="section-intro">
+                <p>Ensure you have rights to distribute all audio content.</p>
+            </div>
+
+            <div class="checklist-item critical" data-item="29">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>You Own or Have Rights to All Audio</h3>
+                    <p>All audio must be original or properly licensed for redistribution.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> No samples from commercial libraries unless they permit redistribution.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="30">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Third-Party Software Declaration</h3>
+                    <p>If using third-party samples or tools, declare it.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Even royalty-free samples may need declaration. Check licenses carefully.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; text-align: center; margin-top: 3rem;">
+            <h2>Ready to Submit?</h2>
+            <p style="color: var(--text-secondary);">Ensure all critical items (🚨) are checked before submitting your audio product!</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <button class="btn-resource" onclick="window.print()" style="display: inline-block; padding: 1rem 2rem; background: var(--primary-color); color: white; border-radius: 8px; border: none; cursor: pointer;">🖨️ Print / Save as PDF</button>
+                <a href="https://support.fab.com/s/article/FAB-TECHNICAL-REQUIREMENTS" target="_blank" class="btn-resource" style="display: inline-block; padding: 1rem 2rem; background: transparent; border: 1px solid var(--primary-color); color: var(--primary-color); border-radius: 8px; text-decoration: none;">📖 Official Fab Requirements</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const items = document.querySelectorAll('.checklist-item');
+        const progressFill = document.getElementById('progressFill');
+
+        items.forEach((item) => {
+            const itemId = item.getAttribute('data-item');
+            const checkbox = item.querySelector('.checkbox');
+            const saved = localStorage.getItem(`fab-audio-checklist-${itemId}`);
+            
+            if (saved === 'true') {
+                checkbox.classList.add('checked');
+            }
+
+            checkbox.addEventListener('click', () => {
+                checkbox.classList.toggle('checked');
+                const isChecked = checkbox.classList.contains('checked');
+                localStorage.setItem(`fab-audio-checklist-${itemId}`, isChecked);
+                updateProgress();
+            });
+        });
+
+        function updateProgress() {
+            const total = items.length;
+            const checked = document.querySelectorAll('.checkbox.checked').length;
+            const percentage = (checked / total) * 100;
+            progressFill.style.width = percentage + '%';
+        }
+
+        updateProgress();
+    </script>
+</body>
+</html>

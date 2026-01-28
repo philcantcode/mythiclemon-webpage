@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pre-release quality checklist for UE5 projects and plugins - ensure marketplace-ready quality before submission.">
+    <title>Pre-Release Quality Checklist | MythicLemon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .checklist-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .checklist-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        .checklist-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00a8e8 0%, #00d9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .checklist-section {
+            margin-bottom: 3rem;
+        }
+        .checklist-section h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .checklist-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+        .checklist-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0, 168, 232, 0.1);
+        }
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .checkbox.checked {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            position: relative;
+        }
+        .checkbox.checked::after {
+            content: "✓";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+        }
+        .item-content h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .item-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .item-tips {
+            background: rgba(0, 168, 232, 0.05);
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        .item-tips strong {
+            color: var(--primary-color);
+        }
+        .progress-bar {
+            background: var(--border-color);
+            height: 8px;
+            border-radius: 4px;
+            margin: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .progress-fill {
+            background: var(--primary-color);
+            height: 100%;
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .critical {
+            border-left: 4px solid #f44336;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <h1>MythicLemon</h1>
+                <p class="tagline">Premium Unreal Engine Assets</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../resources.html">← Back to Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="checklist-container">
+        <div class="checklist-header">
+            <h1>🚀 Pre-Release Quality Checklist</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                Ensure marketplace-ready quality before releasing your UE5 project or plugin
+            </p>
+        </div>
+
+        <div class="checklist-section">
+            <h2>Code Quality</h2>
+
+            <div class="checklist-item critical" data-item="1">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Zero Compiler Warnings</h3>
+                    <p>Fix all compiler warnings - they may be errors on other platforms or configurations.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Many marketplace rejections come from warnings. Build in Development AND Shipping configs.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="2">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Remove Debug Code</h3>
+                    <p>Remove or conditionally compile debug prints, visual debug draws, and test functions.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use WITH_EDITOR, UE_BUILD_SHIPPING macros. Remove all "Print String" nodes from blueprints.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="3">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Validate Blueprint References</h3>
+                    <p>Fix all "None" references and ensure no broken blueprint connections.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use "Reference Viewer" to find broken references. Test after packaging - some references break only in packaged builds.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <h2>Documentation</h2>
+
+            <div class="checklist-item critical" data-item="4">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Create Comprehensive Documentation</h3>
+                    <p>Write clear, detailed documentation covering installation, setup, and usage.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Poor documentation = negative reviews. Include getting started guide, API reference, and examples.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="5">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Add Tooltips to All Public Variables</h3>
+                    <p>Every blueprint property and function should have a clear tooltip.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Explain what it does, valid value ranges, and when to use it. Users read tooltips before documentation.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="6">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Include Example Project/Map</h3>
+                    <p>Provide working examples showing how to use every feature.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Users learn by example. Include simple and advanced use cases. Comment your example blueprints.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <h2>Testing</h2>
+
+            <div class="checklist-item critical" data-item="7">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Test in Fresh Project</h3>
+                    <p>Import your plugin/assets into a completely fresh UE5 project and verify everything works.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Don't assume users have the same plugins you do. Test with ONLY your plugin enabled.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="8">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Test Packaged Build</h3>
+                    <p>Package and run the project - some issues only appear in packaged builds.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Test in both Development AND Shipping builds. Check for missing assets, broken paths, and runtime errors.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="9">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Test on Multiple Platforms</h3>
+                    <p>If claiming multi-platform support, test on each platform.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Windows, Mac, Linux all have differences. Mobile has strict memory constraints. Test on real hardware.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="10">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Perform Stress Testing</h3>
+                    <p>Test with extreme values, edge cases, and rapid inputs.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Spawn 1000 actors, set variables to -999999, rapidly toggle features. If it can crash, users will find it.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <h2>Performance</h2>
+
+            <div class="checklist-item" data-item="11">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Profile Performance Impact</h3>
+                    <p>Measure CPU and GPU cost of your plugin/assets.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use "stat unit", "stat game", "stat gpu". Document performance cost in your description.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="12">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Check Memory Usage</h3>
+                    <p>Verify your assets/plugin don't have excessive memory footprint.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use "memreport" and Size Map. Check for memory leaks with repeated spawn/destroy cycles.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <h2>Asset Quality</h2>
+
+            <div class="checklist-item" data-item="13">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Optimize Texture Sizes</h3>
+                    <p>Ensure all textures use appropriate resolutions and compression.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Don't use 4K for everything. Check compression settings. Enable mipmaps. Remove unused textures.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="14">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Validate All Assets Import Correctly</h3>
+                    <p>Check that meshes, materials, and textures all load without errors.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Look for red/pink materials, missing textures, incorrect normal maps. Check asset validation log.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <h2>Naming & Organization</h2>
+
+            <div class="checklist-item" data-item="15">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Follow UE Naming Conventions</h3>
+                    <p>Use proper prefixes (BP_, M_, T_, SM_) and clear, descriptive names.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> See UE style guide. Consistency is key. Users appreciate well-organized content.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="16">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Organize Into Logical Folders</h3>
+                    <p>Create clear folder structure: Blueprints/, Materials/, Meshes/, etc.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Make it easy for users to find assets. Group by feature or type. Include folder descriptions.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <h2>Marketplace Requirements (if applicable)</h2>
+
+            <div class="checklist-item critical" data-item="17">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Verify UE Marketplace Guidelines</h3>
+                    <p>Review and comply with all Fab marketplace submission requirements.</p>
+                    <div class="item-tips">
+                        <strong>🚨 Critical:</strong> Check minimum requirements, forbidden content, technical standards. Guidelines change - review before each submission.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="18">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Prepare Marketing Materials</h3>
+                    <p>Create compelling screenshots, videos, and description.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> High-quality visuals = more sales. Show features in action. Include comparison shots. 4K screenshots preferred.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; text-align: center; margin-top: 3rem;">
+            <h2>Ready to Ship?</h2>
+            <p>Make sure every item is checked before submission!</p>
+            <button class="btn-resource" onclick="window.print()" style="display: inline-block; padding: 1rem 2rem; background: var(--primary-color); color: white; border-radius: 8px; margin-top: 1rem; border: none; cursor: pointer;">🖨️ Print / Save as PDF</button>
+        </div>
+    </div>
+
+    <script>
+        const items = document.querySelectorAll('.checklist-item');
+        const progressFill = document.getElementById('progressFill');
+
+        items.forEach((item) => {
+            const itemId = item.getAttribute('data-item');
+            const checkbox = item.querySelector('.checkbox');
+            const saved = localStorage.getItem(`prerelease-checklist-${itemId}`);
+            
+            if (saved === 'true') {
+                checkbox.classList.add('checked');
+            }
+
+            checkbox.addEventListener('click', () => {
+                checkbox.classList.toggle('checked');
+                const isChecked = checkbox.classList.contains('checked');
+                localStorage.setItem(`prerelease-checklist-${itemId}`, isChecked);
+                updateProgress();
+            });
+        });
+
+        function updateProgress() {
+            const total = items.length;
+            const checked = document.querySelectorAll('.checkbox.checked').length;
+            const percentage = (checked / total) * 100;
+            progressFill.style.width = percentage + '%';
+        }
+
+        updateProgress();
+    </script>
+</body>
+</html>

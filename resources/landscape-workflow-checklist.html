@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete UE5 landscape workflow checklist - from planning to optimization. Free downloadable checklist for Unreal Engine developers.">
+    <title>UE5 Landscape Workflow Checklist | MythicLemon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .checklist-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .checklist-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+
+        .checklist-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00a8e8 0%, #00d9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .checklist-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .checklist-meta span {
+            color: var(--text-secondary);
+        }
+
+        .checklist-intro {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 3rem;
+        }
+
+        .checklist-section {
+            margin-bottom: 3rem;
+        }
+
+        .checklist-section h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .checklist-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .checklist-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0, 168, 232, 0.1);
+        }
+
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .checkbox.checked {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            position: relative;
+        }
+
+        .checkbox.checked::after {
+            content: "✓";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+        }
+
+        .item-content {
+            flex: 1;
+        }
+
+        .item-content h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .item-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-tips {
+            background: rgba(0, 168, 232, 0.05);
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        .item-tips strong {
+            color: var(--primary-color);
+        }
+
+        .download-section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-download:hover {
+            background: #0090c7;
+            transform: translateY(-2px);
+        }
+
+        .progress-bar {
+            background: var(--border-color);
+            height: 8px;
+            border-radius: 4px;
+            margin: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .progress-fill {
+            background: var(--primary-color);
+            height: 100%;
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        @media print {
+            .checkbox {
+                border: 2px solid #000;
+            }
+            .progress-bar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <h1>MythicLemon</h1>
+                <p class="tagline">Premium Unreal Engine Assets</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../resources.html">← Back to Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="checklist-container">
+        <div class="checklist-header">
+            <h1>🗻 UE5 Landscape Workflow Checklist</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                Complete step-by-step checklist for creating professional landscapes
+            </p>
+            <div class="checklist-meta">
+                <span>📄 15 Essential Steps</span>
+                <span>⏱️ 5 min read</span>
+                <span>💾 Print or save as PDF</span>
+            </div>
+        </div>
+
+        <div class="checklist-intro">
+            <h2>Why Use This Checklist?</h2>
+            <p>Creating landscapes in Unreal Engine 5 involves many interconnected steps. This checklist ensures you don't miss critical setup, optimization, or quality steps. Whether you're importing heightmaps or using tools like Landstamp Pro, following this workflow will save you hours of rework.</p>
+        </div>
+
+        <!-- Phase 1: Planning -->
+        <div class="checklist-section">
+            <h2>Phase 1: Planning & Preparation</h2>
+
+            <div class="checklist-item" data-item="1">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Define World Scale and Size</h3>
+                    <p>Determine the physical size of your world in kilometers and the required landscape size in UE5.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Common sizes: 2017x2017 (4km²), 4033x4033 (16km²), 8129x8129 (66km²). Larger landscapes require more memory and longer build times.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="2">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Choose Heightmap Resolution</h3>
+                    <p>Select appropriate heightmap resolution based on your world scale and detail requirements.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> UE5 requires (2^n + 1) resolution (e.g., 1009, 2017, 4033). Higher resolution = more detail but larger file sizes.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="3">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Decide on Creation Method</h3>
+                    <p>Choose between manual sculpting, heightmap import, procedural generation, or stamp-based (Landstamp Pro).</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Stamps are fastest for varied terrain. Manual sculpting gives total control. Heightmaps are best for real-world data.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 2: Creation -->
+        <div class="checklist-section">
+            <h2>Phase 2: Landscape Creation</h2>
+
+            <div class="checklist-item" data-item="4">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Create or Import Base Landscape</h3>
+                    <p>Set up your landscape actor with the correct size, scale, and initial height data.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use Landscape mode in UE5, or import heightmap as 16-bit PNG/RAW file. Set Z-scale appropriately for your height range.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="5">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Verify Landscape Settings</h3>
+                    <p>Double-check section size, component count, and overall resolution match your requirements.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Common section size: 63x63 quads. More sections = better LOD streaming, but more draw calls.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="6">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Apply Large-Scale Features</h3>
+                    <p>Add major terrain features: mountains, valleys, rivers, plateaus using sculpting or stamps.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Work from large to small. Establish major landforms before adding detail.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="7">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Add Medium Detail Features</h3>
+                    <p>Layer in hills, ridges, erosion patterns, and secondary terrain variation.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use noise stamps or erosion brushes to break up overly smooth terrain.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="8">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Refine Small Details</h3>
+                    <p>Add fine details like rocky outcrops, small elevation changes, and texture variation.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Don't over-detail. Let material displacement and foliage handle micro-detail.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 3: Materials -->
+        <div class="checklist-section">
+            <h2>Phase 3: Materials & Texturing</h2>
+
+            <div class="checklist-item" data-item="9">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Set Up Landscape Material</h3>
+                    <p>Create or assign a landscape material with proper texture layers and blending.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use AutoMaterial or height-based blending for automatic texturing. Include at least 3-4 terrain types (rock, grass, dirt, etc.).
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="10">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Paint Landscape Layers</h3>
+                    <p>If not using auto-material, manually paint texture layers where appropriate.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Paint from broad strokes to details. Use layer blend weight to create smooth transitions.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="11">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Enable Nanite (if applicable)</h3>
+                    <p>Enable Nanite on landscape for better performance and detail with UE5.1+.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Nanite landscapes require UE 5.1+. Great for high-poly detail without performance loss.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 4: Optimization -->
+        <div class="checklist-section">
+            <h2>Phase 4: Optimization & Polish</h2>
+
+            <div class="checklist-item" data-item="12">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Configure LOD Settings</h3>
+                    <p>Set up landscape LOD distances and forced LOD levels for performance.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Adjust LOD distribution to balance visual quality and performance. Test with "stat RHI" and "stat FPS".
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="13">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Test Collision and Walkability</h3>
+                    <p>Walk across terrain to ensure collision works correctly and slopes are traversable.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use collision visualization (Show > Collision) to verify landscape collision mesh.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="14">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Add Foliage and Props</h3>
+                    <p>Place grass, trees, rocks, and other environmental assets using foliage painting.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use foliage types with proper LODs. Enable grass occlusion culling for performance.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="15">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Final Performance Check</h3>
+                    <p>Profile landscape rendering cost and optimize any problem areas.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use "stat unit", "stat fps", and GPU visualizer. Target 60fps for gameplay, 30fps minimum.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="download-section">
+            <h2>Save This Checklist</h2>
+            <p>Print this page or save as PDF for quick reference during your landscape workflow.</p>
+            <button class="btn-download" onclick="window.print()">🖨️ Print / Save as PDF</button>
+            <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+                Your progress is automatically saved in your browser.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Checklist functionality
+        const items = document.querySelectorAll('.checklist-item');
+        const progressFill = document.getElementById('progressFill');
+
+        // Load saved state
+        items.forEach((item, index) => {
+            const itemId = item.getAttribute('data-item');
+            const checkbox = item.querySelector('.checkbox');
+            const saved = localStorage.getItem(`landscape-checklist-${itemId}`);
+            
+            if (saved === 'true') {
+                checkbox.classList.add('checked');
+            }
+
+            checkbox.addEventListener('click', () => {
+                checkbox.classList.toggle('checked');
+                const isChecked = checkbox.classList.contains('checked');
+                localStorage.setItem(`landscape-checklist-${itemId}`, isChecked);
+                updateProgress();
+            });
+        });
+
+        function updateProgress() {
+            const total = items.length;
+            const checked = document.querySelectorAll('.checkbox.checked').length;
+            const percentage = (checked / total) * 100;
+            progressFill.style.width = percentage + '%';
+        }
+
+        updateProgress();
+    </script>
+</body>
+</html>

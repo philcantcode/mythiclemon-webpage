@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Game jam preparation checklist for UE5 developers - maximize your 48-hour productivity with this comprehensive guide.">
+    <title>Game Jam Preparation Checklist | MythicLemon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .checklist-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .checklist-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        .checklist-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00a8e8 0%, #00d9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .checklist-section {
+            margin-bottom: 3rem;
+        }
+        .checklist-section h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .checklist-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+        .checklist-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0, 168, 232, 0.1);
+        }
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .checkbox.checked {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            position: relative;
+        }
+        .checkbox.checked::after {
+            content: "✓";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+        }
+        .item-content h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .item-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .item-tips {
+            background: rgba(0, 168, 232, 0.05);
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        .item-tips strong {
+            color: var(--primary-color);
+        }
+        .progress-bar {
+            background: var(--border-color);
+            height: 8px;
+            border-radius: 4px;
+            margin: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .progress-fill {
+            background: var(--primary-color);
+            height: 100%;
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <h1>MythicLemon</h1>
+                <p class="tagline">Premium Unreal Engine Assets</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../resources.html">← Back to Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="checklist-container">
+        <div class="checklist-header">
+            <h1>🎮 Game Jam Preparation Checklist</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                Maximize your 48-hour productivity with proper preparation
+            </p>
+        </div>
+
+        <div class="checklist-section">
+            <h2>1 Week Before</h2>
+
+            <div class="checklist-item" data-item="1">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Create UE5 Project Template</h3>
+                    <p>Set up a clean UE5 project with your preferred settings, plugins, and folder structure.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Include commonly used plugins (Enhanced Input, Fast Chart Widgets, In-Editor Manual) and basic project settings pre-configured.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="2">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Build Asset Library</h3>
+                    <p>Collect reusable assets: landscapes, materials, blueprints, sounds, UI elements.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Download MythicLemon landscape packs, create modular building pieces, prepare material functions. Organize in a "GameJamAssets" folder.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="3">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Test Your Setup</h3>
+                    <p>Do a mini 2-hour game jam practice run to verify your workflow.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Pick a random theme, build something simple. Identify workflow bottlenecks and missing assets.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <h2>Day Before</h2>
+
+            <div class="checklist-item" data-item="4">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Update Unreal Engine</h3>
+                    <p>Ensure you're on a stable UE5 version and all updates are installed.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Don't update to bleeding-edge versions day-of. Stick with proven stable releases (e.g., 5.3.2, 5.4.4).
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="5">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Clear Disk Space</h3>
+                    <p>Free up at least 50GB for project files, builds, and intermediate data.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Clean up old project binaries, intermediate folders, and DDC. UE5 projects can balloon quickly.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="6">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Prepare Food & Drinks</h3>
+                    <p>Stock up on healthy snacks, meals, and caffeine for 48 hours of development.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Avoid sugar crashes. Prepare easy meals ahead. Stay hydrated!
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="7">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Set Up Task Tracking</h3>
+                    <p>Install In-Editor Task Manager or prepare Trello/Notion board.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use MythicLemon's In-Editor Task Manager to avoid context switching during the jam.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <h2>Theme Announcement (Hour 0)</h2>
+
+            <div class="checklist-item" data-item="8">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Brainstorm Ideas (30 min max)</h3>
+                    <p>Generate 5-10 quick game concepts that fit the theme.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Don't overthink! Pick something achievable in 48h with your existing assets.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="9">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Pick ONE Concept</h3>
+                    <p>Choose the most achievable idea with clearest gameplay loop.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Prioritize: Can I build this in 36 hours (leaving 12h for polish/bugs)? Does it use assets I already have?
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="10">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Create Task Breakdown</h3>
+                    <p>List all features/assets needed. Prioritize as Must/Should/Could have.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> MVP first! Get playable ASAP, then iterate. Track tasks in In-Editor Task Manager.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <h2>During Development</h2>
+
+            <div class="checklist-item" data-item="11">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Build Core Gameplay (0-12h)</h3>
+                    <p>Focus exclusively on making the game playable. No polish, no extras.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Greybox everything. Player movement + core mechanic + win/lose condition = playable.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="12">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Add Art & Audio (12-30h)</h3>
+                    <p>Replace greybox with actual assets, add sounds, improve visuals.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Use pre-made assets. Landstamp Pro for fast terrain, Fast Chart Widgets for UI, free sound libraries.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="13">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Implement Secondary Features (30-36h)</h3>
+                    <p>Add "should have" features if time permits. Cut ruthlessly if behind.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> If you're not playable by hour 24, CUT features. Better to have a polished simple game than broken complex one.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="14">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Polish & Bug Fixes (36-42h)</h3>
+                    <p>Focus on making what you have feel good. Fix critical bugs.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Juice it! Add particle effects, screen shake, sound feedback. Small polish = big impact.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="15">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Build & Test (42-45h)</h3>
+                    <p>Create standalone build. Test on fresh machine if possible.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Always test packaged build! Editor behavior ≠ standalone. Check file size, dependencies.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <h2>Submission (Final 3 Hours)</h2>
+
+            <div class="checklist-item" data-item="16">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Create Game Page</h3>
+                    <p>Write compelling description, add screenshots, explain controls.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Make it easy for players to understand your game in 30 seconds. Clear controls = better ratings.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="17">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Record Trailer/Gameplay</h3>
+                    <p>Capture 30-60 seconds of exciting gameplay footage.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Show, don't tell. GIF or video of best moment >>> wall of text.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="18">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Upload Build</h3>
+                    <p>Upload final build with buffer time for upload speeds.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Upload 1 hour before deadline minimum. Compress builds, test download before submitting.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="19">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Final Verification</h3>
+                    <p>Download and play your submitted build to ensure it works.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> Critical! Missing DLL, broken controls, crashes = wasted 48 hours.
+                    </div>
+                </div>
+            </div>
+
+            <div class="checklist-item" data-item="20">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <h3>Share & Rest</h3>
+                    <p>Share on social media, thank collaborators, then SLEEP.</p>
+                    <div class="item-tips">
+                        <strong>💡 Tip:</strong> You did it! 🎉 Remember to rate other games after resting.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; text-align: center; margin-top: 3rem;">
+            <h2>Save This Checklist</h2>
+            <p>Print this page or save as PDF for your next game jam.</p>
+            <button class="btn-resource" onclick="window.print()" style="display: inline-block; padding: 1rem 2rem; background: var(--primary-color); color: white; border-radius: 8px; margin-top: 1rem; border: none; cursor: pointer;">🖨️ Print / Save as PDF</button>
+        </div>
+    </div>
+
+    <script>
+        const items = document.querySelectorAll('.checklist-item');
+        const progressFill = document.getElementById('progressFill');
+
+        items.forEach((item) => {
+            const itemId = item.getAttribute('data-item');
+            const checkbox = item.querySelector('.checkbox');
+            const saved = localStorage.getItem(`gamejam-checklist-${itemId}`);
+            
+            if (saved === 'true') {
+                checkbox.classList.add('checked');
+            }
+
+            checkbox.addEventListener('click', () => {
+                checkbox.classList.toggle('checked');
+                const isChecked = checkbox.classList.contains('checked');
+                localStorage.setItem(`gamejam-checklist-${itemId}`, isChecked);
+                updateProgress();
+            });
+        });
+
+        function updateProgress() {
+            const total = items.length;
+            const checked = document.querySelectorAll('.checkbox.checked').length;
+            const percentage = (checked / total) * 100;
+            progressFill.style.width = percentage + '%';
+        }
+
+        updateProgress();
+    </script>
+</body>
+</html>

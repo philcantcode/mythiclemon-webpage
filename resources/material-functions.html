@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Essential landscape material functions for UE5 - height blending, triplanar mapping, and more. Quick reference with examples.">
+    <title>UE5 Material Functions for Landscapes | MythicLemon</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .guide-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .guide-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        .guide-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00a8e8 0%, #00d9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .function-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .function-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .code-block {
+            background: rgba(0, 168, 232, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        .tip-box {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <h1>MythicLemon</h1>
+                <p class="tagline">Premium Unreal Engine Assets</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../resources.html">← Back to Resources</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="guide-container">
+        <div class="guide-header">
+            <h1>🎨 UE5 Material Functions for Landscapes</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                Essential material techniques and functions for professional terrain
+            </p>
+        </div>
+
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; margin-bottom: 3rem;">
+            <h2>About This Library</h2>
+            <p style="color: var(--text-secondary); line-height: 1.8;">
+                These material functions are essential for creating realistic, performant landscape materials in Unreal Engine 5. 
+                Each technique is explained with use cases and implementation notes. Use these as building blocks for your terrain materials.
+            </p>
+        </div>
+
+        <div class="function-card">
+            <h3>1. Height-Based Layer Blending</h3>
+            <p style="color: var(--text-secondary);">
+                Automatically blend textures based on landscape height - grass in valleys, rock on mountains.
+            </p>
+            <div class="code-block">
+<strong>Inputs:</strong> HeightmapSample, LowerTexture, UpperTexture, BlendRange
+<strong>Output:</strong> Blended texture based on height
+            </div>
+            <div class="tip-box">
+                <strong>💡 Use Case:</strong> AutoMaterial systems, automatic texturing of imported heightmaps, 
+                quick environment setup without manual painting.
+            </div>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                <strong>Implementation:</strong> Use LandscapeLayerCoords node to get height, normalize to 0-1 range, 
+                use Lerp with smoothstep for natural transition between materials.
+            </p>
+        </div>
+
+        <div class="function-card">
+            <h3>2. Slope-Based Material Selection</h3>
+            <p style="color: var(--text-secondary);">
+                Apply different materials based on surface angle - grass on flat areas, rock on cliffs.
+            </p>
+            <div class="code-block">
+<strong>Inputs:</strong> WorldNormal, FlatMaterial, SteepMaterial, SlopeThreshold
+<strong>Output:</strong> Material based on slope angle
+            </div>
+            <div class="tip-box">
+                <strong>💡 Use Case:</strong> Realistic cliff materials, preventing grass on vertical surfaces, 
+                automatic rock placement on steep terrain.
+            </div>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                <strong>Implementation:</strong> Calculate dot product of world normal and up vector (0,0,1). 
+                Values close to 1 = flat, close to 0 = steep. Use as mask for texture blending.
+            </p>
+        </div>
+
+        <div class="function-card">
+            <h3>3. Triplanar Projection</h3>
+            <p style="color: var(--text-secondary);">
+                Project textures from three axes to eliminate UV stretching on steep surfaces.
+            </p>
+            <div class="code-block">
+<strong>Inputs:</strong> Texture, WorldPosition, WorldNormal, TilingScale
+<strong>Output:</strong> Texture mapped without stretching
+            </div>
+            <div class="tip-box">
+                <strong>💡 Use Case:</strong> Cliffs, caves, overhangs, any steep terrain where standard UV mapping stretches.
+            </div>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                <strong>Implementation:</strong> Sample texture three times (XY, XZ, YZ planes), blend based on normal direction. 
+                UE5 has built-in WorldAlignedTexture node for this.
+            </p>
+        </div>
+
+        <div class="function-card">
+            <h3>4. Distance-Based Detail Fade</h3>
+            <p style="color: var(--text-secondary);">
+                Reduce texture detail at distance to improve performance and reduce tiling artifacts.
+            </p>
+            <div class="code-block">
+<strong>Inputs:</strong> DetailTexture, BaseTexture, FadeStart, FadeEnd
+<strong>Output:</strong> Texture that fades detail with distance
+            </div>
+            <div class="tip-box">
+                <strong>💡 Use Case:</strong> Performance optimization, reducing micro-detail shimmer at distance, 
+                improving overall visual quality.
+            </div>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                <strong>Implementation:</strong> Use CameraPositionWS and pixel world position to calculate distance. 
+                Lerp between detailed and simple textures based on distance thresholds.
+            </p>
+        </div>
+
+        <div class="function-card">
+            <h3>5. Macro Variation (Color Tinting)</h3>
+            <p style="color: var(--text-secondary);">
+                Add large-scale color variation to break up repetitive terrain.
+            </p>
+            <div class="code-block">
+<strong>Inputs:</strong> BaseColor, NoiseTexture, VariationStrength
+<strong>Output:</strong> Color with subtle large-scale variation
+            </div>
+            <div class="tip-box">
+                <strong>💡 Use Case:</strong> Breaking up tiled textures, adding biome variation, 
+                preventing "flat" looking terrain even with good textures.
+            </div>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                <strong>Implementation:</strong> Sample low-frequency noise texture at very large world-space scale (1:10000+). 
+                Multiply or lerp with base color at low strength (0.1-0.3).
+            </p>
+        </div>
+
+        <div class="function-card">
+            <h3>6. Puddle/Wetness Masks</h3>
+            <p style="color: var(--text-secondary);">
+                Create water accumulation in terrain crevices and flat areas.
+            </p>
+            <div class="code-block">
+<strong>Inputs:</strong> WorldNormal, NoiseTexture, WetnessAmount
+<strong>Output:</strong> Mask for wet/puddle areas
+            </div>
+            <div class="tip-box">
+                <strong>💡 Use Case:</strong> Dynamic weather systems, realistic wet terrain, 
+                adding visual interest to flat areas.
+            </div>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                <strong>Implementation:</strong> Combine slope detection (flat = wet) with noise for variation. 
+                Apply to specular, roughness, and base color to simulate wetness.
+            </p>
+        </div>
+
+        <div class="function-card">
+            <h3>7. Multi-Layer Texture Blending with Height Offset</h3>
+            <p style="color: var(--text-secondary);">
+                Blend textures using their height maps for realistic natural transitions.
+            </p>
+            <div class="code-block">
+<strong>Inputs:</strong> LayerA (color+height), LayerB (color+height), BlendWeight
+<strong>Output:</strong> Naturally blended result
+            </div>
+            <div class="tip-box">
+                <strong>💡 Use Case:</strong> Realistic dirt/grass transitions, rock/sand blending, 
+                anywhere you want natural material overlap instead of hard blends.
+            </div>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                <strong>Implementation:</strong> Modify blend weight by height difference. Higher areas of each texture 
+                "win" the blend. Use (HeightA - HeightB) * Strength to offset blend weight.
+            </p>
+        </div>
+
+        <div class="function-card">
+            <h3>8. Snow Accumulation</h3>
+            <p style="color: var(--text-secondary);">
+                Automatically place snow on flat upward-facing surfaces.
+            </p>
+            <div class="code-block">
+<strong>Inputs:</strong> WorldNormal, SnowAmount, SlopeThreshold
+<strong>Output:</strong> Snow mask for blending
+            </div>
+            <div class="tip-box">
+                <strong>💡 Use Case:</strong> Dynamic weather, seasonal environments, mountain peaks, 
+                adding visual variety to terrain.
+            </div>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                <strong>Implementation:</strong> Similar to slope detection but only accumulate on upward-facing 
+                surfaces (normal.z > threshold). Add noise for natural distribution.
+            </p>
+        </div>
+
+        <div class="function-card">
+            <h3>9. Parallax Occlusion Mapping (POM)</h3>
+            <p style="color: var(--text-secondary);">
+                Add depth illusion to terrain using heightmap offset.
+            </p>
+            <div class="code-block">
+<strong>Inputs:</strong> HeightTexture, Intensity, Steps
+<strong>Output:</strong> Offset UVs for depth effect
+            </div>
+            <div class="tip-box">
+                <strong>💡 Use Case:</strong> Close-up terrain detail, rocks, cobblestone paths, 
+                adding perceived depth without geometry.
+            </div>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                <strong>Implementation:</strong> Sample heightmap multiple times along view direction to find intersection. 
+                Expensive - use only on hero assets or close-up surfaces.
+            </p>
+        </div>
+
+        <div class="function-card">
+            <h3>10. Vertex Color Painting Support</h3>
+            <p style="color: var(--text-secondary);">
+                Use vertex colors as masks for manual texture override.
+            </p>
+            <div class="code-block">
+<strong>Inputs:</strong> VertexColor (RGBA), Four material layers
+<strong>Output:</strong> Manually controlled material distribution
+            </div>
+            <div class="tip-box">
+                <strong>💡 Use Case:</strong> Artist-directed material placement, fine-tuning auto-materials, 
+                creating paths/roads, detailing specific areas.
+            </div>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                <strong>Implementation:</strong> Use VertexColor node to access painted values. R,G,B,A channels 
+                control 4 different material layers. Blend using lerp/if nodes.
+            </p>
+        </div>
+
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; margin-top: 3rem; border: 2px solid var(--primary-color);">
+            <h2 style="color: var(--primary-color); margin-bottom: 1rem;">📚 Learning Path</h2>
+            <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem;">
+                Start with height-based and slope-based blending (functions 1-2) for automatic texturing. 
+                Add triplanar projection (3) for cliffs. Then layer in macro variation (5) to break up tiling.
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.8;">
+                Advanced techniques like POM (9) and height-blend (7) should be added once you're comfortable 
+                with the basics. Vertex painting (10) is perfect for final artistic touch-ups.
+            </p>
+        </div>
+
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; text-align: center; margin-top: 3rem;">
+            <h2 style="margin-bottom: 1rem;">Ready-Made Landscape Materials</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                Get professionally crafted landscape materials with these functions built-in
+            </p>
+            <a href="../product.html?id=landscape-pack" style="display: inline-block; background: var(--primary-color); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600;">View Landscape Packs</a>
+        </div>
+    </div>
+</body>
+</html>
