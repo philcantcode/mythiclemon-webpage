@@ -100,6 +100,25 @@ class MythicLemonApp {
         const metaDesc = document.querySelector('meta[name="description"]');
         if (metaDesc) metaDesc.content = product.description;
 
+        // Update Open Graph and Twitter meta tags
+        const productUrl = `https://www.mythiclemon.com/product.html?id=${productId}`;
+        const productImage = `https://www.mythiclemon.com/${product.image}`;
+        
+        document.getElementById('ogUrl')?.setAttribute('content', productUrl);
+        document.getElementById('ogTitle')?.setAttribute('content', `${product.name} | MythicLemon`);
+        document.getElementById('ogDescription')?.setAttribute('content', product.shortDescription || product.description);
+        document.getElementById('ogImage')?.setAttribute('content', productImage);
+        
+        document.getElementById('twitterUrl')?.setAttribute('content', productUrl);
+        document.getElementById('twitterTitle')?.setAttribute('content', `${product.name} | MythicLemon`);
+        document.getElementById('twitterDescription')?.setAttribute('content', product.shortDescription || product.description);
+        document.getElementById('twitterImage')?.setAttribute('content', productImage);
+        
+        document.getElementById('canonical')?.setAttribute('href', productUrl);
+
+        // Add Product Schema (JSON-LD)
+        this.addProductSchema(product, productId);
+
         // Render breadcrumb
         const breadcrumb = document.querySelector('.breadcrumb');
         if (breadcrumb) {
@@ -269,6 +288,42 @@ class MythicLemonApp {
     getUrlParameter(name) {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(name);
+    }
+
+    // Add Product Schema (JSON-LD)
+    addProductSchema(product, productId) {
+        const schema = {
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            "name": product.name,
+            "description": product.description,
+            "image": `https://www.mythiclemon.com/${product.image}`,
+            "brand": {
+                "@type": "Brand",
+                "name": "MythicLemon"
+            },
+            "offers": {
+                "@type": "Offer",
+                "url": `https://www.mythiclemon.com/product.html?id=${productId}`,
+                "priceCurrency": "GBP",
+                "price": product.price.replace('£', ''),
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                    "@type": "Organization",
+                    "name": "MythicLemon"
+                }
+            }
+        };
+
+        // Remove existing schema if any
+        const existingSchema = document.querySelector('script[type="application/ld+json"]');
+        if (existingSchema) existingSchema.remove();
+
+        // Add new schema
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.textContent = JSON.stringify(schema);
+        document.head.appendChild(script);
     }
 
     // Initialize app based on current page
