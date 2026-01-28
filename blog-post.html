@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Post | MythicLemon">
+    <title>Blog | MythicLemon</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        .post-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .post-breadcrumb {
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .post-breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .post-header {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .post-category {
+            display: inline-block;
+            background: rgba(0, 168, 232, 0.2);
+            color: var(--primary-color);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        .post-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.4;
+        }
+
+        .post-meta {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            padding-bottom: 2rem;
+        }
+
+        .post-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .post-cover {
+            width: 100%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .post-cover img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .post-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .post-content h1,
+        .post-content h2,
+        .post-content h3,
+        .post-content h4 {
+            color: var(--text-primary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .post-content h1 { font-size: 2.2rem; }
+        .post-content h2 { font-size: 1.8rem; }
+        .post-content h3 { font-size: 1.4rem; }
+        .post-content h4 { font-size: 1.2rem; }
+
+        .post-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-content a {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        .post-content a:hover {
+            color: #00c8ff;
+            border-bottom-color: #00c8ff;
+        }
+
+        .post-content ul,
+        .post-content ol {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .post-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .post-content blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .post-content code {
+            background: var(--card-bg);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: var(--primary-color);
+        }
+
+        .post-content pre {
+            background: var(--darker-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        .post-content pre code {
+            background: none;
+            padding: 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .post-content hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 3rem 0;
+        }
+
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .post-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .post-content th,
+        .post-content td {
+            border: 1px solid var(--border-color);
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .post-content th {
+            background: var(--card-bg);
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .post-content td {
+            color: var(--text-secondary);
+        }
+
+        .post-tags {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .post-tags h4 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0.3rem;
+        }
+
+        .post-footer {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .post-footer h4 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .post-footer-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .post-header h1 {
+                font-size: 2rem;
+            }
+
+            .post-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .post-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .post-meta {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <h1><a href="index.html" style="text-decoration: none; color: inherit;">MythicLemon</a></h1>
+                <p class="tagline">Premium Unreal Engine Assets</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="user-guides.html">User Guides</a></li>
+                <li><a href="https://www.fab.com/sellers/MythicLemon" target="_blank" class="cta-button">View on Fab</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="post-hero">
+        <div class="post-breadcrumb">
+            <a href="index.html">Home</a> / <a href="blog.html">Blog</a> / <span id="breadcrumbTitle">Loading...</span>
+        </div>
+        <div class="post-header">
+            <div class="post-category" id="postCategory">Loading...</div>
+            <h1 id="postTitle">Loading...</h1>
+            <p class="post-subtitle" id="postSubtitle"></p>
+            <div class="post-meta">
+                <span class="post-meta-item">👤 <span id="postAuthor"></span></span>
+                <span class="post-meta-item">📅 <span id="postDate"></span></span>
+                <span class="post-meta-item">⏱️ <span id="postReadTime"></span></span>
+            </div>
+        </div>
+    </section>
+
+    <div class="post-cover" id="postCover" style="display: none;">
+        <img src="" alt="" id="postCoverImage">
+    </div>
+
+    <article class="post-content" id="postContent">
+        <div class="loading">Loading blog post...</div>
+    </article>
+
+    <div class="post-tags" id="postTags" style="display: none;">
+        <h4>Tags</h4>
+        <div id="postTagsList"></div>
+    </div>
+
+    <div class="post-footer">
+        <h4>Explore More</h4>
+        <div class="post-footer-links">
+            <a href="blog.html" class="btn btn-primary">← Back to Blog</a>
+            <a href="index.html#products" class="btn btn-secondary">Browse Products</a>
+        </div>
+    </div>
+
+    <footer style="background-color: var(--darker-bg); border-top: 2px solid var(--border-color); padding: 3rem 2rem; text-align: center;">
+        <div class="container">
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                © 2026 MythicLemon. All rights reserved.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <a href="https://www.fab.com/sellers/MythicLemon" target="_blank" style="color: var(--primary-color); text-decoration: none;">Fab Marketplace</a>
+                <a href="https://x.com/MythicLemon" target="_blank" style="color: var(--primary-color); text-decoration: none;">X (Twitter)</a>
+                <a href="index.html#products" style="color: var(--primary-color); text-decoration: none;">All Products</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        class BlogPost {
+            constructor() {
+                this.post = null;
+                this.init();
+            }
+
+            async init() {
+                const postId = new URLSearchParams(window.location.search).get('id');
+                if (!postId) {
+                    this.showError('No blog post specified');
+                    return;
+                }
+
+                await this.loadPost(postId);
+                if (this.post) {
+                    this.renderPost();
+                    await this.loadContent();
+                }
+            }
+
+            async loadPost(postId) {
+                try {
+                    const response = await fetch('blogs.json');
+                    const data = await response.json();
+                    this.post = data.posts.find(p => p.id === postId);
+                    
+                    if (!this.post) {
+                        this.showError('Blog post not found');
+                    }
+                } catch (error) {
+                    console.error('Failed to load blog post:', error);
+                    this.showError('Failed to load blog post');
+                }
+            }
+
+            renderPost() {
+                document.title = `${this.post.title} | MythicLemon Blog`;
+                
+                // Update meta description
+                const metaDesc = document.querySelector('meta[name="description"]');
+                if (metaDesc) metaDesc.content = this.post.excerpt;
+
+                // Breadcrumb
+                document.getElementById('breadcrumbTitle').textContent = this.post.title;
+
+                // Header
+                document.getElementById('postCategory').textContent = this.post.category;
+                document.getElementById('postTitle').textContent = this.post.title;
+                document.getElementById('postSubtitle').textContent = this.post.subtitle || '';
+                document.getElementById('postAuthor').textContent = this.post.author;
+                document.getElementById('postDate').textContent = this.formatDate(this.post.date);
+                document.getElementById('postReadTime').textContent = this.post.readTime || '5 min read';
+
+                // Cover image
+                if (this.post.image) {
+                    const cover = document.getElementById('postCover');
+                    const img = document.getElementById('postCoverImage');
+                    img.src = this.post.image;
+                    img.alt = this.post.title;
+                    cover.style.display = 'block';
+                }
+
+                // Tags
+                if (this.post.tags && this.post.tags.length > 0) {
+                    const tagsSection = document.getElementById('postTags');
+                    const tagsList = document.getElementById('postTagsList');
+                    tagsList.innerHTML = this.post.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+                    tagsSection.style.display = 'block';
+                }
+            }
+
+            async loadContent() {
+                try {
+                    const response = await fetch(this.post.content);
+                    const markdown = await response.text();
+                    const html = marked.parse(markdown);
+                    document.getElementById('postContent').innerHTML = html;
+                } catch (error) {
+                    console.error('Failed to load blog content:', error);
+                    document.getElementById('postContent').innerHTML = '<p>Failed to load blog content.</p>';
+                }
+            }
+
+            formatDate(dateStr) {
+                const date = new Date(dateStr);
+                return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            }
+
+            showError(message) {
+                document.getElementById('postContent').innerHTML = `
+                    <div style="text-align: center; padding: 4rem 2rem;">
+                        <h2>${message}</h2>
+                        <p><a href="blog.html">Return to Blog</a></p>
+                    </div>
+                `;
+            }
+        }
+
+        // Initialize blog post
+        new BlogPost();
+    </script>
+</body>
+</html>
