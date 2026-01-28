@@ -376,7 +376,66 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    
+    // Load YouTube videos
+    loadLatestYouTubeVideos();
 });
+
+// YouTube Video Loader using RSS (no API key needed)
+async function loadLatestYouTubeVideos() {
+    const grid = document.getElementById('youtubeGrid');
+    if (!grid) return;
+    
+    // YouTube channel ID for @mythiclemonstudio
+    const CHANNEL_ID = 'UCet339PmtPSFAgP4nmq8c9g';
+    const MAX_RESULTS = 3;
+    
+    try {
+        // Fetch YouTube RSS feed
+        const RSS_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
+        
+        // Use a CORS proxy since we can't directly fetch RSS from client-side
+        const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}`);
+        const data = await response.json();
+        
+        if (data.status !== 'ok' || !data.items || data.items.length === 0) {
+            throw new Error('No videos found');
+        }
+        
+        // Get the latest videos
+        const videos = data.items.slice(0, MAX_RESULTS);
+        
+        // Render videos
+        grid.innerHTML = videos.map(video => {
+            // Extract video ID from link
+            const videoId = video.link.split('v=')[1];
+            return `
+                <div class="youtube-video">
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/${videoId}" 
+                            title="${video.title}" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            `;
+        }).join('');
+        
+    } catch (error) {
+        console.error('Failed to load YouTube videos:', error);
+        // Fallback to manual video IDs or channel embed
+        grid.innerHTML = `
+            <div class="youtube-video">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/videoseries?list=UUYourChannelIdHere" title="Latest YouTube videos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>et339PmtPSFAgP4nmq8c9g
+            </div>
+        `;
+    }
+}
 
 // Export for use in console/debugging
 window.mythicLemon = new MythicLemonApp();
