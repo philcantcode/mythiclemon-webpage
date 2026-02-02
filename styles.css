@@ -8,16 +8,20 @@
 }
 
 :root {
-    --primary-color: #00a8e8;
-    --secondary-color: #ff6b35;
-    --dark-bg: #0f0f1e;
-    --darker-bg: #0a0a14;
-    --card-bg: #1a1a2e;
-    --text-primary: #ffffff;
-    --text-secondary: #b8b8d1;
-    --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --border-color: #2d2d44;
-    --hover-color: #252540;
+    --primary-color: #f59e0b;
+    --primary-dark: #d97706;
+    --secondary-color: #94a3b8;
+    --accent-color: #fbbf24;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --dark-bg: #0f172a;
+    --darker-bg: #020617;
+    --card-bg: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --accent-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    --border-color: #334155;
+    --hover-color: #1e293b;
 }
 
 html {
@@ -135,14 +139,14 @@ header {
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
 }
 
 /* ===========================
    Hero Section
    =========================== */
 .hero {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     padding: 4rem 2rem;
     position: relative;
     overflow: hidden;
@@ -176,14 +180,14 @@ header {
 
 .hero-badge {
     display: inline-block;
-    background: rgba(102, 126, 234, 0.2);
+    background: rgba(245, 158, 11, 0.2);
     color: var(--primary-color);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
-    border: 1px solid rgba(102, 126, 234, 0.3);
+    border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 .hero h2 {
@@ -244,7 +248,7 @@ header {
 }
 
 .feature-card {
-    background: rgba(26, 26, 46, 0.6);
+    background: rgba(30, 41, 59, 0.6);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 1.5rem;
@@ -255,7 +259,7 @@ header {
     background: var(--card-bg);
     border-color: var(--primary-color);
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 168, 232, 0.15);
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.15);
 }
 
 .feature-icon {
@@ -335,7 +339,7 @@ header {
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
 }
 
 .btn-secondary {
@@ -491,12 +495,12 @@ header {
 }
 
 .tag {
-    background: rgba(102, 126, 234, 0.2);
+    background: rgba(245, 158, 11, 0.2);
     color: var(--primary-color);
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.8rem;
-    border: 1px solid rgba(102, 126, 234, 0.3);
+    border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 .product-footer {
@@ -626,7 +630,7 @@ footer {
    =========================== */
 .youtube-section {
     padding: 5rem 2rem;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
 
 .youtube-section h2 {
@@ -663,7 +667,7 @@ footer {
 
 .youtube-video:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 168, 232, 0.2);
+    box-shadow: 0 10px 30px rgba(245, 158, 11, 0.2);
 }
 
 .video-wrapper {
@@ -789,24 +793,24 @@ footer {
 }
 
 .badge-featured {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
     color: white;
 }
 
 .badge-new {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    color: white;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #0f172a;
 }
 
 .badge-popular {
-    background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
     color: white;
 }
 
 .urgency-message {
     padding: 1rem;
     margin: 1rem 0;
-    background: linear-gradient(135deg, rgba(0, 168, 232, 0.1) 0%, rgba(102, 126, 234, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(251, 191, 36, 0.1) 100%);
     border-left: 3px solid var(--primary-color);
     border-radius: 6px;
     font-size: 0.9rem;
@@ -822,10 +826,10 @@ footer {
 
 @keyframes pulse {
     0%, 100% {
-        box-shadow: 0 0 0 0 rgba(0, 168, 232, 0.7);
+        box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
     }
     50% {
-        box-shadow: 0 0 0 10px rgba(0, 168, 232, 0);
+        box-shadow: 0 0 0 10px rgba(245, 158, 11, 0);
     }
 }
 

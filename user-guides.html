@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .guides-hero {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             padding: 4rem 2rem;
             text-align: center;
         }
@@ -84,7 +84,7 @@
         .guide-card:hover {
             border-color: var(--primary-color);
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 168, 232, 0.2);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.2);
         }
 
         .guide-icon {
@@ -189,66 +189,8 @@
     </section>
 
     <section class="guides-section">
-        <div class="guides-grid">
-            <div class="guide-card">
-                <div class="guide-icon">🗺️</div>
-                <h3>Landstamp Pro</h3>
-                <div class="product-name">Professional Landscape Tool</div>
-                <p>Complete guide to using Landstamp Pro for creating professional terrain heightmaps. Covers stamping techniques, layer management, blend modes, and workflow best practices.</p>
-                <div class="guide-actions">
-                    <a href="user-guides/Landstamp-Pro-User-Guide.pdf" target="_blank" class="btn btn-primary btn-download">📄 View Guide</a>
-                    <a href="product.html?id=landstamp-pro" class="btn btn-secondary btn-download">View Product</a>
-                </div>
-                <div class="guide-meta">
-                    <span>📄 PDF Format</span>
-                    <span>🎯 Comprehensive</span>
-                </div>
-            </div>
-
-            <div class="guide-card">
-                <div class="guide-icon">📊</div>
-                <h3>Fast Chart Widgets</h3>
-                <div class="product-name">Data Visualization Tool</div>
-                <p>Learn how to create beautiful charts and graphs with Fast Chart Widgets. Includes Blueprint examples, customization options, and real-time data binding techniques.</p>
-                <div class="guide-actions">
-                    <a href="user-guides/FastChartWidgets-User-Guide.pdf" target="_blank" class="btn btn-primary btn-download">📄 View Guide</a>
-                    <a href="product.html?id=chart-widgets" class="btn btn-secondary btn-download">View Product</a>
-                </div>
-                <div class="guide-meta">
-                    <span>📄 PDF Format</span>
-                    <span>🎯 Blueprint Focused</span>
-                </div>
-            </div>
-
-            <div class="guide-card">
-                <div class="guide-icon">📋</div>
-                <h3>Easy Kanban Board</h3>
-                <div class="product-name">Task Management Plugin</div>
-                <p>Master task management within Unreal Engine using Easy Kanban Board. Setup instructions, workflow customization, and team collaboration tips included.</p>
-                <div class="guide-actions">
-                    <a href="user-guides/Easy-Kanban-Board-User-Guide.pdf" target="_blank" class="btn btn-primary btn-download">📄 View Guide</a>
-                    <a href="product.html?id=easy-kanban-board" class="btn btn-secondary btn-download">View Product</a>
-                </div>
-                <div class="guide-meta">
-                    <span>📄 PDF Format</span>
-                    <span>🎯 Quick Start</span>
-                </div>
-            </div>
-
-            <div class="guide-card">
-                <div class="guide-icon">📝</div>
-                <h3>Markdown 4 Blueprints</h3>
-                <div class="product-name">UMG Markdown Widget</div>
-                <p>Comprehensive guide to integrating markdown-formatted text in your UMG interfaces. Covers syntax support, styling customization, and dynamic content updates.</p>
-                <div class="guide-actions">
-                    <a href="user-guides/Blueprint-Markdown-User-Guide.pdf" target="_blank" class="btn btn-primary btn-download">📄 View Guide</a>
-                    <a href="product.html?id=markdown-4-blueprints" class="btn btn-secondary btn-download">View Product</a>
-                </div>
-                <div class="guide-meta">
-                    <span>📄 PDF Format</span>
-                    <span>🎯 Full Examples</span>
-                </div>
-            </div>
+        <div class="guides-grid" id="guides-container">
+            <div class="loading">Loading guides</div>
         </div>
     </section>
 
@@ -293,6 +235,47 @@
                 }
             });
         }
+
+        // Load and render user guides from JSON
+        async function loadUserGuides() {
+            const container = document.getElementById('guides-container');
+            
+            try {
+                const response = await fetch('user-guides/user_guides.json');
+                if (!response.ok) throw new Error('Failed to load guides');
+                
+                const data = await response.json();
+                
+                if (!data.guides || data.guides.length === 0) {
+                    container.innerHTML = '<p style="text-align: center; color: var(--text-secondary);">No guides available yet.</p>';
+                    return;
+                }
+                
+                container.innerHTML = data.guides.map(guide => `
+                    <div class="guide-card">
+                        <div class="guide-icon">${guide.icon}</div>
+                        <h3>${guide.title}</h3>
+                        <div class="product-name">${guide.productName}</div>
+                        <p>${guide.description}</p>
+                        <div class="guide-actions">
+                            <a href="${guide.pdfPath}" target="_blank" class="btn btn-primary btn-download">📄 View Guide</a>
+                            <a href="${guide.productPath}" class="btn btn-secondary btn-download">View Product</a>
+                        </div>
+                        <div class="guide-meta">
+                            <span>📄 ${guide.format}</span>
+                            <span>🎯 ${guide.focus}</span>
+                        </div>
+                    </div>
+                `).join('');
+                
+            } catch (error) {
+                console.error('Error loading guides:', error);
+                container.innerHTML = '<p style="text-align: center; color: var(--text-secondary);">Error loading guides. Please try again later.</p>';
+            }
+        }
+        
+        // Load guides on page load
+        document.addEventListener('DOMContentLoaded', loadUserGuides);
     </script>
 </body>
 </html>

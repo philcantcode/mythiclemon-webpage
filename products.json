@@ -3039,6 +3039,126 @@
       ]
     },
     {
+      "id": "assassin-rogue-male",
+      "name": "Assassin Dialogue Lore Pack",
+      "subtitle": "Fully Voiced Ranger Character",
+      "shortDescription": "570 professionally voiced dialogue lines with 69 vocal effects, 85 written documents, 19 game art images, and 20 original music tracks",
+      "price": "£19.99",
+      "priceRange": "£19.99",
+      "fabUrl": "https://www.fab.com/listings/assassin-rogue-male",
+      "userGuide": "user-guides/AssassinRogueMale_User_Guide.pdf",
+      "image": "images/assassin-rogue-male.jpg",
+      "featured": true,
+      "category": "Audio",
+      "tags": [
+        "Dialogue",
+        "Voice",
+        "Audio",
+        "Character",
+        "RPG",
+        "NPC",
+        "Lore",
+        "Companion",
+        "Ranger",
+        "Assassin"
+      ],
+      "description": "Bring your world to life with professional-quality character dialogue. A shadowy assassin with a silky, low-pitched voice that rarely rises above conversational volume. Speaks with deliberate ambiguity, letting sentences trail off suggestively. Pronunciation is precise but unhurried—savors words like a predator savors fear. Occasional dry wit delivered completely deadpan.",
+      "features": [
+        {
+          "title": "570 Voiced Dialogue Lines",
+          "description": "Professional voice acting covering emotions, combat, social interactions, environmental commentary, and more"
+        },
+        {
+          "title": "69 Vocal Effects",
+          "description": "Gasps, sighs, laughs, coughs, and emotional reactions for natural character expression"
+        },
+        {
+          "title": "85 Written Documents",
+          "description": "In-game readable content including journals, letters, poetry, recipes, and quest accounts"
+        },
+        {
+          "title": "19 Game Art Images",
+          "description": "AI-generated character portraits, environment concepts, and equipment art"
+        },
+        {
+          "title": "20 Original Music Tracks",
+          "description": "Over 1 hour of composed music including character themes, combat music, and ambient tracks"
+        },
+        {
+          "title": "41 Emotional Categories",
+          "description": "Full emotional spectrum from amusement to weariness with dedicated voice lines for each"
+        }
+      ],
+      "technicalDetails": {
+        "Voiced Lines": "570",
+        "Vocal Effects": "69",
+        "Total Voice Audio": "1h 12m",
+        "Written Documents": "85",
+        "Game Art Images": "19",
+        "Music Tracks": "20 (1h 1m)",
+        "Audio Format": "MP3 (44.1kHz, Stereo)",
+        "UE Integration": "Pre-formatted CSV DataTables"
+      },
+      "keyFeatures": [
+        "570 Voiced Lines",
+        "41 Emotions",
+        "85 Written Documents",
+        "20 Music Tracks",
+        "Full Lore Pack",
+        "UE DataTables Ready",
+        "Professional Voice Acting",
+        "Complete Character"
+      ],
+      "detailedContent": [
+        {
+          "heading": "Dialogue Categories",
+          "items": [
+            {
+              "name": "Emotions",
+              "description": "111 lines covering the full emotional spectrum"
+            },
+            {
+              "name": "Social Interactions",
+              "description": "78 lines for NPC conversations and companion dialogue"
+            },
+            {
+              "name": "Environmental Commentary",
+              "description": "64 lines reacting to the world around them"
+            },
+            {
+              "name": "Combat",
+              "description": "62 lines for battle situations and encounters"
+            },
+            {
+              "name": "Storytelling",
+              "description": "39 lines for campfire tales and quest narratives"
+            }
+          ]
+        },
+        {
+          "heading": "Perfect For",
+          "items": [
+            {
+              "name": "RPGs & Adventure Games",
+              "description": "Deep character dialogue for immersive storytelling"
+            },
+            {
+              "name": "Companion Characters",
+              "description": "Full personality with varied reactions and banter"
+            },
+            {
+              "name": "NPCs with Depth",
+              "description": "Quest givers, merchants, and memorable encounters"
+            },
+            {
+              "name": "Indie Developers",
+              "description": "AAA-quality dialogue without the AAA budget"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "volcanic-throne",
       "name": "The Volcanic Sentinel Throne",
       "subtitle": "Fire & Molten Rock Fantasy Throne",
@@ -3116,7 +3236,7 @@
     "seller": "MythicLemon",
     "tagline": "Premium Unreal Engine Assets",
     "description": "We create high-quality Unreal Engine assets and tools designed to accelerate your development workflow. From massive landscape packs to professional visualization plugins, our products combine technical excellence with creative flexibility.",
-    "totalProducts": "39",
+    "totalProducts": "40",
     "socialLinks": {
       "fab": "https://www.fab.com/sellers/MythicLemon",
       "twitter": "https://x.com/MythicLemon",
@@ -3125,7 +3245,7 @@
     "stats": [
       {
         "label": "Products Available",
-        "value": "39"
+        "value": "40"
       },
       {
         "label": "Latest Version Support",
